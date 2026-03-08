@@ -11,7 +11,7 @@ const ContactSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mx-auto text-center">
           <ScrollReveal>
-            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4">{t("contact.label")}</p>
+            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent-dark mb-4">{t("contact.label")}</p>
             <h2 className="text-3xl md:text-4xl font-serif font-semibold mb-6 leading-tight">
               {t("contact.title")}
             </h2>
