@@ -1,6 +1,9 @@
 import { Linkedin } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-8 bg-primary border-t border-primary-foreground/10">
       <div className="container mx-auto px-6">
@@ -16,7 +19,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-primary-foreground/40 text-xs font-sans text-center">
-          Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory
+          {t("footer.copyright")}
         </p>
       </div>
     </footer>

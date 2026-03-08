@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#why-us", label: "Why Us" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", key: "nav.about" },
+  { href: "#services", key: "nav.services" },
+  { href: "#why-us", key: "nav.whyUs" },
+  { href: "#contact", key: "nav.contact" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-sm border-b border-primary-foreground/10">
@@ -23,19 +26,23 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8 text-sm text-primary-foreground/80 font-sans tracking-wide">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-primary-foreground transition-colors">
-              {l.label}
+              {t(l.key)}
             </a>
           ))}
+          <LanguageSwitcher />
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
@@ -49,7 +56,7 @@ const Navbar = () => {
                 onClick={() => setOpen(false)}
                 className="hover:text-primary-foreground transition-colors"
               >
-                {l.label}
+                {t(l.key)}
               </a>
             ))}
           </div>
