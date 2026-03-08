@@ -24,7 +24,7 @@ const HeroSection = () => {
           </p>
           <div className="animate-fade-in" style={{ animationDelay: "0.4s", opacity: 0 }}>
             <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
-              <a href="#contact">Schedule an Intro Meeting</a>
+              <a href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer">Schedule an Intro Meeting</a>
             </Button>
           </div>
         </div>
