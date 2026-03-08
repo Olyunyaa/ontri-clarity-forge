@@ -9,6 +9,7 @@ export const languageLabels: Record<Language, string> = {
 export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navbar
+    "nav.home": "Home",
     "nav.about": "About",
     "nav.services": "Services",
     "nav.whyUs": "Why Us",
@@ -61,6 +62,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
   nl: {
     // Navbar
+    "nav.home": "Home",
     "nav.about": "Over ons",
     "nav.services": "Diensten",
     "nav.whyUs": "Waarom wij",
@@ -113,6 +115,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
   ru: {
     // Navbar
+    "nav.home": "Главная",
     "nav.about": "О нас",
     "nav.services": "Услуги",
     "nav.whyUs": "Почему мы",
