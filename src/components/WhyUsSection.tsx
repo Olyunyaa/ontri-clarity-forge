@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/ScrollReveal";
+
 const reasons = [
   {
     number: "01",
@@ -21,26 +23,30 @@ const WhyUsSection = () => {
     <section id="why-us" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
-          <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4">Why Choose Us</p>
-          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-16">
-            What sets us apart
-          </h2>
+          <ScrollReveal>
+            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4">Why Choose Us</p>
+            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-16">
+              What sets us apart
+            </h2>
+          </ScrollReveal>
 
           <div className="space-y-12">
-            {reasons.map((reason) => (
-              <div key={reason.number} className="flex gap-6">
-                <span className="text-3xl font-serif font-light text-accent/60 shrink-0 mt-1">
-                  {reason.number}
-                </span>
-                <div>
-                  <h3 className="text-xl font-serif font-semibold text-foreground mb-2">
-                    {reason.title}
-                  </h3>
-                  <p className="text-muted-foreground font-sans leading-relaxed text-sm">
-                    {reason.description}
-                  </p>
+            {reasons.map((reason, i) => (
+              <ScrollReveal key={reason.number} delay={i * 150}>
+                <div className="flex gap-6">
+                  <span className="text-3xl font-serif font-light text-accent/60 shrink-0 mt-1">
+                    {reason.number}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-serif font-semibold text-foreground mb-2">
+                      {reason.title}
+                    </h3>
+                    <p className="text-muted-foreground font-sans leading-relaxed text-sm">
+                      {reason.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
