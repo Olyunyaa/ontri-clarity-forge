@@ -17,7 +17,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4">{t("services.label")}</p>
+            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent-dark mb-4">{t("services.label")}</p>
             <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
               {t("services.title")}
             </h2>
