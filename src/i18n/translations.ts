@@ -62,6 +62,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
   nl: {
     // Navbar
+    "nav.home": "Home",
     "nav.about": "Over ons",
     "nav.services": "Diensten",
     "nav.whyUs": "Waarom wij",
