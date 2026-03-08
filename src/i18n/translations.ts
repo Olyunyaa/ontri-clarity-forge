@@ -115,6 +115,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
   ru: {
     // Navbar
+    "nav.home": "Главная",
     "nav.about": "О нас",
     "nav.services": "Услуги",
     "nav.whyUs": "Почему мы",
