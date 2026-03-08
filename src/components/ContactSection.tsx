@@ -16,7 +16,7 @@ const ContactSection = () => {
           <ScrollReveal delay={200}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer">
                   Schedule an Intro Meeting
                 </a>
               </Button>
