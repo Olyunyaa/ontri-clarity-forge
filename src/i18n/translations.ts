@@ -58,6 +58,19 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+
+    // Legal
+    "legal.terms.title": "Terms & Conditions",
+    "legal.terms.placeholder": "Terms & Conditions content will be added soon.",
+    "legal.privacy.title": "Privacy Policy",
+    "legal.privacy.placeholder": "Privacy Policy content will be added soon.",
+    "legal.cookies.title": "Cookie Policy",
+    "legal.cookies.placeholder": "Cookie Policy content will be added soon.",
+    "legal.disclaimer.title": "Disclaimer",
+    "legal.disclaimer.placeholder": "Disclaimer content will be added soon.",
+
+    // Cookie notice
+    "cookie.notice": "This website uses cookies to ensure the best experience. By continuing to use this site, you agree to our use of cookies.",
   },
 
   nl: {
