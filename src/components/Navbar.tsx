@@ -19,8 +19,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary border-b border-primary-foreground/10">
       <div className="container mx-auto flex items-center justify-between h-20 px-6">
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="flex items-center gap-3">
           <img src={logo} alt="Ontrí Advisory" className="h-12" />
+          <span className="hidden md:block text-lg font-serif font-semibold text-primary-foreground">Ontrí Advisory</span>
         </a>
 
         {/* Desktop */}
