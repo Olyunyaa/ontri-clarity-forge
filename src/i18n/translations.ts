@@ -58,6 +58,19 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+
+    // Legal
+    "legal.terms.title": "Terms & Conditions",
+    "legal.terms.placeholder": "Terms & Conditions content will be added soon.",
+    "legal.privacy.title": "Privacy Policy",
+    "legal.privacy.placeholder": "Privacy Policy content will be added soon.",
+    "legal.cookies.title": "Cookie Policy",
+    "legal.cookies.placeholder": "Cookie Policy content will be added soon.",
+    "legal.disclaimer.title": "Disclaimer",
+    "legal.disclaimer.placeholder": "Disclaimer content will be added soon.",
+
+    // Cookie notice
+    "cookie.notice": "This website uses cookies to ensure the best experience. By continuing to use this site, you agree to our use of cookies.",
   },
 
   nl: {
@@ -111,6 +124,19 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+
+    // Legal
+    "legal.terms.title": "Algemene Voorwaarden",
+    "legal.terms.placeholder": "De Algemene Voorwaarden worden binnenkort toegevoegd.",
+    "legal.privacy.title": "Privacybeleid",
+    "legal.privacy.placeholder": "Het Privacybeleid wordt binnenkort toegevoegd.",
+    "legal.cookies.title": "Cookiebeleid",
+    "legal.cookies.placeholder": "Het Cookiebeleid wordt binnenkort toegevoegd.",
+    "legal.disclaimer.title": "Disclaimer",
+    "legal.disclaimer.placeholder": "De Disclaimer wordt binnenkort toegevoegd.",
+
+    // Cookie notice
+    "cookie.notice": "Deze website maakt gebruik van cookies voor de beste ervaring. Door deze site te blijven gebruiken, gaat u akkoord met ons cookiegebruik.",
   },
 
   ru: {
@@ -164,5 +190,18 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+
+    // Legal
+    "legal.terms.title": "Условия использования",
+    "legal.terms.placeholder": "Условия использования будут добавлены в ближайшее время.",
+    "legal.privacy.title": "Политика конфиденциальности",
+    "legal.privacy.placeholder": "Политика конфиденциальности будет добавлена в ближайшее время.",
+    "legal.cookies.title": "Политика файлов cookie",
+    "legal.cookies.placeholder": "Политика файлов cookie будет добавлена в ближайшее время.",
+    "legal.disclaimer.title": "Отказ от ответственности",
+    "legal.disclaimer.placeholder": "Отказ от ответственности будет добавлен в ближайшее время.",
+
+    // Cookie notice
+    "cookie.notice": "Этот сайт использует файлы cookie для обеспечения наилучшего опыта. Продолжая использовать сайт, вы соглашаетесь с использованием cookie.",
   },
 };

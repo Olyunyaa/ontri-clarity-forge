@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import WhyUsSection from "@/components/WhyUsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import CookieNotice from "@/components/CookieNotice";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <WhyUsSection />
       <ContactSection />
       <Footer />
+      <CookieNotice />
     </div>
   );
 };
