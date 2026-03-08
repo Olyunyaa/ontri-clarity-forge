@@ -1,5 +1,6 @@
 import { Linkedin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import LegalModal from "@/components/LegalModal";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -18,6 +19,43 @@ const Footer = () => {
             <Linkedin className="w-5 h-5" />
           </a>
         </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-4 text-xs font-sans">
+          <LegalModal
+            title={t("legal.terms.title")}
+            trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.terms.title")}</button>}
+          >
+            <p>{t("legal.terms.placeholder")}</p>
+          </LegalModal>
+
+          <span className="text-primary-foreground/20">|</span>
+
+          <LegalModal
+            title={t("legal.privacy.title")}
+            trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.privacy.title")}</button>}
+          >
+            <p>{t("legal.privacy.placeholder")}</p>
+          </LegalModal>
+
+          <span className="text-primary-foreground/20">|</span>
+
+          <LegalModal
+            title={t("legal.cookies.title")}
+            trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.cookies.title")}</button>}
+          >
+            <p>{t("legal.cookies.placeholder")}</p>
+          </LegalModal>
+
+          <span className="text-primary-foreground/20">|</span>
+
+          <LegalModal
+            title={t("legal.disclaimer.title")}
+            trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.disclaimer.title")}</button>}
+          >
+            <p>{t("legal.disclaimer.placeholder")}</p>
+          </LegalModal>
+        </div>
+
         <p className="text-primary-foreground/40 text-xs font-sans text-center">
           {t("footer.copyright")}
         </p>

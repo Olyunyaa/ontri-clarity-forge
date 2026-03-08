@@ -190,5 +190,18 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Footer
     "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+
+    // Legal
+    "legal.terms.title": "Условия использования",
+    "legal.terms.placeholder": "Условия использования будут добавлены в ближайшее время.",
+    "legal.privacy.title": "Политика конфиденциальности",
+    "legal.privacy.placeholder": "Политика конфиденциальности будет добавлена в ближайшее время.",
+    "legal.cookies.title": "Политика файлов cookie",
+    "legal.cookies.placeholder": "Политика файлов cookie будет добавлена в ближайшее время.",
+    "legal.disclaimer.title": "Отказ от ответственности",
+    "legal.disclaimer.placeholder": "Отказ от ответственности будет добавлен в ближайшее время.",
+
+    // Cookie notice
+    "cookie.notice": "Этот сайт использует файлы cookie для обеспечения наилучшего опыта. Продолжая использовать сайт, вы соглашаетесь с использованием cookie.",
   },
 };
