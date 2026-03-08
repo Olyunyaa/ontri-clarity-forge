@@ -25,7 +25,7 @@ const WhyUsSection = () => {
             {reasonKeys.map((reason, i) => (
               <ScrollReveal key={reason.number} delay={i * 150}>
                 <div className="flex gap-6">
-                  <span className="text-3xl font-serif font-light text-accent/60 shrink-0 mt-1">
+                  <span className="text-3xl font-serif font-light text-accent-dark/60 shrink-0 mt-1">
                     {reason.number}
                   </span>
                   <div>

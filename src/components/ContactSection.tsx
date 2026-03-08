@@ -27,7 +27,7 @@ const ContactSection = () => {
             <div className="mt-8 flex items-center justify-center gap-2 text-primary-foreground/60 text-sm font-sans">
               <Mail className="w-4 h-4" />
               <span>{t("contact.email")}</span>
-              <a href="mailto:hello@ontri-advisory.com" className="text-accent hover:underline">
+              <a href="mailto:hello@ontri-advisory.com" className="text-accent-dark hover:underline">
                 hello@ontri-advisory.com
               </a>
             </div>

@@ -9,7 +9,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <ScrollReveal>
-            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4">{t("about.label")}</p>
+            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent-dark mb-4">{t("about.label")}</p>
             <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-8 leading-tight">
               {t("about.title")}
             </h2>
