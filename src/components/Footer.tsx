@@ -1,8 +1,21 @@
+import { Linkedin } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="py-8 bg-primary border-t border-primary-foreground/10">
-      <div className="container mx-auto px-6 text-center">
-        <p className="text-primary-foreground/40 text-xs font-sans">
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <a
+            href="https://www.linkedin.com/company/ontri-advisory"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin className="w-5 h-5" />
+          </a>
+        </div>
+        <p className="text-primary-foreground/40 text-xs font-sans text-center">
           Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory
         </p>
       </div>
