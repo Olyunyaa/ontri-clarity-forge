@@ -38,7 +38,7 @@ const WhyUsSection = () => {
                     {reason.number}
                   </span>
                   <div>
-                    <h3 className="text-xl font-serif font-semibold text-foreground mb-2">
+                    <h3 className="text-2xl font-serif font-semibold text-foreground mb-2">
                       {reason.title}
                     </h3>
                     <p className="text-muted-foreground font-sans leading-relaxed text-sm">

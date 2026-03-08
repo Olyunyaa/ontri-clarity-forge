@@ -42,7 +42,7 @@ const ServicesSection = () => {
             <ScrollReveal key={service.title} delay={i * 100}>
               <div className="group p-8 bg-background border border-border rounded-lg hover:border-accent/40 transition-colors duration-300 h-full">
                 <service.icon className="w-6 h-6 text-accent mb-5" strokeWidth={1.5} />
-                <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
+                <h3 className="text-2xl font-serif font-semibold text-foreground mb-3">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground font-sans leading-relaxed text-sm">
