@@ -5,6 +5,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const navLinks = [
+  { href: "#", key: "nav.home" },
   { href: "#about", key: "nav.about" },
   { href: "#services", key: "nav.services" },
   { href: "#why-us", key: "nav.whyUs" },
