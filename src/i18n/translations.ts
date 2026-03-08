@@ -9,6 +9,7 @@ export const languageLabels: Record<Language, string> = {
 export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navbar
+    "nav.home": "Home",
     "nav.about": "About",
     "nav.services": "Services",
     "nav.whyUs": "Why Us",
