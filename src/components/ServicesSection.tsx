@@ -17,7 +17,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent mb-4">{t("services.label")}</p>
+            <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent-dark mb-4">{t("services.label")}</p>
             <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground">
               {t("services.title")}
             </h2>
@@ -28,7 +28,7 @@ const ServicesSection = () => {
           {serviceKeys.map((service, i) => (
             <ScrollReveal key={service.titleKey} delay={i * 100}>
               <div className="group p-8 bg-background border border-border rounded-lg hover:border-accent/40 transition-colors duration-300 h-full">
-                <service.icon className="w-6 h-6 text-accent mb-5" strokeWidth={1.5} />
+                <service.icon className="w-6 h-6 text-accent-dark mb-5" strokeWidth={1.5} />
                 <h3 className="text-2xl font-serif font-semibold text-foreground mb-3">
                   {t(service.titleKey)}
                 </h3>
