@@ -88,33 +88,33 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // About
     "about.label": "Over ons",
-    "about.title": "Wij zorgen voor helderheid — en pakken de implementatie samen met u op.",
-    "about.p1": "Jarenlang hebben wij bedrijfsprocessen opgezet en opgeschaald — van het lanceren van startups tot het optimaliseren van processen en het aansturen van complexe projecten binnen private equity. Uitvoering zit in ons DNA.",
+    "about.title": "Wij zorgen voor helderheid en pakken de implementatie samen met u op.",
+    "about.p1": "Jarenlang hebben wij bedrijfsprocessen opgezet en opgeschaald: van het lanceren van startups tot het optimaliseren van processen en het aansturen van complexe projecten binnen private equity. Uitvoering zit in ons DNA.",
     "about.p2": "Wij startten Ontrí omdat we zagen dat bedrijven vastliepen: ze wisten dat AI kansen bood, maar verdwaalden in de mogelijkheden en wisten niet waar te beginnen.",
-    "about.p3": "Wij brengen uw werkprocessen in kaart, bepalen waar AI realistisch meerwaarde biedt — en waar niet. Vervolgens kiezen we samen met uw team de juiste tools, richten die in en zorgen ervoor dat ze ook echt worden gebruikt.",
-    "about.p4": "Het resultaat: werkende oplossingen — geen plannen op de plank, maar concrete ondersteuning bij de implementatie.",
+    "about.p3": "Wij brengen uw werkprocessen in kaart en bepalen waar AI realistisch meerwaarde biedt, en waar niet. Vervolgens kiezen we samen met uw team de juiste tools, richten die in en zorgen ervoor dat ze ook echt worden gebruikt.",
+    "about.p4": "Het resultaat: werkende oplossingen. Geen plannen op de plank, maar concrete ondersteuning bij de implementatie.",
 
     // Services
     "services.label": "Wat wij doen",
     "services.title": "Van analyse tot adoptie",
     "services.1.title": "Procesanalyse",
-    "services.1.desc": "Wij achterhalen waar werk stagneert, vastloopt of dubbel wordt gedaan — en herontwerpen uw kernprocessen zodat de uitvoering voorspelbaar, snel en schaalbaar wordt.",
+    "services.1.desc": "Wij achterhalen waar werk stagneert, vastloopt of dubbel wordt gedaan. We herontwerpen uw kernprocessen zodat de uitvoering voorspelbaar, snel en schaalbaar wordt.",
     "services.2.title": "AI-strategie & Routekaart",
-    "services.2.desc": "Wij vertalen 'we moeten iets met AI' naar een concrete routekaart, gekoppeld aan uw bedrijfsdoelen: wat heeft prioriteit, wat kan wachten, en hoe voert u het effectief uit.",
+    "services.2.desc": "Wij vertalen 'we moeten iets met AI' naar een concrete routekaart, gekoppeld aan uw bedrijfsdoelen: wat heeft prioriteit, wat kan wachten en hoe u het effectief uitvoert.",
     "services.3.title": "AI-tools & Implementatie",
     "services.3.desc": "Wij helpen u bewezen AI-tools te kiezen en in te richten die aansluiten bij uw werkprocessen. We verzorgen de opzet, maken handleidingen en trainen uw team om AI in het dagelijks werk te integreren.",
-    "services.4.title": "Adoptie & Verandertraject",
-    "services.4.desc": "Wij zorgen dat verandering ook echt landt: een helder uitrolplan, training, werkinstructies en borging — zodat nieuwe werkwijzen beklijven.",
+    "services.4.title": "Adoptie & Verandermanagement",
+    "services.4.desc": "Wij zorgen dat verandering ook echt landt: een helder uitrolplan, training, werkinstructies en borging, zodat nieuwe werkwijzen beklijven.",
 
     // Why Us
     "whyUs.label": "Waarom wij",
     "whyUs.title": "Wat ons anders maakt",
     "whyUs.1.title": "Eerst de operatie, dan de technologie",
-    "whyUs.1.desc": "Wij beginnen bij uw bedrijfsvoering, niet bij de technologie. We brengen in kaart waar werk hapert, waar middelen weglekken en waar besluitvorming stagneert. Pas daarna zetten we AI gericht in — alleen waar het haalbaar en verantwoord is.",
+    "whyUs.1.desc": "Wij beginnen bij uw bedrijfsvoering, niet bij de technologie. We brengen in kaart waar werk hapert, waar middelen weglekken en waar besluitvorming stagneert. Pas daarna zetten we AI gericht in, alleen waar het haalbaar en verantwoord is.",
     "whyUs.2.title": "Advies én begeleiding bij uitvoering",
     "whyUs.2.desc": "Wij werken zij aan zij met uw team: we maken gedetailleerde plannen, begeleiden de implementatie en lossen knelpunten op. We blijven betrokken totdat de nieuwe werkwijze draait en uw team er vertrouwd mee is.",
     "whyUs.3.title": "Afgestemd op uw situatie",
-    "whyUs.3.desc": "Wij houden rekening met uw realiteit — de capaciteit van uw team, de staat van uw data en uw risicobereidheid.",
+    "whyUs.3.desc": "Wij houden rekening met uw realiteit: de capaciteit van uw team, de staat van uw data en uw risicobereidheid.",
 
     // Contact
     "contact.label": "Neem contact op",
