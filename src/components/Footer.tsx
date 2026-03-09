@@ -29,7 +29,7 @@ const Footer = () => {
             title={t("legal.terms.title")}
             trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.terms.title")}</button>}
           >
-            <p>{t("legal.terms.placeholder")}</p>
+            <TermsContent />
           </LegalModal>
 
           <span className="text-primary-foreground/20">|</span>
@@ -38,7 +38,7 @@ const Footer = () => {
             title={t("legal.privacy.title")}
             trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.privacy.title")}</button>}
           >
-            <p>{t("legal.privacy.placeholder")}</p>
+            <PrivacyContent />
           </LegalModal>
 
           <span className="text-primary-foreground/20">|</span>
@@ -47,7 +47,7 @@ const Footer = () => {
             title={t("legal.cookies.title")}
             trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.cookies.title")}</button>}
           >
-            <p>{t("legal.cookies.placeholder")}</p>
+            <CookiePolicyContent />
           </LegalModal>
 
           <span className="text-primary-foreground/20">|</span>
@@ -56,7 +56,7 @@ const Footer = () => {
             title={t("legal.disclaimer.title")}
             trigger={<button className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors">{t("legal.disclaimer.title")}</button>}
           >
-            <p>{t("legal.disclaimer.placeholder")}</p>
+            <DisclaimerContent />
           </LegalModal>
         </div>
 
