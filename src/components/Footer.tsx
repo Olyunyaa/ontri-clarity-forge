@@ -1,6 +1,10 @@
 import { Linkedin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import LegalModal from "@/components/LegalModal";
+import TermsContent from "@/components/legal/TermsContent";
+import PrivacyContent from "@/components/legal/PrivacyContent";
+import CookiePolicyContent from "@/components/legal/CookiePolicyContent";
+import DisclaimerContent from "@/components/legal/DisclaimerContent";
 
 const Footer = () => {
   const { t } = useLanguage();
