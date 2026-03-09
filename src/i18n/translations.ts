@@ -16,7 +16,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.title": "Stop Guessing Where AI Fits in Your Business",
+    "hero.title": "Stop Guessing Where AI\nFits in Your Business",
     "hero.subtitle": "We audit your operations, identify high-impact opportunities, and help you implement practical AI solutions that your team will actually use.",
     "hero.cta": "Schedule an Intro Meeting",
 
