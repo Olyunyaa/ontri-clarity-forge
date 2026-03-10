@@ -13,8 +13,8 @@ const HeroSection = () => {
       </div>
 
       <div className="container relative z-10 mx-auto px-6 pt-24">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-semibold text-primary-foreground leading-[1.1] mb-6 animate-fade-in">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-semibold text-primary-foreground leading-[1.1] mb-6 animate-fade-in">
             {t("hero.title").split("\n").map((line, i, arr) => (
               <span key={i}>{line}{i < arr.length - 1 && <br />}</span>
             ))}

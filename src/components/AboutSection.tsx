@@ -27,7 +27,7 @@ const AboutSection = () => {
                   <img
                     src={olgaPhoto}
                     alt="Olga Perova, Founder, Ontrí Advisory"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-[50%_25%]"
                     loading="lazy"
                   />
                 </div>
