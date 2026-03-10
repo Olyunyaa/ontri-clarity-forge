@@ -16,17 +16,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.title": "Stop Guessing Where AI\nFits in Your Business",
-    "hero.subtitle": "We audit your operations, identify high-impact opportunities, and help you implement practical AI solutions that your team will actually use.",
+    "hero.title": "Scale Your Business\nWithout Scaling Your Team",
+    "hero.subtitle": "We identify where AI can multiply your team's output — and make sure it does.",
     "hero.cta": "Schedule an Intro Meeting",
 
     // About
     "about.label": "About Us",
-    "about.title": "We bring clarity — and work alongside you to implement.",
-    "about.p1": "We've spent years building and scaling operations — launching startups, optimizing processes, managing complex projects in private equity. We know how to execute.",
-    "about.p2": "We founded Ontrí because we saw companies struggling: knowing AI could help, but overwhelmed by options and unclear on where to start or what would actually work for their business.",
-    "about.p3": "We audit your workflows, identify where AI could realistically improve operations — and where it wouldn't. Then we work with your team to select practical tools, set them up, and make sure they're actually used.",
-    "about.p4": "You get practical solutions that work — not just plans, but real implementation support.",
+    "about.title": "We bring clarity — and see it through.",
+    "about.p1": "We've spent years building operations inside startups and scale-ups — not advising from the outside, but doing the actual work of making businesses run. We know what it looks like when processes break, when teams are stretched thin, and when the answer isn't more people — it's strengthening what's already there.",
+    "about.p2": "We speak the language of goals and numbers. That means we start with your objectives and constraints — and figure out where AI can make a measurable difference.",
+    "about.p3": "Then we work with your team to make sure the changes actually stick.",
+    "about.p4": "We also run Ontrí Advisory itself on AI — which means everything we recommend, we've tested ourselves.",
 
     // Services
     "services.label": "What We Do",
@@ -82,17 +82,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.title": "Weet u waar AI écht waarde toevoegt in uw bedrijf?",
-    "hero.subtitle": "Wij analyseren uw bedrijfsprocessen, brengen de grootste kansen in kaart en helpen u AI-oplossingen in te zetten die uw team ook daadwerkelijk gaat gebruiken.",
+    "hero.title": "Schaal uw bedrijf\nzonder uw team uit te breiden",
+    "hero.subtitle": "Wij identificeren waar AI de prestaties van uw team kan versterken — en implementeren oplossingen die meetbare resultaten opleveren.",
     "hero.cta": "Plan een kennismaking",
 
     // About
     "about.label": "Over ons",
-    "about.title": "Wij zorgen voor helderheid en pakken de implementatie samen met u op.",
-    "about.p1": "Jarenlang hebben wij bedrijfsprocessen opgezet en opgeschaald: van het lanceren van startups tot het optimaliseren van processen en het aansturen van complexe projecten binnen private equity. Uitvoering zit in ons DNA.",
-    "about.p2": "Wij startten Ontrí omdat we zagen dat bedrijven vastliepen: ze wisten dat AI kansen bood, maar verdwaalden in de mogelijkheden en wisten niet waar te beginnen.",
-    "about.p3": "Wij brengen uw werkprocessen in kaart en bepalen waar AI realistisch meerwaarde biedt, en waar niet. Vervolgens kiezen we samen met uw team de juiste tools, richten die in en zorgen ervoor dat ze ook echt worden gebruikt.",
-    "about.p4": "Het resultaat: werkende oplossingen. Geen plannen op de plank, maar concrete ondersteuning bij de implementatie.",
+    "about.title": "Wij brengen helderheid — en zorgen voor resultaat.",
+    "about.p1": "Wij hebben jarenlang operaties gebouwd binnen startups en scale-ups — niet als externe adviseurs, maar als mensen die het werk daadwerkelijk deden. Wij weten hoe het voelt wanneer processen vastlopen, teams overbelast zijn, en het antwoord niet meer mensen zijn — maar het versterken van wat er al is.",
+    "about.p2": "Wij spreken de taal van doelen en cijfers. Dat betekent dat wij beginnen met uw doelstellingen en beperkingen — en uitzoeken waar AI een meetbaar verschil kan maken.",
+    "about.p3": "Daarna werken wij samen met uw team om ervoor te zorgen dat de veranderingen ook echt werken.",
+    "about.p4": "Ontrí Advisory zelf is volledig gebouwd met AI: alles wat wij onze klanten aanbevelen, testen wij eerst op onszelf.",
 
     // Services
     "services.label": "Wat wij doen",
@@ -148,17 +148,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Контакты",
 
     // Hero
-    "hero.title": "Вы точно знаете, где AI принесёт пользу вашему бизнесу?",
-    "hero.subtitle": "Мы анализируем ваши бизнес-процессы, находим точки роста и помогаем внедрить AI-решения, которые ваша команда реально будет использовать.",
+    "hero.title": "Масштабируйте бизнес\nбез расширения команды",
+    "hero.subtitle": "Мы находим процессы, где AI может усилить работу вашей команды — и внедряем решения, которые дадут измеримый результат.",
     "hero.cta": "Записаться на встречу",
 
     // About
     "about.label": "О нас",
-    "about.title": "Мы разбираемся в деталях — и внедряем вместе с вами.",
-    "about.p1": "За нашими плечами — годы построения и масштабирования бизнес-процессов: запуск стартапов, оптимизация операций, управление сложными проектами в сфере private equity. Мы знаем, как доводить дела до результата.",
-    "about.p2": "Мы создали Ontrí, потому что видели: компании понимают, что AI может помочь, но теряются в вариантах и не знают, с чего начать.",
-    "about.p3": "Мы детально изучаем ваши рабочие процессы, определяем, где AI действительно даст эффект, а где — нет. Затем вместе с вашей командой подбираем подходящие инструменты, настраиваем их и добиваемся того, чтобы они реально использовались.",
-    "about.p4": "Результат — работающие решения, а не отчёты на полке. Мы сопровождаем вас на каждом этапе внедрения.",
+    "about.title": "Мы разбираемся в деталях — и доводим до результата.",
+    "about.p1": "Мы много лет работали внутри бизнеса — выстраивали операционные процессы с нуля, оптимизировали существующие, управляли командами в стартапах и scale-ups в роли COO. Мы хорошо знаем, как это бывает: процессы работают не идеально, но времени разобраться нет. Есть дорогостоящие решения, которые давно пора пересмотреть — но руки не доходят. Команда работает на пределе, а выручка не растёт. Часто ответ — не новые люди, а автоматизация того, что съедает время, и высвобождение ресурса для задач, которые действительно двигают бизнес вперёд.",
+    "about.p2": "Мы работаем в логике результатов и цифр. Начинаем с ваших целей и ограничений, разбираемся в процессах — и находим, где AI даст реальный эффект.",
+    "about.p3": "Затем внедряем вместе с командой и доводим до работающего результата.",
+    "about.p4": "Ontrí Advisory сам построен на AI. Всё, что рекомендуем клиентам — сначала проверяем на себе.",
 
     // Services
     "services.label": "Наши услуги",
