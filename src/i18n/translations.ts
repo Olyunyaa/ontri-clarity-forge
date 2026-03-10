@@ -57,7 +57,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "contact.email": "Prefer email?",
 
     // Footer
-    "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+    "footer.copyright": "© 2026 Ontrí Advisory",
 
     // Legal
     "legal.terms.title": "Terms & Conditions",
@@ -123,7 +123,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "contact.email": "Liever mailen?",
 
     // Footer
-    "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+    "footer.copyright": "© 2026 Ontrí Advisory",
 
     // Legal
     "legal.terms.title": "Algemene Voorwaarden",
@@ -189,7 +189,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "contact.email": "Предпочитаете email?",
 
     // Footer
-    "footer.copyright": "Copyright © 2026 Ontrí Advisory | Powered by Ontrí Advisory",
+    "footer.copyright": "© 2026 Ontrí Advisory",
 
     // Legal
     "legal.terms.title": "Условия использования",
