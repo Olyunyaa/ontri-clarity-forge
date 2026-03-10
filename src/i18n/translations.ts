@@ -94,6 +94,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "about.p2": "Wij spreken de taal van doelen en cijfers. Dat betekent dat wij beginnen met uw doelstellingen en beperkingen — en uitzoeken waar AI een meetbaar verschil kan maken.",
     "about.p3": "Daarna werken wij samen met uw team om ervoor te zorgen dat de veranderingen ook echt werken.",
     "about.p4": "Ontrí Advisory zelf is volledig gebouwd met AI: alles wat wij onze klanten aanbevelen, testen wij eerst op onszelf.",
+    "about.quote": "AI is niet ons doel — resultaten wel.",
 
     // Services
     "services.label": "Wat wij doen",
