@@ -1,7 +1,7 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/i18n/LanguageContext";
 import olgaPhoto from "@/assets/olga-perova.png";
-import { Target, Users, Lightbulb } from "lucide-react";
+import { Target, Users, Lightbulb, Sparkles } from "lucide-react";
 
 const AboutSection = () => {
   const { t } = useLanguage();
@@ -19,11 +19,11 @@ const AboutSection = () => {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left column: Photo + name */}
+          {/* Left column: Photo + name + pull quote */}
           <div className="lg:col-span-4">
             <ScrollReveal>
               <div className="sticky top-32">
-                <div className="aspect-[3/4] overflow-hidden rounded-sm mb-5">
+                <div className="overflow-hidden rounded-sm mb-5 max-h-[450px]">
                   <img
                     src={olgaPhoto}
                     alt="Olga Perova, Founder, Ontrí Advisory"
@@ -31,7 +31,12 @@ const AboutSection = () => {
                   />
                 </div>
                 <p className="font-serif text-lg text-foreground font-medium">Olga Perova</p>
-                <p className="text-sm text-muted-foreground font-sans">Founder, Ontrí Advisory</p>
+                <p className="text-sm text-muted-foreground font-sans mb-6">Founder, Ontrí Advisory</p>
+                <blockquote className="border-l-4 border-accent-dark pl-5 py-3">
+                  <p className="text-xl font-serif font-semibold text-foreground italic leading-snug">
+                    {t("about.quote")}
+                  </p>
+                </blockquote>
               </div>
             </ScrollReveal>
           </div>
@@ -68,24 +73,22 @@ const AboutSection = () => {
                 <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-accent flex items-center justify-center mt-1">
                   <Lightbulb className="w-5 h-5 text-accent-foreground" />
                 </div>
-                <div className="space-y-4">
-                  <p className="text-muted-foreground font-sans leading-relaxed">
-                    {t("about.p3")}
-                  </p>
-                  <p className="text-muted-foreground font-sans leading-relaxed">
-                    {t("about.p4")}
-                  </p>
-                </div>
+                <p className="text-muted-foreground font-sans leading-relaxed">
+                  {t("about.p3")}
+                </p>
               </div>
             </ScrollReveal>
 
-            {/* Pull quote */}
+            {/* Block 4: We run on AI ourselves */}
             <ScrollReveal delay={300}>
-              <blockquote className="border-l-4 border-accent-dark pl-6 py-4 mt-4">
-                <p className="text-2xl md:text-3xl font-serif font-semibold text-foreground italic leading-snug">
-                  {t("about.quote")}
+              <div className="flex gap-4 items-start">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-accent flex items-center justify-center mt-1">
+                  <Sparkles className="w-5 h-5 text-accent-foreground" />
+                </div>
+                <p className="text-muted-foreground font-sans leading-relaxed">
+                  {t("about.p4")}
                 </p>
-              </blockquote>
+              </div>
             </ScrollReveal>
           </div>
         </div>
