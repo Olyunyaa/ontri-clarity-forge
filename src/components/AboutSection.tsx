@@ -8,22 +8,22 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-24 md:py-32 bg-background">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 max-w-6xl">
         <ScrollReveal>
           <p className="text-sm font-sans font-medium tracking-[0.2em] uppercase text-accent-dark mb-4">
             {t("about.label")}
           </p>
-          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-16 leading-tight max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-14 leading-tight max-w-2xl">
             {t("about.title")}
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
           {/* Left column: Photo + name + pull quote */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-1">
             <ScrollReveal>
               <div className="sticky top-32">
-                <div className="overflow-hidden rounded-sm mb-5 max-h-[350px] max-w-[280px]">
+                <div className="overflow-hidden rounded-sm mb-5 aspect-[3/4] max-w-full">
                   <img
                     src={olgaPhoto}
                     alt="Olga Perova, Founder, Ontrí Advisory"
@@ -43,8 +43,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right column: Structured content */}
-          <div className="lg:col-span-8 space-y-10">
-            {/* Block 1: Operations experience */}
+          <div className="lg:col-span-2 space-y-8">
             <ScrollReveal>
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-accent flex items-center justify-center mt-1">
@@ -56,7 +55,6 @@ const AboutSection = () => {
               </div>
             </ScrollReveal>
 
-            {/* Block 2: Goals & numbers */}
             <ScrollReveal delay={100}>
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-accent flex items-center justify-center mt-1">
@@ -68,7 +66,6 @@ const AboutSection = () => {
               </div>
             </ScrollReveal>
 
-            {/* Block 3: Making it stick */}
             <ScrollReveal delay={200}>
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-accent flex items-center justify-center mt-1">
@@ -80,7 +77,6 @@ const AboutSection = () => {
               </div>
             </ScrollReveal>
 
-            {/* Block 4: We run on AI ourselves */}
             <ScrollReveal delay={300}>
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-accent flex items-center justify-center mt-1">
