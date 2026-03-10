@@ -27,6 +27,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "about.p2": "We speak the language of goals and numbers. That means we start with your objectives and constraints — and figure out where AI can make a measurable difference.",
     "about.p3": "Then we work with your team to make sure the changes actually stick.",
     "about.p4": "We also run Ontrí Advisory itself on AI — which means everything we recommend, we've tested ourselves.",
+    "about.quote": "AI is not our goal — results are.",
 
     // Services
     "services.label": "What We Do",
