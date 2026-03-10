@@ -83,7 +83,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.title": "Schaal uw bedrijf\nzonder uw team uit te breiden",
+    "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
     "hero.subtitle": "Wij identificeren waar AI de prestaties van uw team kan versterken — en implementeren oplossingen die meetbare resultaten opleveren.",
     "hero.cta": "Plan een kennismaking",
 
@@ -150,7 +150,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Контакты",
 
     // Hero
-    "hero.title": "Масштабируйте бизнес\nбез расширения команды",
+    "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
     "hero.subtitle": "Мы находим процессы, где AI может усилить работу вашей команды — и внедряем решения, которые дадут измеримый результат.",
     "hero.cta": "Записаться на встречу",
 
