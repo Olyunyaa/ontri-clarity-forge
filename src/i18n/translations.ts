@@ -82,17 +82,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.title": "Weet u waar AI écht waarde toevoegt in uw bedrijf?",
-    "hero.subtitle": "Wij analyseren uw bedrijfsprocessen, brengen de grootste kansen in kaart en helpen u AI-oplossingen in te zetten die uw team ook daadwerkelijk gaat gebruiken.",
+    "hero.title": "Schaal uw bedrijf\nzonder uw team uit te breiden",
+    "hero.subtitle": "Wij identificeren waar AI de prestaties van uw team kan versterken — en implementeren oplossingen die meetbare resultaten opleveren.",
     "hero.cta": "Plan een kennismaking",
 
     // About
     "about.label": "Over ons",
-    "about.title": "Wij zorgen voor helderheid en pakken de implementatie samen met u op.",
-    "about.p1": "Jarenlang hebben wij bedrijfsprocessen opgezet en opgeschaald: van het lanceren van startups tot het optimaliseren van processen en het aansturen van complexe projecten binnen private equity. Uitvoering zit in ons DNA.",
-    "about.p2": "Wij startten Ontrí omdat we zagen dat bedrijven vastliepen: ze wisten dat AI kansen bood, maar verdwaalden in de mogelijkheden en wisten niet waar te beginnen.",
-    "about.p3": "Wij brengen uw werkprocessen in kaart en bepalen waar AI realistisch meerwaarde biedt, en waar niet. Vervolgens kiezen we samen met uw team de juiste tools, richten die in en zorgen ervoor dat ze ook echt worden gebruikt.",
-    "about.p4": "Het resultaat: werkende oplossingen. Geen plannen op de plank, maar concrete ondersteuning bij de implementatie.",
+    "about.title": "Wij brengen helderheid — en zorgen voor resultaat.",
+    "about.p1": "Wij hebben jarenlang operaties gebouwd binnen startups en scale-ups — niet als externe adviseurs, maar als mensen die het werk daadwerkelijk deden. Wij weten hoe het voelt wanneer processen vastlopen, teams overbelast zijn, en het antwoord niet meer mensen zijn — maar het versterken van wat er al is.",
+    "about.p2": "Wij spreken de taal van doelen en cijfers. Dat betekent dat wij beginnen met uw doelstellingen en beperkingen — en uitzoeken waar AI een meetbaar verschil kan maken.",
+    "about.p3": "Daarna werken wij samen met uw team om ervoor te zorgen dat de veranderingen ook echt werken.",
+    "about.p4": "Ontrí Advisory zelf is volledig gebouwd met AI: alles wat wij onze klanten aanbevelen, testen wij eerst op onszelf.",
 
     // Services
     "services.label": "Wat wij doen",
