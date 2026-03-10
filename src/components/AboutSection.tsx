@@ -23,7 +23,7 @@ const AboutSection = () => {
           <div className="lg:col-span-1">
             <ScrollReveal>
               <div className="sticky top-32">
-                <div className="overflow-hidden rounded-sm mb-5 aspect-[3/4] max-w-full">
+                <div className="overflow-hidden rounded-sm mb-5 w-[280px] h-[280px]">
                   <img
                     src={olgaPhoto}
                     alt="Olga Perova, Founder, Ontrí Advisory"
