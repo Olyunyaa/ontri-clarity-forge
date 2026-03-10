@@ -16,17 +16,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.contact": "Contact",
 
     // Hero
-    "hero.title": "Stop Guessing Where AI\nFits in Your Business",
-    "hero.subtitle": "We audit your operations, identify high-impact opportunities, and help you implement practical AI solutions that your team will actually use.",
+    "hero.title": "Scale Your Business\nWithout Scaling Your Team",
+    "hero.subtitle": "We identify where AI can multiply your team's output — and make sure it does.",
     "hero.cta": "Schedule an Intro Meeting",
 
     // About
     "about.label": "About Us",
-    "about.title": "We bring clarity — and work alongside you to implement.",
-    "about.p1": "We've spent years building and scaling operations — launching startups, optimizing processes, managing complex projects in private equity. We know how to execute.",
-    "about.p2": "We founded Ontrí because we saw companies struggling: knowing AI could help, but overwhelmed by options and unclear on where to start or what would actually work for their business.",
-    "about.p3": "We audit your workflows, identify where AI could realistically improve operations — and where it wouldn't. Then we work with your team to select practical tools, set them up, and make sure they're actually used.",
-    "about.p4": "You get practical solutions that work — not just plans, but real implementation support.",
+    "about.title": "We bring clarity — and see it through.",
+    "about.p1": "We've spent years building operations inside startups and scale-ups — not advising from the outside, but doing the actual work of making businesses run. We know what it looks like when processes break, when teams are stretched thin, and when the answer isn't more people — it's strengthening what's already there.",
+    "about.p2": "We speak the language of goals and numbers. That means we start with your objectives and constraints — and figure out where AI can make a measurable difference.",
+    "about.p3": "Then we work with your team to make sure the changes actually stick.",
+    "about.p4": "We also run Ontrí Advisory itself on AI — which means everything we recommend, we've tested ourselves.",
 
     // Services
     "services.label": "What We Do",
