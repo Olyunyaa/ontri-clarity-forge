@@ -322,9 +322,10 @@ body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:v
   </div>
 </div>
 
-<!-- Hidden Netlify form for bot detection -->
-<form name="audit-results" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<!-- Netlify form detection -->
+<form name="audit-results" method="POST" action="/audit/" data-netlify="true" data-netlify-honeypot="bot-field" style="display:none">
   <input name="bot-field">
+  <input name="subject">
   <input name="name">
   <input name="company">
   <input name="role">
@@ -853,11 +854,12 @@ function sendResults(){
   formData.append('results',buildResultsText());
   fetch('/audit/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:formData.toString()})
     .then(r=>{
-      if(!r.ok) throw new Error(r.status);
+      if(!r.ok) throw new Error('HTTP '+r.status);
       show('s4');
     })
-    .catch(()=>{
-      alert(tr('send_err'));
+    .catch(e=>{
+      console.error('Form submit error:',e);
+      alert(tr('send_err')+'\n\n(Debug: '+e.message+')');
     });
 }
 
