@@ -322,16 +322,8 @@ body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:v
   </div>
 </div>
 
-<!-- Netlify form detection -->
-<form name="audit-results" method="POST" action="/audit/" data-netlify="true" data-netlify-honeypot="bot-field" style="display:none">
-  <input name="bot-field">
-  <input name="subject">
-  <input name="name">
-  <input name="company">
-  <input name="role">
-  <input name="phone">
-  <textarea name="results"></textarea>
-</form>
+<!-- Web3Forms bot check -->
+<input type="checkbox" name="botcheck" style="display:none">
 
 <script>
 const TR = {
@@ -844,22 +836,24 @@ function sendResults(){
     show('s4');
     return;
   }
-  const formData=new URLSearchParams();
-  formData.append('form-name','audit-results');
-  formData.append('subject','AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '));
-  formData.append('name',userName);
-  formData.append('company',userCompany);
-  formData.append('role',userRole);
-  formData.append('phone',userPhone);
-  formData.append('results',buildResultsText());
-  fetch('/audit/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:formData.toString()})
-    .then(r=>{
-      if(!r.ok) throw new Error('HTTP '+r.status);
-      show('s4');
+  const payload={
+    access_key:'WEB3FORMS_KEY_PLACEHOLDER',
+    subject:'AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '),
+    name:userName,
+    company:userCompany,
+    role:userRole,
+    phone:userPhone,
+    results:buildResultsText()
+  };
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    .then(r=>r.json())
+    .then(data=>{
+      if(data.success) show('s4');
+      else throw new Error(data.message||'Unknown error');
     })
     .catch(e=>{
       console.error('Form submit error:',e);
-      alert(tr('send_err')+'\n\n(Debug: '+e.message+')');
+      alert(tr('send_err'));
     });
 }
 
