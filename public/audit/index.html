@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Process Audit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F4EE;--surface:#FFFFFF;--ink:#111B32;--ink-2:#3D4F6B;--ink-3:#8090A8;--accent:#111B32;--accent-light:#ECEEF5;--green:#1A6B40;--green-light:#E6F2EC;--amber:#9B5000;--amber-light:#FBF0E4;--red:#B03020;--red-light:#FCECEA;--border:#E4E1D8;--radius:12px;--radius-sm:8px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:var(--ink);min-height:100vh}
+.screen{display:none;min-height:100vh}
+.screen.active{display:flex;flex-direction:column}
+.lang-switcher{display:flex;background:var(--surface);border:1.5px solid var(--border);border-radius:20px;overflow:hidden;flex-shrink:0}
+.lang-btn{font-size:12px;font-weight:500;font-family:'Inter',sans-serif;padding:5px 12px;border:none;background:transparent;cursor:pointer;color:var(--ink-2);transition:all .15s}
+.lang-btn.active{background:#111B32;color:#F6F4EE}
+#s0{position:relative}
+.welcome-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:70px 24px 40px;text-align:center;width:100%}
+.welcome-lang{position:fixed;top:22px;right:24px;z-index:20}
+.welcome-badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#9B7B4A;background:transparent;padding:0;margin-bottom:18px}
+.welcome-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,46px);font-weight:600;line-height:1.15;color:var(--ink);margin-bottom:14px;max-width:540px;white-space:pre-line;letter-spacing:-.01em}
+.welcome-sub{font-size:15px;font-weight:300;color:var(--ink-2);line-height:1.75;max-width:420px;margin:0 auto 32px;font-family:'Inter',sans-serif}
+.welcome-form{display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px}
+.field-group{display:flex;flex-direction:column;gap:5px;text-align:left}
+.field-group label{font-size:10px;font-weight:500;color:var(--ink-2);letter-spacing:.14em;text-transform:uppercase;font-family:'Inter',sans-serif}
+.welcome-form input{width:100%;font-size:14px;font-family:'Inter',sans-serif;padding:12px 14px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--surface);color:var(--ink);outline:none;transition:border-color .2s}
+.welcome-form input:focus{border-color:var(--accent)}
+.btn-primary{font-size:14px;font-weight:500;font-family:'Inter',sans-serif;padding:13px 24px;border-radius:var(--radius-sm);border:none;background:#111B32;color:#F6F4EE;cursor:pointer;transition:background .2s;margin-top:6px;width:100%}
+.btn-primary:hover{background:#1E2E50;}
+.welcome-note{font-size:12px;color:var(--ink-3);margin-top:14px;max-width:340px;line-height:1.5;text-align:center}
+.step-header{background:var(--surface);border-bottom:1px solid var(--border);padding:13px 20px 13px 150px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10}
+.step-back{font-size:18px;background:none;border:none;cursor:pointer;color:var(--ink-2);padding:4px;line-height:1;flex-shrink:0}
+.step-back:hover{color:var(--ink)}
+.step-info{flex:1;min-width:0}
+.step-lbl{font-size:10px;font-weight:500;color:#9B7B4A;letter-spacing:.16em;text-transform:uppercase}
+.step-ttl{font-size:14px;font-weight:500;color:var(--ink);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.step-dots{display:flex;gap:5px;flex-shrink:0}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:all .2s}
+.dot.done{background:var(--accent)}
+.dot.active{background:var(--ink);width:18px;border-radius:3px}
+.step-body{flex:1;padding:28px 20px 40px;max-width:700px;margin:0 auto;width:100%}
+.step-intro{margin-bottom:24px}
+.step-intro h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em;line-height:1.15}
+.step-intro p{font-size:13px;color:var(--ink-2);line-height:1.6}
+.tasks-list{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.task-row{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:12px 14px;display:flex;align-items:center;gap:10px;transition:border-color .2s}
+.task-row:focus-within{border-color:var(--accent)}
+.task-idx{font-size:12px;font-weight:500;color:var(--ink-3);min-width:18px}
+.task-inp{flex:1;font-size:14px;font-family:'Inter',sans-serif;border:none;outline:none;background:transparent;color:var(--ink)}
+.task-inp::placeholder{color:var(--ink-3)}
+.pct-wrap{display:flex;align-items:center;gap:3px;background:var(--bg);border-radius:6px;padding:4px 9px;flex-shrink:0}
+.pct-wrap input{width:38px;font-size:14px;font-weight:500;font-family:'Inter',sans-serif;border:none;outline:none;background:transparent;color:#111B32;text-align:center}
+.pct-wrap span{font-size:12px;color:var(--ink-3)}
+.del-btn{background:none;border:none;cursor:pointer;color:var(--ink-3);font-size:16px;line-height:1;padding:2px 3px;transition:color .15s}
+.del-btn:hover{color:var(--red)}
+.add-btn{font-size:13px;color:var(--accent);background:var(--accent-light);border:1.5px dashed var(--accent);border-radius:var(--radius);padding:11px;width:100%;cursor:pointer;font-family:'Inter',sans-serif;font-weight:500;transition:all .15s}
+.add-btn:hover{background:#dde8fc}
+.total-row{display:flex;align-items:center;gap:10px;margin-top:16px;padding:12px 14px;border-radius:var(--radius-sm);background:var(--surface);border:1.5px solid var(--border)}
+.total-track{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.total-fill{height:100%;border-radius:2px;transition:width .3s,background .3s;background:var(--accent)}
+.total-lbl{font-size:13px;font-weight:500;min-width:42px;text-align:right}
+.step-footer{padding:16px 20px;max-width:700px;margin:0 auto;width:100%;display:flex;justify-content:flex-end;gap:10px}
+.btn-next{font-size:14px;font-weight:500;font-family:'Inter',sans-serif;padding:11px 24px;border-radius:var(--radius-sm);border:none;background:#111B32;color:#F6F4EE;cursor:pointer;transition:opacity .2s}
+.btn-next:hover{opacity:.82}
+.btn-next:disabled{opacity:.3;cursor:not-allowed}
+.btn-pdf{font-size:14px;font-weight:500;font-family:'Inter',sans-serif;padding:11px 24px;border-radius:var(--radius-sm);border:none;background:#F0E4D1;color:#111B32;cursor:pointer;transition:opacity .2s}
+.btn-pdf:hover{opacity:.82}
+.btn-ghost{font-size:14px;font-family:'Inter',sans-serif;padding:11px 18px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:transparent;color:var(--ink-2);cursor:pointer;transition:all .15s}
+.btn-ghost:hover{border-color:var(--ink-2);color:var(--ink)}
+.task-nav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.task-pill{font-size:12px;padding:5px 13px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);cursor:pointer;color:var(--ink-2);font-family:'Inter',sans-serif;transition:all .15s;white-space:nowrap}
+.task-pill.active{background:#111B32;border-color:#111B32;color:#F6F4EE}
+.task-pill.done{border-color:var(--green);color:var(--green);background:var(--green-light)}
+.task-ctr{font-size:12px;color:var(--ink-3);margin-bottom:16px}
+.d-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:9px}
+.d-card h3{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:13px;padding:7px 13px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);cursor:pointer;color:var(--ink-2);font-family:'Inter',sans-serif;transition:all .15s;user-select:none}
+.chip:hover{border-color:var(--ink-2);color:var(--ink)}
+.c-blue{background:var(--accent-light);border-color:var(--accent);color:var(--accent)}
+.c-green{background:var(--green-light);border-color:var(--green);color:var(--green)}
+.c-amber{background:var(--amber-light);border-color:var(--amber);color:var(--amber)}
+.c-red{background:var(--red-light);border-color:var(--red);color:var(--red)}
+.d-textarea{width:100%;font-size:13px;font-family:'Inter',sans-serif;padding:11px 13px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--bg);color:var(--ink);resize:vertical;min-height:66px;line-height:1.55;outline:none;transition:border-color .2s}
+.d-textarea:focus{border-color:var(--accent)}
+.wl-toggle{display:flex;align-items:center;gap:12px;padding:13px 15px;border-radius:var(--radius-sm);border:1.5px solid var(--border);background:var(--surface);cursor:pointer;transition:all .2s;user-select:none;margin-top:2px}
+.wl-toggle.on{background:var(--red-light);border-color:var(--red)}
+.wl-icon{font-size:18px}
+.wl-text{flex:1}
+.wl-text strong{font-size:13px;font-weight:500;display:block}
+.wl-text span{font-size:12px;color:var(--ink-2)}
+.wl-toggle.on .wl-text span{color:var(--red)}
+.wl-ind{width:36px;height:20px;border-radius:10px;background:var(--border);position:relative;transition:background .2s;flex-shrink:0}
+.wl-ind::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;background:#fff;transition:transform .2s}
+.wl-toggle.on .wl-ind{background:var(--red)}
+.wl-toggle.on .wl-ind::after{transform:translateX(16px)}
+.divider{display:flex;align-items:center;gap:14px;margin:18px 0}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.divider span{font-size:12px;color:#8090A8;white-space:nowrap}
+.final-btns{display:flex;gap:10px;margin-top:24px}
+.final-btns button{flex:1}
+
+.logo{position:fixed;top:20px;left:24px;z-index:30;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#111B32;text-decoration:none;letter-spacing:.01em;line-height:1}
+
+
+.acc-item{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;transition:border-color .2s}
+.acc-item.is-done{border-color:#1A6B40}
+.acc-header{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none}
+.acc-check{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;font-size:11px;color:transparent}
+.acc-item.is-done .acc-check{background:#1A6B40;border-color:#1A6B40;color:#fff}
+.acc-name{flex:1;font-size:14px;font-weight:500;color:var(--ink)}
+.acc-pct{font-size:13px;color:var(--ink-3);margin-right:8px}
+.acc-chevron{font-size:12px;color:var(--ink-3);transition:transform .2s}
+.acc-chevron.open{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 18px 18px;border-top:1px solid var(--border)}
+.acc-body.open{display:block}
+.acc-subtasks{background:var(--accent-light);border:1px solid var(--accent);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:14px}
+.acc-subtasks h4{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.acc-subtasks ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.acc-subtasks li{font-size:13px;color:var(--ink);display:flex;align-items:flex-start;gap:8px}
+.acc-subtasks li span{color:var(--accent);margin-top:1px;flex-shrink:0}
+.sub-row{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin-bottom:8px}
+.sub-label{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-right:8px;display:inline-block;margin-bottom:4px}
+.slider-group{margin-top:18px;display:flex;flex-direction:column;gap:8px}
+.rcard{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 20px 18px;text-align:center}
+.rcard-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:14px;line-height:1.5}
+.rcard-value{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1;margin-bottom:16px}
+.rcard-value .rcard-pct{font-size:28px;color:var(--ink-3);margin-left:1px}
+.rcard-slider{width:100%;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;outline:none;cursor:pointer;background:var(--border)}
+.rcard-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:#F0E4D1;cursor:pointer;border:2.5px solid var(--accent);box-shadow:0 1px 4px rgba(0,0,0,.12);transition:box-shadow .15s}
+.rcard-slider::-webkit-slider-thumb:hover{box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.rcard-slider::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#F0E4D1;cursor:pointer;border:2.5px solid var(--accent);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.rcard-slider::-moz-range-track{height:6px;border-radius:3px;background:transparent;border:none}
+.rcard-warn{font-size:12px;color:var(--amber);margin-top:10px;min-height:16px;transition:opacity .2s}
+
+@media(max-width:600px){
+  .logo{position:absolute;top:14px;left:16px;font-size:17px}
+  .welcome-inner{padding:60px 18px 32px}
+  .welcome-title{font-size:clamp(24px,6vw,36px)}
+  .welcome-sub{font-size:14px;margin-bottom:24px}
+  .welcome-form{max-width:100%}
+  .welcome-lang{top:16px;right:16px}
+
+  .step-header{padding:10px 14px 10px 14px;gap:8px}
+  .step-info{min-width:0}
+  .step-lbl{font-size:9px;letter-spacing:.1em}
+  .step-ttl{font-size:12px}
+  .step-dots{gap:4px}
+  .dot{width:5px;height:5px}
+  .dot.active{width:14px}
+  .step-back{font-size:16px;padding:2px}
+
+  .step-body{padding:20px 16px 32px}
+  .step-intro h2{font-size:24px}
+  .step-intro p{font-size:12px}
+
+  .task-row{padding:10px 10px;gap:6px}
+  .task-idx{font-size:11px;min-width:14px}
+  .task-inp{font-size:13px}
+  .pct-wrap{padding:3px 6px}
+  .pct-wrap input{width:32px;font-size:13px}
+  .del-btn{font-size:14px}
+  .add-btn{font-size:12px;padding:10px}
+  .total-row{padding:10px 12px;gap:8px}
+
+  .step-footer{padding:12px 16px}
+  .btn-next{padding:11px 18px;font-size:13px}
+  .btn-pdf{padding:11px 18px;font-size:13px}
+  .btn-primary{padding:12px 18px;font-size:13px}
+
+  .rcard{padding:16px 14px 14px}
+  .rcard-label{font-size:10px;margin-bottom:10px}
+  .rcard-value{font-size:34px;margin-bottom:12px}
+  .rcard-value .rcard-pct{font-size:22px}
+
+  .acc-header{padding:12px 14px;gap:8px}
+  .acc-name{font-size:13px}
+  .acc-body.open{padding:0 14px 14px}
+  .d-card{padding:14px}
+  .chip{font-size:12px;padding:6px 10px}
+  .sub-row{padding:10px}
+
+  .final-btns{flex-direction:column;gap:8px}
+  .final-btns button{width:100%}
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+</head>
+<body>
+<a class="logo" href="https://ontri-advisory.com">Ontr&#237; Advisory</a>
+
+
+<!-- WELCOME -->
+<div class="screen active" id="s0">
+  <div class="welcome-lang lang-switcher">
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+  </div>
+  <div class="welcome-inner">
+    <div class="welcome-badge" data-k="badge">AI Process Audit</div>
+    <h1 class="welcome-title" data-k="w_title"></h1>
+    <p class="welcome-sub" data-k="w_sub"></p>
+    <div class="welcome-form">
+      <div class="field-group">
+        <label data-k="l_name"></label>
+        <input id="i-name" type="text" autocomplete="given-name">
+      </div>
+      <div class="field-group">
+        <label data-k="l_role"></label>
+        <input id="i-role" type="text">
+      </div>
+      <div class="field-group">
+        <label data-k="l_company"></label>
+        <input id="i-company" type="text">
+      </div>
+      <div class="field-group">
+        <label data-k="l_phone"></label>
+        <input id="i-phone" type="text" inputmode="tel" autocomplete="new-password" name="nophone" readonly onfocus="this.removeAttribute('readonly')">
+      </div>
+      <button class="btn-primary" onclick="start()" data-k="btn_start"></button>
+    </div>
+    <p class="welcome-note" data-k="w_note"></p>
+  </div>
+</div>
+
+<!-- STEP 1: TASKS -->
+<div class="screen" id="s1">
+  <div class="step-header">
+    <button class="step-back" onclick="goBack(1)">←</button>
+    <div class="step-info">
+      <div class="step-lbl" data-k="s1_lbl"></div>
+      <div class="step-ttl" data-k="s1_ttl"></div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+    </div>
+    <div class="step-dots">
+      <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+  <div class="step-body">
+    <div class="step-intro">
+      <h2 id="h-tasks"></h2>
+      <p data-k="tasks_sub"></p>
+    </div>
+    <div class="tasks-list" id="tasks-list"></div>
+    <button class="add-btn" onclick="addTask()" data-k="btn_add"></button>
+    <div class="total-row">
+      <span style="font-size:13px;color:var(--ink-2)" data-k="total_lbl"></span>
+      <div class="total-track"><div class="total-fill" id="t-bar" style="width:0%"></div></div>
+      <span class="total-lbl" id="t-lbl" style="color:var(--ink-2)">0%</span>
+    </div>
+    <div id="total-warn" style="display:none;font-size:12px;color:var(--red);margin-top:8px;text-align:right" data-k="total_warn"></div>
+    <div id="sliders-panel"></div>
+  </div>
+  <div class="step-footer">
+    <button class="btn-next" id="btn-detail" onclick="goDetail()" disabled></button>
+  </div>
+</div>
+
+<!-- STEP 2: DETAIL -->
+<div class="screen" id="s2">
+  <div class="step-header">
+    <button class="step-back" onclick="goBack(2)">←</button>
+    <div class="step-info">
+      <div class="step-lbl" data-k="s2_lbl"></div>
+      <div class="step-ttl" id="detail-ttl"></div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+    </div>
+    <div class="step-dots">
+      <div class="dot done"></div><div class="dot active"></div><div class="dot"></div>
+    </div>
+  </div>
+  <div class="step-body">
+    <div class="step-intro">
+      <h2 data-k="d_heading"></h2>
+      <p data-k="d_sub"></p>
+    </div>
+    <div id="accordion-panel"></div>
+  </div>
+  <div class="step-footer">
+    <button class="btn-next" onclick="goGeneral()" data-k="btn_next_step"></button>
+  </div>
+</div>
+
+<!-- STEP 3: GENERAL QUESTIONS -->
+<div class="screen" id="s3">
+  <div class="step-header">
+    <button class="step-back" onclick="goBack(3)">←</button>
+    <div class="step-info">
+      <div class="step-lbl" data-k="s3_lbl"></div>
+      <div class="step-ttl" data-k="s3_ttl"></div>
+    </div>
+    <div class="lang-switcher">
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+    </div>
+    <div class="step-dots">
+      <div class="dot done"></div><div class="dot done"></div><div class="dot active"></div>
+    </div>
+  </div>
+  <div class="step-body">
+    <div class="step-intro">
+      <h2 data-k="s3_heading"></h2>
+      <p data-k="s3_sub"></p>
+    </div>
+    <div id="general-panel"></div>
+  </div>
+</div>
+
+<!-- THANK YOU -->
+<div class="screen" id="s4">
+  <div class="welcome-inner">
+    <h1 class="welcome-title" data-k="ty_heading"></h1>
+    <p class="welcome-sub" data-k="ty_text"></p>
+    <button class="btn-primary" style="max-width:360px" onclick="restart()" data-k="btn_restart"></button>
+  </div>
+</div>
+
+<!-- Hidden Netlify form for bot detection -->
+<form name="audit-results" netlify netlify-honeypot="bot-field" hidden>
+  <input name="bot-field">
+  <input name="name">
+  <input name="company">
+  <input name="role">
+  <input name="phone">
+  <textarea name="results"></textarea>
+</form>
+
+<script>
+const TR = {
+  en:{
+    badge:'AI · Process Audit',
+    def_subtasks:[],
+    w_title:'How can AI improve\nyour key work processes?',
+    w_sub:'This diagnostic identifies where AI can have the greatest impact on your tasks and processes.',
+    l_name:'Your name', i_name:'your name',
+    l_role:'Role', i_role:'your role',
+    l_company:'Company', i_company:'company name',
+    l_phone:'Phone (Telegram / WhatsApp)', i_phone:'+44 7911 123456',
+    btn_start:'Start the audit →',
+    w_note:'Your answers are confidential.',
+    s1_lbl:'Step 1 of 3', s1_ttl:'Your main tasks',
+    tasks_heading:'What are you currently spending your time on?',
+    tasks_sub:'List your main tasks at a high level — no subtasks yet, those come next. Estimate the % of your working week each one takes. Total should be 100%.',
+    btn_add:'+ Add another task', total_lbl:'Total',
+    total_warn:'Total exceeds 100% — adjust the distribution before continuing',
+    btn_detail:'Next: add details →',
+    s2_lbl:'Step 2 of 3', s2_ttl:'Task details',
+    d_heading:'Task details',
+    d_sub:'These questions help us better understand your context. Fill in what feels relevant — we\u2019ll cover the rest in our meeting.',
+    btn_next_step:'Next →',
+    s3_lbl:'Step 3 of 3', s3_ttl:'General questions',
+    s3_heading:'General questions about AI',
+    s3_sub:'These questions are about your overall experience with AI, not any specific task.',
+    btn_done:'Done',
+    btn_pdf:'Get PDF',
+    btn_restart:'Start over',
+    ty_heading:'Thank you!',
+    ty_text:'Your answers have been sent. Thank you for your time. We will be in touch shortly.',
+    send_ok:'Results sent successfully! Your consultant will review them.',
+    send_err:'Something went wrong. Please try again.',
+    sending:'Sending…',
+    task_ph:'Task name…',
+    q_ai_tools:'How do you use AI for this task?',
+    q_ai_how:'How do you use AI?',
+    q_who:'Who carries out this task?',
+    q_problems:'What problems do you face when using AI?',
+    q_notes:'Anything else worth noting?',
+    q_subtasks:'What does this task consist of?',
+    q_general:'Tell us more',
+    btn_add_sub:'+ Add subtask',
+    notes_ph:'Context, specific challenges, things you have already tried\u2026',
+    q_routine_total:'What % of your work consists of routine tasks?',
+    q_routine_ai:'What % of those does AI currently handle?',
+    q_routine_goal:'What % of routine tasks would you like to delegate to AI?',
+    routine_warn:'More than total routine tasks',
+    q_consulting_goal:'What would you most like to get from consulting?',
+    goal_ph:'free up time from routine tasks, improve the quality of work AI already does, learn more about process optimisation with AI',
+    wl_label:'I want to spend less time on this',
+    wl_on:"Flagged as a time drain — we'll prioritise this",
+    wl_off:'Tap to flag as a priority for optimisation',
+    task_ctr:'Task {i} of {n}',
+    divider_text:'and finally',
+    ai_opts:['ChatGPT','Claude','Gemini','Copilot','Perplexity','Custom GPT','AI agent','Don\'t use AI'],
+    prob_other_ph:'Other — describe here',
+    ai_how_opts:['Upload documents + prompt','Type a prompt each time','Use a saved prompt template','Set up an agent / automation'],
+    who_opts:['Myself','My employee','External consultant'],
+    prob_opts:["Output needs a lot of editing","Can't fully trust the result",'Takes too long to set up','Data security concerns','AI misses important details','No clear process for the team'],
+    def_tasks:[
+      'Analysing stakeholder responses',
+      'Preparing policy briefings for management',
+      'Preparing responses to consultations',
+      'Analysing regulatory documents',
+      'Writing emails & external communications',
+      'Team management & oversight',
+    ],
+  },
+  ru:{
+    badge:'AI · Диагностика процессов',
+    def_subtasks:[],
+    w_title:'Как AI может улучшить\nваши ключевые рабочие процессы?',
+    w_sub:'Диагностика поможет определить, где AI может дать наибольший эффект в ваших задачах и процессах.',
+    l_name:'Ваше имя', i_name:'ваше имя',
+    l_role:'Роль', i_role:'ваша роль',
+    l_company:'Компания', i_company:'название компании',
+    l_phone:'Телефон (Telegram / WhatsApp)', i_phone:'+44 20 1234 5678',
+    btn_start:'Начать аудит →',
+    w_note:'Ваши ответы конфиденциальны.',
+    s1_lbl:'Шаг 1 из 3', s1_ttl:'Ваши основные задачи',
+    tasks_heading:'На что вы сейчас тратите ваше время?',
+    tasks_sub:'Перечислите ваши основные задачи и оцените, какой % рабочей недели занимает каждая из задач. Укажите укрупнённые задачи — без деталей и подзадач, о них мы спросим на следующем шаге.',
+    btn_add:'+ Добавить задачу', total_lbl:'Итого',
+    total_warn:'Сумма превышает 100% — скорректируйте распределение перед тем как продолжить',
+    btn_detail:'Далее: детали →',
+    s2_lbl:'Шаг 2 из 3', s2_ttl:'Детали по задачам',
+    d_heading:'Детали по каждой задаче',
+    d_sub:'Эти вопросы помогут нам лучше понять ваш контекст. Заполните то, что считаете важным — остальное обсудим на встрече.',
+    btn_next_step:'Далее →',
+    s3_lbl:'Шаг 3 из 3', s3_ttl:'Общие вопросы',
+    s3_heading:'Общие вопросы про AI',
+    s3_sub:'Эти вопросы — про ваш общий опыт с AI, а не про конкретную задачу.',
+    btn_done:'Готово',
+    btn_pdf:'Получить PDF',
+    btn_restart:'Начать заново',
+    ty_heading:'Спасибо!',
+    ty_text:'Ваши ответы отправлены. Спасибо за ваше время. Мы свяжемся с вами в ближайшее время.',
+    send_ok:'Результаты отправлены! Ваш консультант получит их и свяжется с вами.',
+    send_err:'Что-то пошло не так. Попробуйте ещё раз.',
+    sending:'Отправка…',
+    task_ph:'Название задачи…',
+    q_ai_tools:'Как используете AI для этой задачи?',
+    q_ai_how:'Как пользуетесь?',
+    q_who:'Кто выполняет эту задачу?',
+    q_problems:'С какими проблемами при использовании AI сталкиваетесь?',
+    q_notes:'Что ещё важно об этой задаче?',
+    q_subtasks:'Из чего состоит задача?',
+    q_general:'Расскажите подробнее',
+    btn_add_sub:'+ Добавить подзадачу',
+    notes_ph:'Контекст, конкретные сложности, что уже пробовали…',
+    q_routine_total:'Какой % вашей работы составляют рутинные задачи?',
+    q_routine_ai:'Сколько % из них сейчас выполняет AI?',
+    q_routine_goal:'Сколько % рутинных задач вы хотели бы делегировать AI?',
+    routine_warn:'Больше чем рутинных задач в целом',
+    q_consulting_goal:'Что в первую очередь вы хотели бы получить от консалтинга?',
+    goal_ph:'освободить время от рутинных задач, улучшить качество работы, которую уже выполняет AI, узнать больше про возможности оптимизации процессов с помощью AI',
+    wl_label:'Хочу тратить на это меньше времени',
+    wl_on:'Отмечено как "поглотитель времени" — разберёмся с этим',
+    wl_off:'Нажмите, чтобы отметить как приоритет для оптимизации',
+    task_ctr:'Задача {i} из {n}',
+    divider_text:'и напоследок',
+    ai_opts:['ChatGPT','Claude','Gemini','Copilot','Perplexity','Custom GPT','AI-агент','Не использую'],
+    prob_other_ph:'Другое — напишите здесь',
+    ai_how_opts:['Загружаю документы + промпт','Ввожу промпт каждый раз','Использую сохранённый промпт','Настроил агента / автоматизацию'],
+    who_opts:['Я','Мой сотрудник','Внешний консультант'],
+    prob_opts:['Результат нужно много переписывать','Не доверяю результату','Долго настраивать','Опасения по безопасности данных','AI упускает важные детали','Нет чёткого процесса для команды'],
+    def_tasks:[
+      'Анализ stakeholder responses',
+      'Подготовка policy briefings для руководства',
+      'Подготовка ответов на консультации',
+      'Анализ регуляторных документов',
+      'Написание писем и внешних коммуникаций',
+      'Управление командой и контроль',
+    ],
+  }
+};
+const DEF_PCTS = [20,20,20,15,15,10];
+
+let lang='ru', userName='', userRole='', userCompany='', userPhone='', tasks=[], curIdx=0;
+let routineTotal=60, routineAI=20, routineGoal=60, userProblems=[], userProblemsOther='', userGoal='';
+
+function tr(k,vars){
+  let s=TR[lang][k]||TR.en[k]||k;
+  if(vars) Object.entries(vars).forEach(([a,b])=>s=s.replaceAll('{'+a+'}',b));
+  return s;
+}
+
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  applyTR();
+  if(tasks.length){renderTasks();renderSliders();if(document.getElementById('s2').classList.contains('active'))renderAccordion();if(document.getElementById('s3').classList.contains('active'))renderStep3();}
+}
+
+function applyTR(){
+  document.querySelectorAll('[data-k]').forEach(el=>{
+    const v=tr(el.dataset.k);
+    el.textContent=v;
+  });
+  const btnDetail=document.getElementById('btn-detail');
+  if(btnDetail) btnDetail.textContent=tr('btn_detail');
+  document.getElementById('i-name').placeholder=tr('i_name');
+  document.getElementById('i-role').placeholder=tr('i_role');
+  document.getElementById('i-company').placeholder=tr('i_company');
+  document.getElementById('i-phone').placeholder=tr('i_phone');
+}
+
+function mkTask(name,pct,subtasks){return{name,pct,subtasks:subtasks||[],aiHow:[],aiTools:[],who:[],wl:false,notes:''}}
+
+function start(){
+  userName=document.getElementById('i-name').value.trim()||(lang==='ru'?'вас':'you');
+  userRole=document.getElementById('i-role').value.trim();
+  userCompany=document.getElementById('i-company').value.trim();
+  userPhone=document.getElementById('i-phone').value.trim();
+  tasks=TR[lang].def_tasks.map((n,i)=>mkTask(n,DEF_PCTS[i]||5));
+  routineTotal=60;routineAI=20;routineGoal=60;userProblems=[];userProblemsOther='';userGoal='';
+  renderTasks();renderSliders();
+  document.getElementById('h-tasks').textContent=tr('tasks_heading',{name:userName});
+  show('s1');
+}
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function goBack(from){
+  if(from===1) show('s0');
+  if(from===2){renderTasks();renderSliders();show('s1');}
+  if(from===3) show('s2');
+}
+
+function renderTasks(){
+  document.getElementById('tasks-list').innerHTML=tasks.map((t,i)=>`
+    <div class="task-row">
+      <span class="task-idx">${i+1}</span>
+      <input class="task-inp" value="${esc(t.name)}" placeholder="${tr('task_ph')}"
+        oninput="tasks[${i}].name=this.value;updateTotal()">
+      <div class="pct-wrap">
+        <input type="number" min="0" max="100" value="${t.pct}"
+          oninput="tasks[${i}].pct=parseInt(this.value)||0;updateTotal()">
+        <span>%</span>
+      </div>
+      <button class="del-btn" onclick="delTask(${i})">×</button>
+    </div>`).join('');
+  updateTotal();
+}
+
+function addTask(){
+  tasks.push(mkTask('',0));
+  renderTasks();
+  document.querySelectorAll('.task-inp').slice(-1)[0]?.focus();
+}
+function delTask(i){tasks.splice(i,1);renderTasks();}
+
+function updateTotal(){
+  const sum=tasks.reduce((a,t)=>a+(t.pct||0),0);
+  document.getElementById('t-bar').style.width=Math.min(sum,100)+'%';
+  document.getElementById('t-bar').style.background=sum>100?'var(--red)':sum>=90?'var(--green)':'var(--accent)';
+  document.getElementById('t-lbl').textContent=sum+'%';
+  document.getElementById('t-lbl').style.color=sum>100?'var(--red)':sum>=90?'var(--green)':'var(--ink-2)';
+  const hasNames=tasks.some(t=>t.name.trim().length>1);
+  document.getElementById('btn-detail').disabled=!hasNames;
+  const warn=document.getElementById('total-warn');
+  if(warn){warn.style.display=sum>100?'block':'none';warn.textContent=sum>100?tr('total_warn'):'';}
+}
+
+function sliderBg(v){return `linear-gradient(to right,var(--accent) ${v}%,var(--border) ${v}%)`}
+
+function onSlider(id,val){
+  val=+val;
+  if(id===1) routineTotal=val;
+  if(id===2) routineAI=val;
+  if(id===3) routineGoal=val;
+  const el=document.getElementById('rv-'+id);
+  if(el) el.textContent=val;
+  const inp=document.getElementById('rs-'+id);
+  if(inp) inp.style.background=sliderBg(val);
+  const w=document.getElementById('rw-2');
+  if(w){
+    const over=routineAI>routineTotal;
+    w.textContent=over?tr('routine_warn'):'';
+    w.style.opacity=over?'1':'0';
+  }
+}
+
+function renderSliders(){
+  document.getElementById('sliders-panel').innerHTML=`<div class="slider-group">
+    <div class="rcard">
+      <div class="rcard-label">${tr('q_routine_total')}</div>
+      <div class="rcard-value"><span id="rv-1">${routineTotal}</span><span class="rcard-pct">%</span></div>
+      <input class="rcard-slider" id="rs-1" type="range" min="0" max="100" step="5" value="${routineTotal}" style="background:${sliderBg(routineTotal)}" oninput="onSlider(1,this.value)">
+    </div>
+    <div class="rcard">
+      <div class="rcard-label">${tr('q_routine_ai')}</div>
+      <div class="rcard-value"><span id="rv-2">${routineAI}</span><span class="rcard-pct">%</span></div>
+      <input class="rcard-slider" id="rs-2" type="range" min="0" max="100" step="5" value="${routineAI}" style="background:${sliderBg(routineAI)}" oninput="onSlider(2,this.value)">
+      <div class="rcard-warn" id="rw-2" style="opacity:${routineAI>routineTotal?1:0}">${routineAI>routineTotal?tr('routine_warn'):''}</div>
+    </div>
+    <div class="rcard">
+      <div class="rcard-label">${tr('q_routine_goal')}</div>
+      <div class="rcard-value"><span id="rv-3">${routineGoal}</span><span class="rcard-pct">%</span></div>
+      <input class="rcard-slider" id="rs-3" type="range" min="0" max="100" step="5" value="${routineGoal}" style="background:${sliderBg(routineGoal)}" oninput="onSlider(3,this.value)">
+    </div>
+  </div>`;
+}
+
+function goDetail(){renderAccordion();show('s2');}
+
+function goGeneral(){renderStep3();show('s3');}
+
+function renderStep3(){
+  const probOpts=tr('prob_opts');
+  const probColors=['c-amber','c-amber','c-amber','c-red','c-red','c-amber'];
+  const probsHtml=probOpts.map((opt,j)=>{
+    const sel=userProblems.includes(opt);
+    const cls=sel?(probColors[j]||'c-amber'):'';
+    return `<span class="chip ${cls}" onclick="toggleUserProblem(this.textContent)">${esc(opt)}</span>`;
+  }).join('');
+  document.getElementById('general-panel').innerHTML=`
+    <div class="d-card" style="border-left:3px solid #111B32;margin-bottom:0">
+      <h3>${tr('q_problems')}</h3>
+      <div class="chips">${probsHtml}</div>
+      <textarea class="d-textarea" style="margin-top:10px;min-height:50px" placeholder="${tr('prob_other_ph')}" oninput="userProblemsOther=this.value">${esc(userProblemsOther)}</textarea>
+    </div>
+    <div class="divider"><span>${tr('divider_text')}</span></div>
+    <div class="d-card" style="border-left:3px solid #111B32">
+      <h3>${tr('q_consulting_goal')}</h3>
+      <textarea class="d-textarea" style="min-height:140px" placeholder="${tr('goal_ph')}" oninput="userGoal=this.value">${esc(userGoal)}</textarea>
+    </div>
+    <div class="final-btns">
+      <button class="btn-primary" onclick="sendResults()">${tr('btn_done')}</button>
+      <button class="btn-pdf" onclick="generatePDF()">${tr('btn_pdf')}</button>
+    </div>`;
+}
+
+function toggleUserProblem(val){
+  const i=userProblems.indexOf(val);
+  i>=0?userProblems.splice(i,1):userProblems.push(val);
+  renderStep3();
+}
+
+function switchTask(i){curIdx=i;renderAccordion();}
+
+function needsAiHow(aiToolsArr){
+  const skip=['Не использую',"Don't use AI"];
+  return aiToolsArr.some(v=>!skip.includes(v));
+}
+
+function subChips(taskIdx,subIdx,field,opts,colors){
+  return opts.map((opt,j)=>{
+    const sel=tasks[taskIdx].subtasks[subIdx][field].includes(opt);
+    const cls=sel?(colors[j]||'c-blue'):'';
+    return `<span class="chip ${cls}" onclick="toggleSubChip(${taskIdx},${subIdx},'${field}',this.textContent)">${esc(opt)}</span>`;
+  }).join('');
+}
+
+function addSubtask(taskIdx){
+  tasks[taskIdx].subtasks.push({name:'',who:[],aiTools:[],aiHow:[]});
+  renderAccordion();
+}
+
+function delSubtask(taskIdx,subIdx){
+  tasks[taskIdx].subtasks.splice(subIdx,1);
+  renderAccordion();
+}
+
+function updateSubName(taskIdx,subIdx,val){
+  tasks[taskIdx].subtasks[subIdx].name=val;
+}
+
+function toggleSubChip(taskIdx,subIdx,field,val){
+  const arr=tasks[taskIdx].subtasks[subIdx][field],i=arr.indexOf(val);
+  i>=0?arr.splice(i,1):arr.push(val);
+  renderAccordion();
+}
+
+function renderAccordion(){
+  document.getElementById('detail-ttl').textContent=tr('s2_ttl');
+  const whoOpts=tr('who_opts');
+  const aiOpts=tr('ai_opts');
+  const aiHowOpts=tr('ai_how_opts');
+  const whoColors=['c-blue','c-green','c-amber'];
+  const aiColors=['c-blue','c-blue','c-blue','c-blue','c-blue','c-blue','c-green','c-amber'];
+  const aiHowColors=['c-blue','c-blue','c-green','c-green'];
+  document.getElementById('accordion-panel').innerHTML=tasks.map((t,i)=>{
+    const isDone=t.who.length>0||t.aiTools.length>0;
+    const isOpen=curIdx===i;
+    let bodyHtml='';
+    if(isOpen){
+      /* ① Кто выполняет */
+      bodyHtml+=`<div class="d-card" style="margin-bottom:9px">
+        <h3>${tr('q_who')}</h3>
+        <div class="chips">${chips(i,'who',whoOpts,whoColors)}</div>
+      </div>`;
+      /* ② Чем пользуетесь? */
+      bodyHtml+=`<div class="d-card" style="margin-bottom:9px">
+        <h3>${tr('q_ai_tools')}</h3>
+        <div class="chips">${chips(i,'aiTools',aiOpts,aiColors)}</div>
+      </div>`;
+      /* ②b Как пользуетесь? (conditional) */
+      if(needsAiHow(t.aiTools)){
+        bodyHtml+=`<div class="d-card" style="margin-bottom:9px">
+          <h3>${tr('q_ai_how')}</h3>
+          <div class="chips">${chips(i,'aiHow',aiHowOpts,aiHowColors)}</div>
+        </div>`;
+      }
+      /* ③ Из чего состоит задача */
+      const subsHtml=t.subtasks.map((s,j)=>{
+        const subAiHow=needsAiHow(s.aiTools)?`
+          <div style="margin-top:6px"><span class="sub-label">${tr('q_ai_how')}:</span>
+            <div class="chips" style="display:inline-flex">${subChips(i,j,'aiHow',aiHowOpts,aiHowColors)}</div>
+          </div>`:'';
+        return `<div class="sub-row">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <input class="task-inp" style="flex:1;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px" value="${esc(s.name)}" placeholder="${tr('task_ph')}" oninput="updateSubName(${i},${j},this.value)">
+            <button class="del-btn" onclick="delSubtask(${i},${j})">×</button>
+          </div>
+          <div style="margin-bottom:6px"><span class="sub-label">${tr('q_who')}:</span>
+            <div class="chips" style="display:inline-flex">${subChips(i,j,'who',whoOpts,whoColors)}</div>
+          </div>
+          <div style="margin-bottom:6px"><span class="sub-label">${tr('q_ai_tools')}:</span>
+            <div class="chips" style="display:inline-flex">${subChips(i,j,'aiTools',aiOpts,aiColors)}</div>
+          </div>
+          ${subAiHow}
+        </div>`;
+      }).join('');
+      bodyHtml+=`<div class="d-card" style="margin-bottom:9px">
+        <h3>${tr('q_subtasks')}</h3>
+        ${subsHtml}
+        <button class="add-btn" onclick="addSubtask(${i})" style="margin-top:6px">${tr('btn_add_sub')}</button>
+      </div>`;
+      /* ④ Общие вопросы */
+      bodyHtml+=`<div class="d-card" style="margin-bottom:9px">
+        <h3>${tr('q_general')}</h3>
+        <textarea class="d-textarea" placeholder="${tr('notes_ph')}" oninput="tasks[${i}].notes=this.value" style="margin-bottom:9px">${esc(t.notes)}</textarea>
+        <div class="wl-toggle ${t.wl?'on':''}" onclick="toggleWL(${i})">
+          <span class="wl-icon">${t.wl?'⬇':'⏱'}</span>
+          <div class="wl-text">
+            <strong>${tr('wl_label')}</strong>
+            <span>${t.wl?tr('wl_on'):tr('wl_off')}</span>
+          </div>
+          <div class="wl-ind"></div>
+        </div>
+      </div>`;
+    }
+    return `
+      <div class="acc-item ${isDone?'is-done':''}" id="acc-${i}">
+        <div class="acc-header" onclick="toggleAcc(${i})">
+          <div class="acc-check">${isDone?'✓':''}</div>
+          <div class="acc-name">${t.name||('Task '+(i+1))}</div>
+          <div class="acc-pct">${t.pct}%</div>
+          <div class="acc-chevron ${isOpen?'open':''}">▼</div>
+        </div>
+        <div class="acc-body ${isOpen?'open':''}">${bodyHtml}</div>
+      </div>`;
+  }).join('');
+}
+
+function toggleAcc(i){
+  curIdx=curIdx===i?-1:i;
+  renderAccordion();
+  if(curIdx>=0){
+    setTimeout(()=>{
+      const el=document.getElementById('acc-'+i);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    },50);
+  }
+}
+
+function chips(idx,field,opts,colors){
+  return opts.map((opt,j)=>{
+    const sel=tasks[idx][field].includes(opt);
+    const cls=sel?(colors[j]||'c-blue'):'';
+    return `<span class="chip ${cls}" onclick="toggleChip(${idx},'${field}',this.textContent)">${esc(opt)}</span>`;
+  }).join('');
+}
+
+function toggleChip(idx,field,val){
+  const arr=tasks[idx][field],i=arr.indexOf(val);
+  i>=0?arr.splice(i,1):arr.push(val);
+  renderAccordion();
+}
+function toggleWL(i){tasks[i].wl=!tasks[i].wl;renderAccordion();}
+
+function buildResultsText(){
+  const L=lang==='ru';
+  const n=v=>v||'—';
+  const a=arr=>arr.length?arr.join(', '):'—';
+  const lines=[];
+  lines.push('═══════════════════════════════════════');
+  lines.push(L?'AI-АУДИТ ПРОЦЕССОВ':'AI PROCESS AUDIT');
+  lines.push('═══════════════════════════════════════');
+  lines.push('');
+  lines.push(`${L?'Имя':'Name'}: ${n(userName)}`);
+  lines.push(`${L?'Роль':'Role'}: ${n(userRole)}`);
+  lines.push(`${L?'Компания':'Company'}: ${n(userCompany)}`);
+  lines.push(`${L?'Телефон':'Phone'}: ${n(userPhone)}`);
+  lines.push(`${L?'Язык интерфейса':'Interface language'}: ${lang.toUpperCase()}`);
+  lines.push('');
+  lines.push('───────────────────────────────────────');
+  lines.push(L?'СЛАЙДЕРЫ — РУТИННЫЕ ЗАДАЧИ':'SLIDERS — ROUTINE TASKS');
+  lines.push('───────────────────────────────────────');
+  lines.push(`${L?'% рутинных задач':'% routine tasks'}: ${routineTotal}%`);
+  lines.push(`${L?'% рутины выполняет AI':'% routine handled by AI'}: ${routineAI}%`);
+  lines.push(`${L?'% рутины хочет делегировать AI':'% routine wants to delegate to AI'}: ${routineGoal}%`);
+  lines.push('');
+  lines.push('───────────────────────────────────────');
+  lines.push(L?'ЗАДАЧИ — ДЕТАЛИ':'TASKS — DETAILS');
+  lines.push('───────────────────────────────────────');
+  tasks.forEach((t,i)=>{
+    lines.push('');
+    lines.push(`▸ ${L?'ЗАДАЧА':'TASK'} ${i+1}: ${n(t.name)}`);
+    lines.push(`  ${L?'Доля времени':'Time share'}: ${t.pct}%`);
+    lines.push(`  ${L?'Кто выполняет':'Who does it'}: ${a(t.who)}`);
+    lines.push(`  ${L?'AI-инструменты':'AI tools'}: ${a(t.aiTools)}`);
+    lines.push(`  ${L?'Как использует AI':'How uses AI'}: ${a(t.aiHow)}`);
+    lines.push(`  ${L?'Хочет меньше времени':'Wants less time'}: ${t.wl?(L?'ДА':'YES'):(L?'нет':'no')}`);
+    lines.push(`  ${L?'Заметки':'Notes'}: ${n(t.notes)}`);
+    if(t.subtasks.length){
+      lines.push(`  ${L?'Подзадачи':'Subtasks'} (${t.subtasks.length}):`);
+      t.subtasks.forEach((s,j)=>{
+        lines.push(`    ${j+1}. ${n(s.name)}`);
+        lines.push(`       ${L?'Кто':'Who'}: ${a(s.who)}`);
+        lines.push(`       ${L?'AI-инструменты':'AI tools'}: ${a(s.aiTools)}`);
+        lines.push(`       ${L?'Как использует AI':'How uses AI'}: ${a(s.aiHow)}`);
+      });
+    } else {
+      lines.push(`  ${L?'Подзадачи':'Subtasks'}: ${L?'не добавлены':'none added'}`);
+    }
+  });
+  lines.push('');
+  lines.push('───────────────────────────────────────');
+  lines.push(L?'ОБЩИЕ ВОПРОСЫ':'GENERAL QUESTIONS');
+  lines.push('───────────────────────────────────────');
+  lines.push(`${L?'Проблемы с AI':'AI problems'}: ${a(userProblems)}`);
+  if(userProblemsOther) lines.push(`${L?'Другое':'Other'}: ${userProblemsOther}`);
+  lines.push(`${L?'Цель консалтинга':'Consulting goal'}: ${n(userGoal)}`);
+  lines.push('');
+  lines.push('═══════════════════════════════════════');
+  return lines.join('\n');
+}
+
+function sendResults(){
+  /* If running locally (file:// or localhost), skip network and go to thank-you */
+  if(location.protocol==='file:'||location.hostname==='localhost'||location.hostname==='127.0.0.1'){
+    show('s4');
+    return;
+  }
+  const formData=new URLSearchParams();
+  formData.append('form-name','audit-results');
+  formData.append('subject','AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '));
+  formData.append('name',userName);
+  formData.append('company',userCompany);
+  formData.append('role',userRole);
+  formData.append('phone',userPhone);
+  formData.append('results',buildResultsText());
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:formData.toString()})
+    .then(r=>{
+      if(!r.ok) throw new Error(r.status);
+      show('s4');
+    })
+    .catch(()=>{
+      alert(tr('send_err'));
+    });
+}
+
+async function generatePDF(){
+  if(!window.jspdf){alert(lang==='ru'?'Библиотека PDF не загружена. Проверьте интернет-соединение.':'PDF library not loaded. Check your internet connection.');return;}
+  try{
+  const {jsPDF}=window.jspdf;
+  const doc=new jsPDF('p','mm','a4');
+  const pw=170,lm=20;
+  let y=20;
+  const L=lang==='ru';
+
+  /* Load PTSans for Cyrillic */
+  try{
+    const toB64=async(url)=>{const r=await fetch(url);const b=await r.arrayBuffer();const u=new Uint8Array(b);let s='';for(let i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s);};
+    const [b64r,b64b]=await Promise.all([
+      toB64('https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79P0U.ttf'),
+      toB64('https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh4Ok.ttf')
+    ]);
+    doc.addFileToVFS('PTSans-Regular.ttf',b64r);
+    doc.addFont('PTSans-Regular.ttf','PTSans','normal');
+    doc.addFileToVFS('PTSans-Bold.ttf',b64b);
+    doc.addFont('PTSans-Bold.ttf','PTSans','bold');
+    doc.setFont('PTSans');
+  }catch(e){
+    /* Fallback to helvetica if font load fails */
+    doc.setFont('helvetica');
+  }
+
+  function checkPage(need){if(y+need>275){doc.addPage();y=20;}}
+  function plain(s){return String(s||'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"');}
+
+  /* Header */
+  doc.setFontSize(14);doc.setFont(doc.getFont().fontName,'bold');
+  doc.text(L?'Ontrí Advisory — AI-аудит процессов':'Ontrí Advisory — AI Process Audit',lm,y);
+  y+=8;
+  doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
+  const meta=[userName,userRole,userCompany,userPhone,new Date().toLocaleDateString()].filter(Boolean).join(' · ');
+  doc.text(meta,lm,y);
+  y+=10;
+
+  /* Divider line */
+  doc.setDrawColor(200);doc.line(lm,y,lm+pw,y);y+=8;
+
+  /* Sliders */
+  doc.setFontSize(11);doc.setFont(doc.getFont().fontName,'bold');
+  doc.text(L?'Рутинные задачи':'Routine tasks',lm,y);y+=6;
+  doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
+  doc.text(`${L?'% рутинных задач':'% routine tasks'}: ${routineTotal}%`,lm,y);y+=5;
+  doc.text(`${L?'% рутины выполняет AI':'% routine handled by AI'}: ${routineAI}%`,lm,y);y+=5;
+  doc.text(`${L?'Цель делегирования AI':'Delegation goal'}: ${routineGoal}%`,lm,y);y+=10;
+
+  /* Tasks */
+  doc.setDrawColor(200);doc.line(lm,y,lm+pw,y);y+=8;
+  doc.setFontSize(11);doc.setFont(doc.getFont().fontName,'bold');
+  doc.text(L?'Задачи':'Tasks',lm,y);y+=7;
+
+  tasks.forEach((t,i)=>{
+    checkPage(30);
+    doc.setFontSize(10);doc.setFont(doc.getFont().fontName,'bold');
+    const taskTitle=`${i+1}. ${plain(t.name)||'—'} (${t.pct}%)`;
+    doc.text(taskTitle,lm,y);y+=5;
+    doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
+
+    const who=t.who.length?t.who.join(', '):'—';
+    doc.text(`${L?'Кто':'Who'}: ${who}`,lm+3,y);y+=4.5;
+    const tools=t.aiTools.length?t.aiTools.join(', '):'—';
+    doc.text(`${L?'AI-инструменты':'AI tools'}: ${tools}`,lm+3,y);y+=4.5;
+    const how=t.aiHow.length?t.aiHow.join(', '):'—';
+    doc.text(`${L?'Как использует AI':'How uses AI'}: ${how}`,lm+3,y);y+=4.5;
+    if(t.wl){doc.text(`>> ${L?'Хочет меньше времени':'Wants less time'}`,lm+3,y);y+=4.5;}
+    if(t.notes){
+      const noteLines=doc.splitTextToSize(`${L?'Заметки':'Notes'}: ${plain(t.notes)}`,pw-6);
+      checkPage(noteLines.length*4.5);
+      doc.text(noteLines,lm+3,y);y+=noteLines.length*4.5;
+    }
+
+    if(t.subtasks.length){
+      doc.setFontSize(8);doc.setFont(doc.getFont().fontName,'bold');
+      doc.text(L?'Подзадачи:':'Subtasks:',lm+3,y);y+=4;
+      doc.setFont(doc.getFont().fontName,'normal');
+      t.subtasks.forEach((s,j)=>{
+        checkPage(12);
+        const subName=plain(s.name)||'—';
+        const subWho=s.who.length?s.who.join(', '):'—';
+        const subTools=s.aiTools.length?s.aiTools.join(', '):'—';
+        doc.text(`  ${j+1}. ${subName}`,lm+3,y);y+=3.5;
+        doc.text(`     ${L?'Кто':'Who'}: ${subWho} | ${L?'AI':'AI'}: ${subTools}`,lm+3,y);y+=4;
+      });
+    }
+    y+=4;
+  });
+
+  /* Problems */
+  checkPage(20);
+  doc.setDrawColor(200);doc.line(lm,y,lm+pw,y);y+=8;
+  doc.setFontSize(11);doc.setFont(doc.getFont().fontName,'bold');
+  doc.text(L?'Проблемы с AI':'AI problems',lm,y);y+=6;
+  doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
+  const probText=userProblems.length?userProblems.join(', '):'—';
+  const probLines=doc.splitTextToSize(probText,pw);
+  checkPage(probLines.length*4.5);
+  doc.text(probLines,lm,y);y+=probLines.length*4.5;
+  if(userProblemsOther){
+    y+=2;
+    const otherLines=doc.splitTextToSize((L?'Другое: ':'Other: ')+userProblemsOther,pw);
+    checkPage(otherLines.length*4.5);
+    doc.text(otherLines,lm,y);y+=otherLines.length*4.5;
+  }
+  y+=4;
+
+  /* Goal */
+  checkPage(20);
+  doc.setFontSize(11);doc.setFont(doc.getFont().fontName,'bold');
+  doc.text(L?'Цель консалтинга':'Consulting goal',lm,y);y+=6;
+  doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
+  const goalText=userGoal||'—';
+  const goalLines=doc.splitTextToSize(goalText,pw);
+  checkPage(goalLines.length*4.5);
+  doc.text(goalLines,lm,y);
+
+  const safeName=(userName||'audit').replace(/[^a-zA-Zа-яА-ЯёЁ0-9_-]/g,'_');
+  doc.save('AI-Audit-'+safeName+'.pdf');
+  }catch(e){console.error('PDF generation error:',e);alert(lang==='ru'?'Ошибка при создании PDF. Попробуйте ещё раз.':'Error generating PDF. Please try again.');}
+}
+
+function restart(){
+  userName='';userRole='';userCompany='';userPhone='';tasks=[];curIdx=0;
+  routineTotal=60;routineAI=20;routineGoal=60;userProblems=[];userProblemsOther='';userGoal='';
+  document.getElementById('i-name').value='';
+  document.getElementById('i-role').value='';
+  document.getElementById('i-company').value='';
+  document.getElementById('i-phone').value='';
+  show('s0');
+}
+
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+applyTR();
+</script>
+</body>
+</html>
