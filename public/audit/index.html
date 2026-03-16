@@ -322,9 +322,6 @@ body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:v
   </div>
 </div>
 
-<!-- Web3Forms bot check -->
-<input type="checkbox" name="botcheck" style="display:none">
-
 <script>
 const TR = {
   en:{
@@ -836,16 +833,16 @@ function sendResults(){
     show('s4');
     return;
   }
-  const payload={
-    access_key:'WEB3FORMS_KEY_PLACEHOLDER',
-    subject:'AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '),
-    name:userName,
-    company:userCompany,
-    role:userRole,
-    phone:userPhone,
-    results:buildResultsText()
-  };
-  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+  const formData=new FormData();
+  formData.append('subject','AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '));
+  formData.append('name',userName);
+  formData.append('company',userCompany);
+  formData.append('role',userRole);
+  formData.append('phone',userPhone);
+  formData.append('message',buildResultsText());
+  formData.append('_captcha','false');
+  formData.append('_template','box');
+  fetch('https://formsubmit.co/ajax/hello.ontri@gmail.com',{method:'POST',body:formData})
     .then(r=>r.json())
     .then(data=>{
       if(data.success) show('s4');
