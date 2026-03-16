@@ -833,15 +833,36 @@ function sendResults(){
     show('s4');
     return;
   }
+  const L=lang==='ru';
+  const n=v=>v||'—';
+  const a=arr=>arr.length?arr.join(', '):'—';
   const formData=new FormData();
-  formData.append('subject','AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '));
-  formData.append('name',userName);
-  formData.append('company',userCompany);
-  formData.append('role',userRole);
-  formData.append('phone',userPhone);
-  formData.append('message',buildResultsText());
+  formData.append('_subject','AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '));
   formData.append('_captcha','false');
-  formData.append('_template','box');
+  formData.append('_template','table');
+  formData.append('Name',n(userName));
+  formData.append('Role',n(userRole));
+  formData.append('Company',n(userCompany));
+  formData.append('Phone',n(userPhone));
+  formData.append('Language',lang.toUpperCase());
+  formData.append('Routine tasks %',routineTotal+'%');
+  formData.append('AI handles %',routineAI+'%');
+  formData.append('Delegation goal %',routineGoal+'%');
+  tasks.forEach((t,i)=>{
+    const parts=[];
+    parts.push(n(t.name)+' ('+t.pct+'%)');
+    parts.push('Who: '+a(t.who));
+    parts.push('AI tools: '+a(t.aiTools));
+    if(t.aiHow.length) parts.push('How: '+a(t.aiHow));
+    if(t.wl) parts.push('⚡ Wants less time');
+    if(t.notes) parts.push('Notes: '+t.notes);
+    if(t.subtasks.length) t.subtasks.forEach((s,j)=>{
+      parts.push('  '+(j+1)+'. '+n(s.name)+' — Who: '+a(s.who)+', AI: '+a(s.aiTools));
+    });
+    formData.append('Task '+(i+1),parts.join('\n'));
+  });
+  formData.append('Problems',a(userProblems)+(userProblemsOther?'\nOther: '+userProblemsOther:''));
+  formData.append('Consulting goal',n(userGoal));
   fetch('https://formsubmit.co/ajax/hello.ontri@gmail.com',{method:'POST',body:formData})
     .then(r=>r.json())
     .then(data=>{
