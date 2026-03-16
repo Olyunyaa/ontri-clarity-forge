@@ -860,13 +860,37 @@ function sendResults(){
     problems:probText,
     goal:n(userGoal)
   };
+  if(!navigator.onLine){
+    /* Offline: queue and send later */
+    const queue=JSON.parse(localStorage.getItem('audit_queue')||'[]');
+    queue.push(params);
+    localStorage.setItem('audit_queue',JSON.stringify(queue));
+    show('s4');
+    return;
+  }
   emailjs.send('service_pfl7vyt','template_xo7wv5f',params,'MqADpxGb2aRhHIjN2')
     .then(()=>show('s4'))
     .catch(e=>{
       console.error('Form submit error:',e);
-      alert(tr('send_err'));
+      /* Save to queue on error too */
+      const queue=JSON.parse(localStorage.getItem('audit_queue')||'[]');
+      queue.push(params);
+      localStorage.setItem('audit_queue',JSON.stringify(queue));
+      show('s4');
     });
 }
+
+/* Send queued submissions when back online */
+function flushQueue(){
+  const queue=JSON.parse(localStorage.getItem('audit_queue')||'[]');
+  if(!queue.length) return;
+  localStorage.removeItem('audit_queue');
+  queue.forEach(p=>{
+    emailjs.send('service_pfl7vyt','template_xo7wv5f',p,'MqADpxGb2aRhHIjN2').catch(()=>{});
+  });
+}
+window.addEventListener('online',flushQueue);
+flushQueue();
 
 async function generatePDF(){
   if(!window.jspdf){alert(lang==='ru'?'Библиотека PDF не загружена. Проверьте интернет-соединение.':'PDF library not loaded. Check your internet connection.');return;}
@@ -1004,6 +1028,7 @@ function restart(){
 function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 applyTR();
+if('serviceWorker' in navigator) navigator.serviceWorker.register('/audit/sw.js').catch(()=>{});
 </script>
 </body>
 </html>
