@@ -15,6 +15,7 @@
 - **`src/components/AboutSection.tsx`** — об основателе (Ольга Перова), фото, био, ценности
 - **`src/components/ServicesSection.tsx`** — 4 карточки услуг (Audit, Strategy, Tools, Adoption)
 - **`src/components/HowItWorksSection.tsx`** — секция «Как мы работаем»: 3 шага (созвон → аудит → внедрение), ссылка на /audit/
+- **`src/components/CasesSection.tsx`** — секция «Кейсы»: 5 анонимных клиентских историй (pain-first, ROI-строка), утверждены Ольгой 20.07.2026
 - **`src/components/WhyUsSection.tsx`** — 3 карточки преимуществ
 - **`src/components/ContactSection.tsx`** — CTA с Calendly + email
 - **`src/components/Footer.tsx`** — юридические модалки (Terms, Privacy, Cookies, Disclaimer)
@@ -118,6 +119,7 @@ git add public/audit/index.html && git commit -m "Update audit form" && git push
 - Из всех текстов (EN/NL/RU, легальные страницы, аудит-форма) удалены длинные тире (em dash) — фразы переписаны через запятые/двоеточия; задеплоено и проверено на проде 20.07.2026
 - Лидогенерация (20.07.2026): аудит-форма теперь связана с сайтом — кнопка в навбаре, вторая CTA в hero, ссылка в шаге 2 «Как мы работаем» и в Contact; hero-подзаголовок переписан (аудитория + результат); добавлена секция HowItWorksSection
 - SEO (20.07.2026): favicon из логотипа (favicon.png, apple-touch-icon.png), OG-image 1200x630 (public/og-image.png), полные OG/Twitter-теги, canonical, JSON-LD ProfessionalService, sitemap.xml + ссылка в robots.txt
+- Кейсы (20.07.2026): секция из 5 анонимных кейсов (AI-ассистент CEO, комьюнити, инженерная компания, RAG для HR, анти-FOMO агент) на EN/NL/RU, задеплоена и проверена на проде; хэш-ссылки (#cases) теперь работают при прямом заходе; ScrollReveal уважает prefers-reduced-motion
 - Аудит-форма **работает** на https://ontri-advisory.com/audit/
 - Форма реструктурирована: 3 шага (Tasks → Details → General Questions), кнопки «Готово» и «Получить PDF» на последнем шаге, экран «Спасибо» после отправки
 - EmailJS отправляет красивые email с данными аудита
