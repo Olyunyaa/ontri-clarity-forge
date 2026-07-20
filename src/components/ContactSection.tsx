@@ -31,6 +31,12 @@ const ContactSection = () => {
                 hello@ontri-advisory.com
               </a>
             </div>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-primary-foreground/60 text-sm font-sans">
+              <span>{t("contact.auditText")}</span>
+              <a href="/audit/" className="text-accent-dark hover:underline">
+                {t("contact.auditLink")}
+              </a>
+            </div>
           </ScrollReveal>
         </div>
       </div>

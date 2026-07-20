@@ -14,11 +14,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Services",
     "nav.whyUs": "Why Us",
     "nav.contact": "Contact",
+    "nav.audit": "Free AI Audit",
 
     // Hero
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
-    "hero.subtitle": "We identify where AI can multiply your team's output, and we make sure it does.",
+    "hero.subtitle": "We help startups and scale-ups hand routine work over to AI, so the business grows without growing the team. We find where AI pays off and stay until it works.",
     "hero.cta": "Schedule an Intro Meeting",
+    "hero.ctaAudit": "Take the Free AI Process Audit",
 
     // About
     "about.label": "About Us",
@@ -51,11 +53,24 @@ export const translations: Record<Language, Record<string, string>> = {
     "whyUs.3.title": "Aligned with Your Reality",
     "whyUs.3.desc": "We work with your constraints: team capacity, data readiness, and risk appetite.",
 
+    // How It Works
+    "how.label": "How It Works",
+    "how.title": "Three steps to results",
+    "how.1.title": "Intro meeting",
+    "how.1.desc": "A free intro call about your goals, your processes, and where time is being lost. No obligations.",
+    "how.2.title": "AI Process Audit",
+    "how.2.desc": "You describe your key workflows in our online audit. We analyze them and pinpoint where AI will deliver a measurable effect.",
+    "how.2.link": "Open the audit",
+    "how.3.title": "Roadmap and implementation",
+    "how.3.desc": "You get a prioritized roadmap tied to your business goals. We implement it together with your team and stay involved until the new way of working sticks.",
+
     // Contact
     "contact.label": "Contact Us",
     "contact.title": "Let's discuss how Ontrí Advisory can accelerate your intelligent transformation.",
     "contact.cta": "Schedule an Intro Meeting",
     "contact.email": "Prefer email?",
+    "contact.auditText": "Not ready for a call yet?",
+    "contact.auditLink": "Start with the free AI Process Audit",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",
@@ -81,11 +96,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Diensten",
     "nav.whyUs": "Waarom wij",
     "nav.contact": "Contact",
+    "nav.audit": "Gratis AI-audit",
 
     // Hero
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
-    "hero.subtitle": "Wij identificeren waar AI de prestaties van uw team kan versterken en implementeren oplossingen die meetbare resultaten opleveren.",
+    "hero.subtitle": "Wij helpen startups en scale-ups routinewerk over te dragen aan AI, zodat het bedrijf groeit zonder het team uit te breiden. We vinden waar AI loont en blijven betrokken tot het werkt.",
     "hero.cta": "Plan een kennismaking",
+    "hero.ctaAudit": "Doe de gratis AI-procesaudit",
 
     // About
     "about.label": "Over ons",
@@ -118,11 +135,24 @@ export const translations: Record<Language, Record<string, string>> = {
     "whyUs.3.title": "Afgestemd op uw situatie",
     "whyUs.3.desc": "Wij houden rekening met uw realiteit: de capaciteit van uw team, de staat van uw data en uw risicobereidheid.",
 
+    // How It Works
+    "how.label": "Hoe het werkt",
+    "how.title": "In drie stappen naar resultaat",
+    "how.1.title": "Kennismaking",
+    "how.1.desc": "Een gratis kennismakingsgesprek over uw doelen, uw processen en waar tijd verloren gaat. Geheel vrijblijvend.",
+    "how.2.title": "AI-procesaudit",
+    "how.2.desc": "U beschrijft uw belangrijkste werkprocessen in onze online audit. Wij analyseren ze en bepalen waar AI een meetbaar effect oplevert.",
+    "how.2.link": "Open de audit",
+    "how.3.title": "Routekaart en implementatie",
+    "how.3.desc": "U ontvangt een geprioriteerde routekaart, gekoppeld aan uw bedrijfsdoelen. We voeren die samen met uw team uit en blijven betrokken tot de nieuwe werkwijze beklijft.",
+
     // Contact
     "contact.label": "Neem contact op",
     "contact.title": "Laten we samen bekijken hoe Ontrí Advisory uw organisatie kan helpen met AI.",
     "contact.cta": "Plan een kennismaking",
     "contact.email": "Liever mailen?",
+    "contact.auditText": "Nog niet klaar voor een gesprek?",
+    "contact.auditLink": "Begin met de gratis AI-procesaudit",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",
@@ -148,11 +178,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Услуги",
     "nav.whyUs": "Почему мы",
     "nav.contact": "Контакты",
+    "nav.audit": "Бесплатный AI-аудит",
 
     // Hero
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
-    "hero.subtitle": "Мы находим процессы, где AI может усилить работу вашей команды, и внедряем решения, которые дадут измеримый результат.",
+    "hero.subtitle": "Помогаем стартапам и scale-up компаниям передать рутину AI, чтобы бизнес рос без расширения команды. Находим, где AI окупится, и остаёмся до работающего результата.",
     "hero.cta": "Записаться на встречу",
+    "hero.ctaAudit": "Пройти бесплатный AI-аудит процессов",
 
     // About
     "about.label": "О нас",
@@ -185,11 +217,24 @@ export const translations: Record<Language, Record<string, string>> = {
     "whyUs.3.title": "С учётом вашей реальности",
     "whyUs.3.desc": "Мы учитываем ваши реальные условия: возможности команды, готовность данных и допустимый уровень риска.",
 
+    // How It Works
+    "how.label": "Как мы работаем",
+    "how.title": "Три шага до результата",
+    "how.1.title": "Знакомство",
+    "how.1.desc": "Бесплатный вводный созвон: ваши цели, процессы и где теряется время. Без обязательств.",
+    "how.2.title": "AI-аудит процессов",
+    "how.2.desc": "Вы описываете ключевые процессы в онлайн-аудите. Мы анализируем их и находим, где AI даст измеримый эффект.",
+    "how.2.link": "Открыть аудит",
+    "how.3.title": "Дорожная карта и внедрение",
+    "how.3.desc": "Вы получаете приоритизированную дорожную карту, привязанную к целям бизнеса. Внедряем вместе с вашей командой и остаёмся рядом, пока новый подход не приживётся.",
+
     // Contact
     "contact.label": "Свяжитесь с нами",
     "contact.title": "Давайте обсудим, как Ontrí Advisory может помочь вашему бизнесу с AI.",
     "contact.cta": "Записаться на встречу",
     "contact.email": "Предпочитаете email?",
+    "contact.auditText": "Пока не готовы к созвону?",
+    "contact.auditLink": "Начните с бесплатного AI-аудита процессов",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",

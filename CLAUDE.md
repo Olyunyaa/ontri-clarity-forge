@@ -14,6 +14,7 @@
 - **`src/components/HeroSection.tsx`** — hero с фоном, CTA → Calendly
 - **`src/components/AboutSection.tsx`** — об основателе (Ольга Перова), фото, био, ценности
 - **`src/components/ServicesSection.tsx`** — 4 карточки услуг (Audit, Strategy, Tools, Adoption)
+- **`src/components/HowItWorksSection.tsx`** — секция «Как мы работаем»: 3 шага (созвон → аудит → внедрение), ссылка на /audit/
 - **`src/components/WhyUsSection.tsx`** — 3 карточки преимуществ
 - **`src/components/ContactSection.tsx`** — CTA с Calendly + email
 - **`src/components/Footer.tsx`** — юридические модалки (Terms, Privacy, Cookies, Disclaimer)
@@ -115,6 +116,8 @@ git add public/audit/index.html && git commit -m "Update audit form" && git push
 
 - Сайт **работает** на https://ontri-advisory.com (GitHub Pages, HTTPS, SSL до 14.06.2026)
 - Из всех текстов (EN/NL/RU, легальные страницы, аудит-форма) удалены длинные тире (em dash) — фразы переписаны через запятые/двоеточия; задеплоено и проверено на проде 20.07.2026
+- Лидогенерация (20.07.2026): аудит-форма теперь связана с сайтом — кнопка в навбаре, вторая CTA в hero, ссылка в шаге 2 «Как мы работаем» и в Contact; hero-подзаголовок переписан (аудитория + результат); добавлена секция HowItWorksSection
+- SEO (20.07.2026): favicon из логотипа (favicon.png, apple-touch-icon.png), OG-image 1200x630 (public/og-image.png), полные OG/Twitter-теги, canonical, JSON-LD ProfessionalService, sitemap.xml + ссылка в robots.txt
 - Аудит-форма **работает** на https://ontri-advisory.com/audit/
 - Форма реструктурирована: 3 шага (Tasks → Details → General Questions), кнопки «Готово» и «Получить PDF» на последнем шаге, экран «Спасибо» после отправки
 - EmailJS отправляет красивые email с данными аудита
@@ -127,4 +130,6 @@ git add public/audit/index.html && git commit -m "Update audit form" && git push
 - [ ] Доработать NL (голландский) перевод — сейчас частичный
 - [ ] Рассмотреть добавление аудит-формы на NL
 - [ ] Удалить `netlify.toml` и `.netlify/` — больше не используются
-- [ ] Добавить favicon (сейчас стандартный)
+- [x] Добавить favicon (сделано 20.07.2026 из логотипа)
+- [ ] Кейсы/результаты клиентов на сайт (нужны реальные цифры от Ольги, не выдумывать)
+- [ ] Аналитика (Plausible/GoatCounter, нужен аккаунт)

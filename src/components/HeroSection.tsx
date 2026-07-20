@@ -22,9 +22,17 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-primary-foreground/75 font-sans font-light leading-relaxed mb-10 animate-fade-in" style={{ animationDelay: "0.2s", opacity: 0 }}>
             {t("hero.subtitle")}
           </p>
-          <div className="animate-fade-in" style={{ animationDelay: "0.4s", opacity: 0 }}>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s", opacity: 0 }}>
             <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
               <a href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer">{t("hero.cta")}</a>
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-base px-8 py-6 bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              asChild
+            >
+              <a href="/audit/">{t("hero.ctaAudit")}</a>
             </Button>
           </div>
         </div>
