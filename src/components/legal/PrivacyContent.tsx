@@ -33,7 +33,7 @@ const PrivacyContent = () => (
 
     <h3 className="text-lg font-semibold">6. Your Rights</h3>
     <p>Under GDPR, you have the right to access, rectify, erase, restrict, or port your data, and to object to processing or withdraw consent at any time. To exercise any right, email hello@ontri-advisory.com. We will respond within one month.</p>
-    <p>You may also lodge a complaint with the Dutch Data Protection Authority:<br /><strong>Autoriteit Persoonsgegevens</strong> — autoriteitpersoonsgegevens.nl — +31 70 888 85 00</p>
+    <p>You may also lodge a complaint with the Dutch Data Protection Authority:<br /><strong>Autoriteit Persoonsgegevens</strong>, autoriteitpersoonsgegevens.nl, +31 70 888 85 00</p>
 
     <h3 className="text-lg font-semibold">7. Cookies</h3>
     <p>For details on how we use cookies, see our Cookie Policy.</p>
@@ -41,7 +41,7 @@ const PrivacyContent = () => (
     <h3 className="text-lg font-semibold">8. Changes</h3>
     <p>We may update this Policy periodically. The revised version will be posted on this page with an updated date. By continuing to use the Website after changes are posted, you acknowledge that you have been informed about the processing of personal data as described in the updated Policy.</p>
 
-    <p className="text-sm italic text-muted-foreground">Olga Perova, trading as Ontrí Advisory — Heiloo, the Netherlands</p>
+    <p className="text-sm italic text-muted-foreground">Olga Perova, trading as Ontrí Advisory, Heiloo, the Netherlands</p>
   </div>
 );
 

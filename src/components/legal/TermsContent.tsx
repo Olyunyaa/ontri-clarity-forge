@@ -7,7 +7,7 @@ const TermsContent = () => (
     <p>These Terms govern your use of www.ontri-advisory.com (the "Website"), operated by <strong>Olga Perova</strong>, trading as Ontrí Advisory. By accessing the Website, you agree to these Terms. Separate written agreements apply to any consulting services provided by Ontrí Advisory.</p>
 
     <h3 className="text-lg font-semibold">2. Intellectual Property</h3>
-    <p>All Website content — including text, graphics, logos, and downloadable materials — is the property of <strong>Olga Perova</strong>, trading as Ontrí Advisory, or its licensors. You may not reproduce, distribute, or exploit any content without prior written consent, except for personal, non-commercial use.</p>
+    <p>All Website content, including text, graphics, logos, and downloadable materials, is the property of <strong>Olga Perova</strong>, trading as Ontrí Advisory, or its licensors. You may not reproduce, distribute, or exploit any content without prior written consent, except for personal, non-commercial use.</p>
 
     <h3 className="text-lg font-semibold">3. Permitted Use</h3>
     <p>You may use this Website for lawful purposes only. You agree not to: violate applicable laws; transmit unsolicited promotional material; attempt unauthorised access to the Website or its systems; or introduce malicious code or software.</p>
@@ -33,7 +33,7 @@ const TermsContent = () => (
     <h3 className="text-lg font-semibold">10. Contact</h3>
     <p><strong>Olga Perova</strong>, trading as Ontrí Advisory | KVK: <strong>97101907</strong> | hello@ontri-advisory.com</p>
 
-    <p className="text-sm italic text-muted-foreground">Olga Perova, trading as Ontrí Advisory — Heiloo, the Netherlands</p>
+    <p className="text-sm italic text-muted-foreground">Olga Perova, trading as Ontrí Advisory, Heiloo, the Netherlands</p>
   </div>
 );
 

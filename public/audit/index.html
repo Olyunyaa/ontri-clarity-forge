@@ -338,13 +338,13 @@ const TR = {
     w_note:'Your answers are confidential.',
     s1_lbl:'Step 1 of 3', s1_ttl:'Your main tasks',
     tasks_heading:'What are you currently spending your time on?',
-    tasks_sub:'List your main tasks at a high level — no subtasks yet, those come next. Estimate the % of your working week each one takes. Total should be 100%.',
+    tasks_sub:'List your main tasks at a high level. No subtasks yet, those come next. Estimate the % of your working week each one takes. Total should be 100%.',
     btn_add:'+ Add another task', total_lbl:'Total',
-    total_warn:'Total exceeds 100% — adjust the distribution before continuing',
+    total_warn:'Total exceeds 100%. Adjust the distribution before continuing',
     btn_detail:'Next: add details →',
     s2_lbl:'Step 2 of 3', s2_ttl:'Task details',
     d_heading:'Task details',
-    d_sub:'These questions help us better understand your context. Fill in what feels relevant — we\u2019ll cover the rest in our meeting.',
+    d_sub:'These questions help us better understand your context. Fill in what feels relevant; we\u2019ll cover the rest in our meeting.',
     btn_next_step:'Next →',
     s3_lbl:'Step 3 of 3', s3_ttl:'General questions',
     s3_heading:'General questions about AI',
@@ -374,12 +374,12 @@ const TR = {
     q_consulting_goal:'What would you most like to get from consulting?',
     goal_ph:'free up time from routine tasks, improve the quality of work AI already does, learn more about process optimisation with AI',
     wl_label:'I want to spend less time on this',
-    wl_on:"Flagged as a time drain — we'll prioritise this",
+    wl_on:"Flagged as a time drain. We'll prioritise this",
     wl_off:'Tap to flag as a priority for optimisation',
     task_ctr:'Task {i} of {n}',
     divider_text:'and finally',
     ai_opts:['ChatGPT','Claude','Gemini','Copilot','Perplexity','Custom GPT','AI agent','Don\'t use AI'],
-    prob_other_ph:'Other — describe here',
+    prob_other_ph:'Other: describe here',
     ai_how_opts:['Upload documents + prompt','Type a prompt each time','Use a saved prompt template','Set up an agent / automation'],
     who_opts:['Myself','My employee','External consultant'],
     prob_opts:["Output needs a lot of editing","Can't fully trust the result",'Takes too long to set up','Data security concerns','AI misses important details','No clear process for the team'],
@@ -405,17 +405,17 @@ const TR = {
     w_note:'Ваши ответы конфиденциальны.',
     s1_lbl:'Шаг 1 из 3', s1_ttl:'Ваши основные задачи',
     tasks_heading:'На что вы сейчас тратите ваше время?',
-    tasks_sub:'Перечислите ваши основные задачи и оцените, какой % рабочей недели занимает каждая из задач. Укажите укрупнённые задачи — без деталей и подзадач, о них мы спросим на следующем шаге.',
+    tasks_sub:'Перечислите ваши основные задачи и оцените, какой % рабочей недели занимает каждая из задач. Укажите укрупнённые задачи без деталей и подзадач: о них мы спросим на следующем шаге.',
     btn_add:'+ Добавить задачу', total_lbl:'Итого',
-    total_warn:'Сумма превышает 100% — скорректируйте распределение перед тем как продолжить',
+    total_warn:'Сумма превышает 100%. Скорректируйте распределение перед тем как продолжить',
     btn_detail:'Далее: детали →',
     s2_lbl:'Шаг 2 из 3', s2_ttl:'Детали по задачам',
     d_heading:'Детали по каждой задаче',
-    d_sub:'Эти вопросы помогут нам лучше понять ваш контекст. Заполните то, что считаете важным — остальное обсудим на встрече.',
+    d_sub:'Эти вопросы помогут нам лучше понять ваш контекст. Заполните то, что считаете важным, остальное обсудим на встрече.',
     btn_next_step:'Далее →',
     s3_lbl:'Шаг 3 из 3', s3_ttl:'Общие вопросы',
     s3_heading:'Общие вопросы про AI',
-    s3_sub:'Эти вопросы — про ваш общий опыт с AI, а не про конкретную задачу.',
+    s3_sub:'Эти вопросы касаются вашего общего опыта с AI, а не конкретной задачи.',
     btn_done:'Готово',
     btn_pdf:'Получить PDF',
     btn_restart:'Начать заново',
@@ -441,12 +441,12 @@ const TR = {
     q_consulting_goal:'Что в первую очередь вы хотели бы получить от консалтинга?',
     goal_ph:'освободить время от рутинных задач, улучшить качество работы, которую уже выполняет AI, узнать больше про возможности оптимизации процессов с помощью AI',
     wl_label:'Хочу тратить на это меньше времени',
-    wl_on:'Отмечено как "поглотитель времени" — разберёмся с этим',
+    wl_on:'Отмечено как "поглотитель времени", разберёмся с этим',
     wl_off:'Нажмите, чтобы отметить как приоритет для оптимизации',
     task_ctr:'Задача {i} из {n}',
     divider_text:'и напоследок',
     ai_opts:['ChatGPT','Claude','Gemini','Copilot','Perplexity','Custom GPT','AI-агент','Не использую'],
-    prob_other_ph:'Другое — напишите здесь',
+    prob_other_ph:'Другое: напишите здесь',
     ai_how_opts:['Загружаю документы + промпт','Ввожу промпт каждый раз','Использую сохранённый промпт','Настроил агента / автоматизацию'],
     who_opts:['Я','Мой сотрудник','Внешний консультант'],
     prob_opts:['Результат нужно много переписывать','Не доверяю результату','Долго настраивать','Опасения по безопасности данных','AI упускает важные детали','Нет чёткого процесса для команды'],
@@ -772,8 +772,8 @@ function toggleWL(i){tasks[i].wl=!tasks[i].wl;renderAccordion();}
 
 function buildResultsText(){
   const L=lang==='ru';
-  const n=v=>v||'—';
-  const a=arr=>arr.length?arr.join(', '):'—';
+  const n=v=>v||'-';
+  const a=arr=>arr.length?arr.join(', '):'-';
   const lines=[];
   lines.push('═══════════════════════════════════════');
   lines.push(L?'AI-АУДИТ ПРОЦЕССОВ':'AI PROCESS AUDIT');
@@ -786,14 +786,14 @@ function buildResultsText(){
   lines.push(`${L?'Язык интерфейса':'Interface language'}: ${lang.toUpperCase()}`);
   lines.push('');
   lines.push('───────────────────────────────────────');
-  lines.push(L?'СЛАЙДЕРЫ — РУТИННЫЕ ЗАДАЧИ':'SLIDERS — ROUTINE TASKS');
+  lines.push(L?'СЛАЙДЕРЫ: РУТИННЫЕ ЗАДАЧИ':'SLIDERS: ROUTINE TASKS');
   lines.push('───────────────────────────────────────');
   lines.push(`${L?'% рутинных задач':'% routine tasks'}: ${routineTotal}%`);
   lines.push(`${L?'% рутины выполняет AI':'% routine handled by AI'}: ${routineAI}%`);
   lines.push(`${L?'% рутины хочет делегировать AI':'% routine wants to delegate to AI'}: ${routineGoal}%`);
   lines.push('');
   lines.push('───────────────────────────────────────');
-  lines.push(L?'ЗАДАЧИ — ДЕТАЛИ':'TASKS — DETAILS');
+  lines.push(L?'ЗАДАЧИ: ДЕТАЛИ':'TASKS: DETAILS');
   lines.push('───────────────────────────────────────');
   tasks.forEach((t,i)=>{
     lines.push('');
@@ -834,8 +834,8 @@ function sendResults(){
     show('s4');
     return;
   }
-  const n=v=>v||'—';
-  const a=arr=>arr.length?arr.join(', '):'—';
+  const n=v=>v||'-';
+  const a=arr=>arr.length?arr.join(', '):'-';
   let tasksHtml='';
   tasks.forEach((t,i)=>{
     let detail='Who: '+a(t.who)+'<br>AI tools: '+a(t.aiTools);
@@ -845,14 +845,14 @@ function sendResults(){
     if(t.subtasks.length){
       detail+='<br>Subtasks:';
       t.subtasks.forEach((s,j)=>{
-        detail+='<br>&nbsp;&nbsp;'+(j+1)+'. '+n(s.name)+' — Who: '+a(s.who)+', AI: '+a(s.aiTools);
+        detail+='<br>&nbsp;&nbsp;'+(j+1)+'. '+n(s.name)+' | Who: '+a(s.who)+', AI: '+a(s.aiTools);
       });
     }
     tasksHtml+='<table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:8px"><tr><td style="background-color:#F6F4EE;border-radius:8px;padding:14px 16px;border-left:3px solid #111B32"><div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;color:#111B32;margin-bottom:6px">'+n(t.name)+' ('+t.pct+'%)</div><div style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#3D4F6B;line-height:1.6">'+detail+'</div></td></tr></table>';
   });
   const probText=a(userProblems)+(userProblemsOther?'<br>Other: '+userProblemsOther:'');
   const params={
-    subject:'AI Audit — '+[userName,userRole,userCompany].filter(Boolean).join(' · '),
+    subject:'AI Audit: '+[userName,userRole,userCompany].filter(Boolean).join(' · '),
     name:n(userName),role:n(userRole),company:n(userCompany),phone:n(userPhone),
     lang:lang.toUpperCase(),
     routine_total:routineTotal,routine_ai:routineAI,routine_goal:routineGoal,
@@ -923,7 +923,7 @@ async function generatePDF(){
 
   /* Header */
   doc.setFontSize(14);doc.setFont(doc.getFont().fontName,'bold');
-  doc.text(L?'Ontrí Advisory — AI-аудит процессов':'Ontrí Advisory — AI Process Audit',lm,y);
+  doc.text(L?'Ontrí Advisory: AI-аудит процессов':'Ontrí Advisory: AI Process Audit',lm,y);
   y+=8;
   doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
   const meta=[userName,userRole,userCompany,userPhone,new Date().toLocaleDateString()].filter(Boolean).join(' · ');
@@ -949,15 +949,15 @@ async function generatePDF(){
   tasks.forEach((t,i)=>{
     checkPage(30);
     doc.setFontSize(10);doc.setFont(doc.getFont().fontName,'bold');
-    const taskTitle=`${i+1}. ${plain(t.name)||'—'} (${t.pct}%)`;
+    const taskTitle=`${i+1}. ${plain(t.name)||'-'} (${t.pct}%)`;
     doc.text(taskTitle,lm,y);y+=5;
     doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
 
-    const who=t.who.length?t.who.join(', '):'—';
+    const who=t.who.length?t.who.join(', '):'-';
     doc.text(`${L?'Кто':'Who'}: ${who}`,lm+3,y);y+=4.5;
-    const tools=t.aiTools.length?t.aiTools.join(', '):'—';
+    const tools=t.aiTools.length?t.aiTools.join(', '):'-';
     doc.text(`${L?'AI-инструменты':'AI tools'}: ${tools}`,lm+3,y);y+=4.5;
-    const how=t.aiHow.length?t.aiHow.join(', '):'—';
+    const how=t.aiHow.length?t.aiHow.join(', '):'-';
     doc.text(`${L?'Как использует AI':'How uses AI'}: ${how}`,lm+3,y);y+=4.5;
     if(t.wl){doc.text(`>> ${L?'Хочет меньше времени':'Wants less time'}`,lm+3,y);y+=4.5;}
     if(t.notes){
@@ -972,9 +972,9 @@ async function generatePDF(){
       doc.setFont(doc.getFont().fontName,'normal');
       t.subtasks.forEach((s,j)=>{
         checkPage(12);
-        const subName=plain(s.name)||'—';
-        const subWho=s.who.length?s.who.join(', '):'—';
-        const subTools=s.aiTools.length?s.aiTools.join(', '):'—';
+        const subName=plain(s.name)||'-';
+        const subWho=s.who.length?s.who.join(', '):'-';
+        const subTools=s.aiTools.length?s.aiTools.join(', '):'-';
         doc.text(`  ${j+1}. ${subName}`,lm+3,y);y+=3.5;
         doc.text(`     ${L?'Кто':'Who'}: ${subWho} | ${L?'AI':'AI'}: ${subTools}`,lm+3,y);y+=4;
       });
@@ -988,7 +988,7 @@ async function generatePDF(){
   doc.setFontSize(11);doc.setFont(doc.getFont().fontName,'bold');
   doc.text(L?'Проблемы с AI':'AI problems',lm,y);y+=6;
   doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
-  const probText=userProblems.length?userProblems.join(', '):'—';
+  const probText=userProblems.length?userProblems.join(', '):'-';
   const probLines=doc.splitTextToSize(probText,pw);
   checkPage(probLines.length*4.5);
   doc.text(probLines,lm,y);y+=probLines.length*4.5;
@@ -1005,7 +1005,7 @@ async function generatePDF(){
   doc.setFontSize(11);doc.setFont(doc.getFont().fontName,'bold');
   doc.text(L?'Цель консалтинга':'Consulting goal',lm,y);y+=6;
   doc.setFontSize(9);doc.setFont(doc.getFont().fontName,'normal');
-  const goalText=userGoal||'—';
+  const goalText=userGoal||'-';
   const goalLines=doc.splitTextToSize(goalText,pw);
   checkPage(goalLines.length*4.5);
   doc.text(goalLines,lm,y);

@@ -17,39 +17,39 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
-    "hero.subtitle": "We identify where AI can multiply your team's output — and make sure it does.",
+    "hero.subtitle": "We identify where AI can multiply your team's output, and we make sure it does.",
     "hero.cta": "Schedule an Intro Meeting",
 
     // About
     "about.label": "About Us",
-    "about.title": "We bring clarity — and see it through.",
-    "about.p1": "We've spent years building operations inside startups and scale-ups — not advising from the outside, but doing the actual work of making businesses run. We know what it looks like when processes break, when teams are stretched thin, and when the answer isn't more people — it's strengthening what's already there.",
-    "about.p2": "We speak the language of goals and numbers. That means we start with your objectives and constraints — and figure out where AI can make a measurable difference.",
+    "about.title": "We bring clarity and see it through.",
+    "about.p1": "We've spent years building operations inside startups and scale-ups: not advising from the outside, but doing the actual work of making businesses run. We know what it looks like when processes break, when teams are stretched thin, and when the answer isn't more people but strengthening what's already there.",
+    "about.p2": "We speak the language of goals and numbers. That means we start with your objectives and constraints, then figure out where AI can make a measurable difference.",
     "about.p3": "Then we work with your team to make sure the changes actually stick.",
-    "about.p4": "We also run Ontrí Advisory itself on AI — which means everything we recommend, we've tested ourselves.",
-    "about.quote": "AI is not our goal — results are.",
+    "about.p4": "We also run Ontrí Advisory itself on AI, which means everything we recommend, we've tested ourselves.",
+    "about.quote": "AI is not our goal. Results are.",
 
     // Services
     "services.label": "What We Do",
     "services.title": "From audit to adoption",
     "services.1.title": "Audit of the Processes",
-    "services.1.desc": "We uncover where work slows down, breaks, or gets duplicated — and redesign your core workflows so execution becomes predictable, fast, and scalable.",
+    "services.1.desc": "We uncover where work slows down, breaks, or gets duplicated, then redesign your core workflows so execution becomes predictable, fast, and scalable.",
     "services.2.title": "AI Strategy → Roadmapping",
     "services.2.desc": "We turn 'we should do AI' into a prioritized roadmap tied to business KPIs: what to do first, what to skip, and how to execute effectively.",
     "services.3.title": "AI Tools and Solutions",
     "services.3.desc": "We help you select and implement proven AI solutions that fit your workflows. We set them up, create usage frameworks and documentation, and train your team to integrate AI into their daily work.",
     "services.4.title": "Adoption & Change Management",
-    "services.4.desc": "We make adoption happen: clear rollout plan, training, playbooks, and accountability — so new ways of working actually stick.",
+    "services.4.desc": "We make adoption happen: clear rollout plan, training, playbooks, and accountability, so new ways of working actually stick.",
 
     // Why Us
     "whyUs.label": "Why Choose Us",
     "whyUs.title": "What sets us apart",
     "whyUs.1.title": "Operations-First Approach",
-    "whyUs.1.desc": "We start with operations, not technology. We identify where work slows down, where resources leak, and where decisions stall. Then we apply AI selectively — only where it's feasible and safe.",
+    "whyUs.1.desc": "We start with operations, not technology. We identify where work slows down, where resources leak, and where decisions stall. Then we apply AI selectively, only where it's feasible and safe.",
     "whyUs.2.title": "Advisory + Guided Implementation",
     "whyUs.2.desc": "We work closely with your team during implementation: creating detailed plans, providing guidance, troubleshooting issues. We stay involved until new workflows are working and your team is comfortable with them. Governance is built in from day one.",
     "whyUs.3.title": "Aligned with Your Reality",
-    "whyUs.3.desc": "We work with your constraints — team capacity, data readiness, and risk appetite.",
+    "whyUs.3.desc": "We work with your constraints: team capacity, data readiness, and risk appetite.",
 
     // Contact
     "contact.label": "Contact Us",
@@ -84,17 +84,17 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
-    "hero.subtitle": "Wij identificeren waar AI de prestaties van uw team kan versterken — en implementeren oplossingen die meetbare resultaten opleveren.",
+    "hero.subtitle": "Wij identificeren waar AI de prestaties van uw team kan versterken en implementeren oplossingen die meetbare resultaten opleveren.",
     "hero.cta": "Plan een kennismaking",
 
     // About
     "about.label": "Over ons",
-    "about.title": "Wij brengen helderheid — en zorgen voor resultaat.",
-    "about.p1": "Wij hebben jarenlang operaties gebouwd binnen startups en scale-ups — niet als externe adviseurs, maar als mensen die het werk daadwerkelijk deden. Wij weten hoe het voelt wanneer processen vastlopen, teams overbelast zijn, en het antwoord niet meer mensen zijn — maar het versterken van wat er al is.",
-    "about.p2": "Wij spreken de taal van doelen en cijfers. Dat betekent dat wij beginnen met uw doelstellingen en beperkingen — en uitzoeken waar AI een meetbaar verschil kan maken.",
+    "about.title": "Wij brengen helderheid en zorgen voor resultaat.",
+    "about.p1": "Wij hebben jarenlang operaties gebouwd binnen startups en scale-ups: niet als externe adviseurs, maar als mensen die het werk daadwerkelijk deden. Wij weten hoe het voelt wanneer processen vastlopen, teams overbelast zijn, en het antwoord niet meer mensen zijn, maar het versterken van wat er al is.",
+    "about.p2": "Wij spreken de taal van doelen en cijfers. Dat betekent dat wij beginnen met uw doelstellingen en beperkingen, en uitzoeken waar AI een meetbaar verschil kan maken.",
     "about.p3": "Daarna werken wij samen met uw team om ervoor te zorgen dat de veranderingen ook echt werken.",
     "about.p4": "Ontrí Advisory zelf is volledig gebouwd met AI: alles wat wij onze klanten aanbevelen, testen wij eerst op onszelf.",
-    "about.quote": "AI is niet ons doel — resultaten wel.",
+    "about.quote": "AI is niet ons doel, resultaten wel.",
 
     // Services
     "services.label": "Wat wij doen",
@@ -151,16 +151,16 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
-    "hero.subtitle": "Мы находим процессы, где AI может усилить работу вашей команды — и внедряем решения, которые дадут измеримый результат.",
+    "hero.subtitle": "Мы находим процессы, где AI может усилить работу вашей команды, и внедряем решения, которые дадут измеримый результат.",
     "hero.cta": "Записаться на встречу",
 
     // About
     "about.label": "О нас",
-    "about.title": "Мы разбираемся в деталях — и доводим до результата.",
-    "about.p1": "Мы много лет работали внутри бизнеса — выстраивали операционные процессы с нуля, оптимизировали существующие, управляли командами в стартапах и scale-ups в роли COO. Мы хорошо знаем, как это бывает: процессы работают не идеально, но времени разобраться нет. Есть дорогостоящие решения, которые давно пора пересмотреть — но руки не доходят. Команда работает на пределе, а выручка не растёт. Часто ответ — не новые люди, а автоматизация того, что съедает время, и высвобождение ресурса для задач, которые действительно двигают бизнес вперёд.",
-    "about.p2": "Мы работаем в логике результатов и цифр. Начинаем с ваших целей и ограничений, разбираемся в процессах — и находим, где AI даст реальный эффект.",
+    "about.title": "Мы разбираемся в деталях и доводим до результата.",
+    "about.p1": "Мы много лет работали внутри бизнеса: выстраивали операционные процессы с нуля, оптимизировали существующие, управляли командами в стартапах и scale-ups в роли COO. Мы хорошо знаем, как это бывает: процессы работают не идеально, но времени разобраться нет. Есть дорогостоящие решения, которые давно пора пересмотреть, но руки не доходят. Команда работает на пределе, а выручка не растёт. Часто ответ не в новых людях, а в автоматизации того, что съедает время, и высвобождении ресурса для задач, которые действительно двигают бизнес вперёд.",
+    "about.p2": "Мы работаем в логике результатов и цифр. Начинаем с ваших целей и ограничений, разбираемся в процессах и находим, где AI даст реальный эффект.",
     "about.p3": "Затем внедряем вместе с командой и доводим до работающего результата.",
-    "about.p4": "Ontrí Advisory сам построен на AI. Всё, что рекомендуем клиентам — сначала проверяем на себе.",
+    "about.p4": "Ontrí Advisory сам построен на AI. Всё, что рекомендуем клиентам, сначала проверяем на себе.",
     "about.quote": "Мы не внедряем AI ради AI.",
 
     // Services
@@ -173,17 +173,17 @@ export const translations: Record<Language, Record<string, string>> = {
     "services.3.title": "Подбор и внедрение AI-инструментов",
     "services.3.desc": "Мы помогаем выбрать и настроить проверенные AI-решения под ваши задачи. Создаём инструкции, регламенты и обучаем команду интегрировать AI в повседневную работу.",
     "services.4.title": "Сопровождение изменений",
-    "services.4.desc": "Мы доводим внедрение до конца: план запуска, обучение, рабочие инструкции и контроль — чтобы новые подходы прижились, а не остались на бумаге.",
+    "services.4.desc": "Мы доводим внедрение до конца: план запуска, обучение, рабочие инструкции и контроль, чтобы новые подходы прижились, а не остались на бумаге.",
 
     // Why Us
     "whyUs.label": "Почему мы",
     "whyUs.title": "Чем мы отличаемся",
     "whyUs.1.title": "Сначала бизнес, потом технологии",
-    "whyUs.1.desc": "Мы начинаем с ваших процессов, а не с технологий. Выявляем, где теряется время, утекают ресурсы и застревают решения. AI подключаем точечно — только там, где это обоснованно и безопасно.",
+    "whyUs.1.desc": "Мы начинаем с ваших процессов, а не с технологий. Выявляем, где теряется время, утекают ресурсы и застревают решения. AI подключаем точечно, только там, где это обоснованно и безопасно.",
     "whyUs.2.title": "Консалтинг + сопровождение",
     "whyUs.2.desc": "Мы работаем бок о бок с вашей командой: составляем планы, помогаем на каждом шаге, решаем возникающие проблемы. Мы остаёмся рядом, пока новые процессы не заработают стабильно.",
     "whyUs.3.title": "С учётом вашей реальности",
-    "whyUs.3.desc": "Мы учитываем ваши реальные условия — возможности команды, готовность данных и допустимый уровень риска.",
+    "whyUs.3.desc": "Мы учитываем ваши реальные условия: возможности команды, готовность данных и допустимый уровень риска.",
 
     // Contact
     "contact.label": "Свяжитесь с нами",

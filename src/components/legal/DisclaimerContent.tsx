@@ -22,7 +22,7 @@ const DisclaimerContent = () => (
     <h3 className="text-lg font-semibold">6. Contact</h3>
     <p>Questions? Email us at hello@ontri-advisory.com.</p>
 
-    <p className="text-sm italic text-muted-foreground">Olga Perova, trading as Ontrí Advisory — Heiloo, the Netherlands</p>
+    <p className="text-sm italic text-muted-foreground">Olga Perova, trading as Ontrí Advisory, Heiloo, the Netherlands</p>
   </div>
 );
 
