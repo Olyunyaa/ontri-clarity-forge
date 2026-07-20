@@ -6,11 +6,15 @@ interface ScrollRevealProps {
   delay?: number;
 }
 
+const prefersReducedMotion = () =>
+  typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 const ScrollReveal = ({ children, className = "", delay = 0 }: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(prefersReducedMotion);
 
   useEffect(() => {
+    if (isVisible) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -23,7 +27,7 @@ const ScrollReveal = ({ children, className = "", delay = 0 }: ScrollRevealProps
 
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [isVisible]);
 
   return (
     <div

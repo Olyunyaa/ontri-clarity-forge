@@ -14,6 +14,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Services",
     "nav.whyUs": "Why Us",
     "nav.contact": "Contact",
+    "nav.cases": "Cases",
     "nav.audit": "Free AI Audit",
 
     // Hero
@@ -64,6 +65,30 @@ export const translations: Record<Language, Record<string, string>> = {
     "how.3.title": "Roadmap and implementation",
     "how.3.desc": "You get a prioritized roadmap tied to your business goals. We implement it together with your team and stay involved until the new way of working sticks.",
 
+    // Cases
+    "cases.label": "Cases",
+    "cases.title": "What founders come to us with",
+    "cases.1.role": "CEO, multi-million business",
+    "cases.1.pain": "His assistant left. Again.",
+    "cases.1.desc": "He was tired of spending a year teaching every new assistant how he works, and then starting the search over. We built him a custom multi-agent AI assistant instead: she understands his texts and voice messages, tracks his tasks and his team's, sets reminders and follow-ups, turns screenshots into flights and restaurant bookings in his calendar, and calls restaurants to book a table.",
+    "cases.1.result": "ROI in 1 month, against the cost of recruiting and hiring an assistant",
+    "cases.2.role": "Founder, paid community",
+    "cases.2.pain": "Onboarding, payments, member tracking: all manual, all on her.",
+    "cases.2.desc": "With AI we rebuilt how she works with her community to improve retention: agents and systems now handle the onboarding and member tracking she used to do by hand, and her time goes to sales instead of operations.",
+    "cases.2.result": "15+ hours a month saved, ROI in 2 months",
+    "cases.3.role": "Dutch engineering company, 40 years in business",
+    "cases.3.pain": "Their website didn't look like their work.",
+    "cases.3.desc": "We upgraded it with a modern design and built a 3D map of their latest 200 projects on a real map of the Netherlands, with real borders, cities and project layouts. A different first impression for clients and future employees.",
+    "cases.3.result": "Under 20 hours of work",
+    "cases.4.role": "HR Director, international company",
+    "cases.4.pain": "A fifth of her week went to answering the same employee questions.",
+    "cases.4.desc": "We built a RAG assistant on the company's internal documents. It answers instantly, and her time went back to work that needs a human.",
+    "cases.4.result": "20% of her week freed",
+    "cases.5.role": "Product executive, industrial tech",
+    "cases.5.pain": "Everyone around her was talking about AI. She had no time to keep up.",
+    "cases.5.desc": "We audited where she struggled, built her an anti-FOMO news agent, and set up advanced AI workflows for research and data visualization, the parts of her job that used to be slow and painful.",
+    "cases.5.result": "From FOMO to a working AI stack",
+
     // Contact
     "contact.label": "Contact Us",
     "contact.title": "Let's discuss how Ontrí Advisory can accelerate your intelligent transformation.",
@@ -96,6 +121,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Diensten",
     "nav.whyUs": "Waarom wij",
     "nav.contact": "Contact",
+    "nav.cases": "Cases",
     "nav.audit": "Gratis AI-audit",
 
     // Hero
@@ -146,6 +172,30 @@ export const translations: Record<Language, Record<string, string>> = {
     "how.3.title": "Routekaart en implementatie",
     "how.3.desc": "U ontvangt een geprioriteerde routekaart, gekoppeld aan uw bedrijfsdoelen. We voeren die samen met uw team uit en blijven betrokken tot de nieuwe werkwijze beklijft.",
 
+    // Cases
+    "cases.label": "Cases",
+    "cases.title": "Waar oprichters mee komen",
+    "cases.1.role": "CEO, internationaal miljoenenbedrijf",
+    "cases.1.pain": "Zijn assistent vertrok. Alweer.",
+    "cases.1.desc": "Hij was het beu om elke nieuwe assistent een jaar lang in te werken en daarna opnieuw te beginnen. Wij bouwden een multi-agent AI-assistent op maat: zij begrijpt zijn berichten en spraakmemo's, houdt zijn taken en die van zijn team bij, zet reminders en follow-ups, zet screenshots om in vluchten en restaurantreserveringen in zijn agenda en belt zelf het restaurant om een tafel te boeken.",
+    "cases.1.result": "Terugverdiend in 1 maand, alleen al tegen de kosten van werving en een nieuwe assistent",
+    "cases.2.role": "Oprichter van een betaalde community",
+    "cases.2.pain": "Onboarding, betalingen, ledenadministratie: alles handmatig, alles via haar.",
+    "cases.2.desc": "Met AI hebben we haar manier van werken opnieuw opgebouwd om retentie te verbeteren: agents en systemen doen nu wat zij met de hand deed, en haar tijd gaat naar sales in plaats van operatie.",
+    "cases.2.result": "Minstens 15 uur per maand bespaard, terugverdiend in 2 maanden",
+    "cases.3.role": "Nederlands ingenieursbedrijf, 40 jaar actief",
+    "cases.3.pain": "De website deed hun werk geen recht.",
+    "cases.3.desc": "We vernieuwden het design en bouwden een 3D-kaart met hun laatste 200 projecten op een echte kaart van Nederland, met echte grenzen, steden en projectindelingen. Een compleet andere eerste indruk voor klanten en toekomstige medewerkers.",
+    "cases.3.result": "Minder dan 20 uur werk",
+    "cases.4.role": "HR-directeur, internationaal bedrijf",
+    "cases.4.pain": "Een vijfde van haar week ging op aan dezelfde vragen van medewerkers.",
+    "cases.4.desc": "We bouwden een RAG-assistent op de interne documenten van het bedrijf. Die beantwoordt ze direct, en haar tijd ging terug naar werk waar een mens voor nodig is.",
+    "cases.4.result": "20% van haar week vrijgemaakt",
+    "cases.5.role": "Product executive, industriële tech",
+    "cases.5.pain": "Iedereen om haar heen had het over AI, maar zij had geen tijd om bij te blijven.",
+    "cases.5.desc": "We brachten in kaart waar ze vastliep, bouwden een anti-FOMO nieuwsagent en richtten geavanceerde AI-workflows in voor research en datavisualisatie, de delen van haar werk die traag en taai waren.",
+    "cases.5.result": "Van FOMO naar een werkende AI-stack",
+
     // Contact
     "contact.label": "Neem contact op",
     "contact.title": "Laten we samen bekijken hoe Ontrí Advisory uw organisatie kan helpen met AI.",
@@ -178,6 +228,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.services": "Услуги",
     "nav.whyUs": "Почему мы",
     "nav.contact": "Контакты",
+    "nav.cases": "Кейсы",
     "nav.audit": "Бесплатный AI-аудит",
 
     // Hero
@@ -227,6 +278,30 @@ export const translations: Record<Language, Record<string, string>> = {
     "how.2.link": "Открыть аудит",
     "how.3.title": "Дорожная карта и внедрение",
     "how.3.desc": "Вы получаете приоритизированную дорожную карту, привязанную к целям бизнеса. Внедряем вместе с вашей командой и остаёмся рядом, пока новый подход не приживётся.",
+
+    // Cases
+    "cases.label": "Кейсы",
+    "cases.title": "С чем к нам приходят",
+    "cases.1.role": "CEO, бизнес с многомиллионным оборотом",
+    "cases.1.pain": "От него ушёл ассистент. Снова.",
+    "cases.1.desc": "Ему надоело год учить каждого нового ассистента работать с собой, а потом начинать поиск заново. Вместо этого мы собрали ему кастомного мультиагентного AI-ассистента: она понимает его тексты и голосовые, ведёт его задачи и задачи команды, ставит напоминания и фоллоу-апы, превращает скриншоты в перелёты и брони ресторанов в календаре и сама звонит в ресторан, чтобы забронировать столик.",
+    "cases.1.result": "Окупился за 1 месяц, если считать только стоимость подбора и найма ассистента",
+    "cases.2.role": "Фаундер платного комьюнити",
+    "cases.2.pain": "Онбординг, платежи, учёт участников: всё вручную, всё на ней.",
+    "cases.2.desc": "С помощью AI мы перестроили её работу с комьюнити, чтобы улучшить удержание: агенты и системы теперь делают то, что она делала руками, а её время уходит на продажи, а не на операционку.",
+    "cases.2.result": "Минимум 15 часов в месяц, окупилось за 2 месяца",
+    "cases.3.role": "Голландская инженерная компания, 40 лет на рынке",
+    "cases.3.pain": "Сайт не выглядел так же убедительно, как их работа.",
+    "cases.3.desc": "Мы обновили дизайн и сделали 3D-карту их последних 200 проектов на реальной карте Нидерландов: настоящие границы, города и планировки проектов. Совсем другое первое впечатление для клиентов и будущих сотрудников.",
+    "cases.3.result": "Меньше 20 часов работы",
+    "cases.4.role": "HR-директор международной компании",
+    "cases.4.pain": "Пятая часть её недели уходила на одни и те же вопросы сотрудников.",
+    "cases.4.desc": "Мы построили RAG-ассистента на внутренних документах компании. Он отвечает мгновенно, а её время вернулось к задачам, где нужен человек.",
+    "cases.4.result": "Освобождено 20% рабочей недели",
+    "cases.5.role": "Топ-менеджер, промышленные технологии",
+    "cases.5.pain": "Вокруг все говорили про AI, а у неё не было времени разобраться.",
+    "cases.5.desc": "Мы разобрали, где она буксует, собрали ей анти-FOMO новостного агента и настроили продвинутые AI-процессы для рисёрча и визуализации данных, тех частей работы, которые раньше шли медленно и тяжело.",
+    "cases.5.result": "Из FOMO в рабочий AI-стек",
 
     // Contact
     "contact.label": "Свяжитесь с нами",
