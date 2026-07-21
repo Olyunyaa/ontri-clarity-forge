@@ -195,8 +195,8 @@ body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:v
 <!-- WELCOME -->
 <div class="screen active" id="s0">
   <div class="welcome-lang lang-switcher">
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
   </div>
   <div class="welcome-inner">
     <div class="welcome-badge" data-k="badge">AI Process Audit</div>
@@ -234,8 +234,8 @@ body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:v
       <div class="step-ttl" data-k="s1_ttl"></div>
     </div>
     <div class="lang-switcher">
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
     </div>
     <div class="step-dots">
       <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
@@ -270,8 +270,8 @@ body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:v
       <div class="step-ttl" id="detail-ttl"></div>
     </div>
     <div class="lang-switcher">
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
     </div>
     <div class="step-dots">
       <div class="dot done"></div><div class="dot active"></div><div class="dot"></div>
@@ -298,8 +298,8 @@ body{font-family:'Inter',sans-serif;font-weight:400;background:var(--bg);color:v
       <div class="step-ttl" data-k="s3_ttl"></div>
     </div>
     <div class="lang-switcher">
-      <button class="lang-btn" onclick="setLang('en')">EN</button>
-      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('ru')">RU</button>
     </div>
     <div class="step-dots">
       <div class="dot done"></div><div class="dot done"></div><div class="dot active"></div>
@@ -462,7 +462,7 @@ const TR = {
 };
 const DEF_PCTS = [20,20,20,15,15,10];
 
-let lang='ru', userName='', userRole='', userCompany='', userPhone='', tasks=[], curIdx=0;
+let lang='en', userName='', userRole='', userCompany='', userPhone='', tasks=[], curIdx=0;
 let routineTotal=60, routineAI=20, routineGoal=60, userProblems=[], userProblemsOther='', userGoal='';
 
 function tr(k,vars){
