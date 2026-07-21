@@ -1,10 +1,9 @@
-import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const stepKeys = [
   { number: "01", titleKey: "how.1.title", descKey: "how.1.desc" },
-  { number: "02", titleKey: "how.2.title", descKey: "how.2.desc", linkKey: "how.2.link", href: "/audit/" },
+  { number: "02", titleKey: "how.2.title", descKey: "how.2.desc" },
   { number: "03", titleKey: "how.3.title", descKey: "how.3.desc" },
 ];
 
@@ -36,15 +35,6 @@ const HowItWorksSection = () => {
                     <p className="text-muted-foreground font-sans leading-relaxed text-sm">
                       {t(step.descKey)}
                     </p>
-                    {step.linkKey && (
-                      <a
-                        href={step.href}
-                        className="inline-flex items-center gap-1 mt-3 text-sm font-sans font-medium text-accent-dark hover:underline"
-                      >
-                        {t(step.linkKey)}
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                    )}
                   </div>
                 </div>
               </ScrollReveal>
