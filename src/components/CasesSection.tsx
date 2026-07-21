@@ -1,5 +1,14 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/i18n/LanguageContext";
+import caseMapOverview from "@/assets/case-map-overview.jpg";
+import caseMapCity from "@/assets/case-map-city.jpg";
+
+const caseImages: Record<string, { src: string; alt: string }[]> = {
+  "3": [
+    { src: caseMapOverview, alt: "Interactive 3D project map of the Netherlands" },
+    { src: caseMapCity, alt: "Street-level city view with project locations" },
+  ],
+};
 
 const caseKeys = ["1", "2", "3", "4", "5"].map((n) => ({
   number: `0${n}`,
@@ -7,6 +16,7 @@ const caseKeys = ["1", "2", "3", "4", "5"].map((n) => ({
   painKey: `cases.${n}.pain`,
   descKey: `cases.${n}.desc`,
   resultKey: `cases.${n}.result`,
+  images: caseImages[n],
 }));
 
 const CasesSection = () => {
@@ -41,6 +51,19 @@ const CasesSection = () => {
                   <p className="text-muted-foreground font-sans leading-relaxed text-sm mb-5">
                     {t(c.descKey)}
                   </p>
+                  {c.images && (
+                    <div className="grid sm:grid-cols-2 gap-3 mb-5">
+                      {c.images.map((img) => (
+                        <img
+                          key={img.src}
+                          src={img.src}
+                          alt={img.alt}
+                          loading="lazy"
+                          className="w-full rounded-sm border border-foreground/10"
+                        />
+                      ))}
+                    </div>
+                  )}
                   <p className="inline-block border-l-2 border-accent-dark pl-3 text-sm font-sans font-medium text-foreground">
                     {t(c.resultKey)}
                   </p>
