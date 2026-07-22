@@ -19,7 +19,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
-    "hero.subtitle": "We help startups and scale-ups hand routine work over to AI, so the business grows without growing the team. We find where AI pays off and stay until it works.",
+    "hero.subtitle": "We help small and medium-sized companies at any stage hand routine work over to AI, so the business grows without growing the team. We find where AI pays off and stay until it works.",
     "hero.cta": "Schedule an Intro Meeting",
     "hero.ctaAudit": "Take the Free AI Process Audit",
 
@@ -125,7 +125,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
-    "hero.subtitle": "Wij helpen startups en scale-ups routinewerk over te dragen aan AI, zodat het bedrijf groeit zonder het team uit te breiden. We vinden waar AI loont en blijven betrokken tot het werkt.",
+    "hero.subtitle": "Wij helpen kleine en middelgrote bedrijven in elke fase routinewerk over te dragen aan AI, zodat het bedrijf groeit zonder het team uit te breiden. We vinden waar AI loont en blijven betrokken tot het werkt.",
     "hero.cta": "Plan een kennismaking",
     "hero.ctaAudit": "Doe de gratis AI-procesaudit",
 
@@ -231,7 +231,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
-    "hero.subtitle": "Помогаем стартапам и scale-up компаниям передать рутину AI, чтобы бизнес рос без расширения команды. Находим, где AI окупится, и остаёмся до работающего результата.",
+    "hero.subtitle": "Помогаем малому и среднему бизнесу на любой стадии передать рутину AI, чтобы бизнес рос без расширения команды. Находим, где AI окупится, и остаёмся до работающего результата.",
     "hero.cta": "Записаться на встречу",
     "hero.ctaAudit": "Пройти бесплатный AI-аудит процессов",
 
