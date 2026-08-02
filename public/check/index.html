@@ -383,27 +383,58 @@ function renderResult(){
 }
 
 let analyticsSent = false;
+const EJS_SERVICE = 'service_pfl7vyt', EJS_KEY = 'MqADpxGb2aRhHIjN2';
+const EJS_TEMPLATE_CHECK = 'template_check', EJS_TEMPLATE_LEGACY = 'template_xo7wv5f';
+
 function q2Label(){
   const other = (document.getElementById('q2-other-input').value || '').trim();
   const isOther = ans.q2 === TR[lang].q2.length-1;
   return TR[lang].q2[ans.q2 ?? 0] + (isOther && other ? ' (' + other + ')' : '');
 }
+
+function resultBodyHtml(){
+  const primary = OPS[lang][ans.q4[0]];
+  return document.getElementById('r-why').textContent +
+    '<br><br><b>Effect:</b> ' + primary.eff +
+    '<br><b>Complexity:</b> ' + TR[lang].cx[primary.cx] + ', ' + primary.cxNote +
+    '<br><b>First check:</b> ' + primary.first;
+}
+
+function sendToOlya(kind, email){
+  const primary = OPS[lang][ans.q4[0]];
+  const isLead = kind === 'lead';
+  const checkParams = {
+    subject: (isLead ? 'New lead · ' : 'Completed · ') + 'AI Opportunity Check',
+    kind_label: isLead ? 'New lead' : 'Completed, no email left',
+    lead_email: email || '-',
+    role: TR[lang].q1[ans.q1 ?? 5],
+    business: q2Label(),
+    team: TR[lang].q3[ans.q3 ?? 0],
+    pains: ans.q4.map(i=>TR[lang].q4[i]).join(', '),
+    ai_exp: TR[lang].q5[ans.q5 ?? 0],
+    result_title: primary.t,
+    result_body: resultBodyHtml(),
+    lang: lang
+  };
+  const legacyParams = {
+    lang: lang,
+    name: 'AI Opportunity Check ' + (isLead ? 'lead: ' + email : '(no email left)'),
+    role: TR[lang].q1[ans.q1 ?? 5],
+    company: q2Label() + ' · ' + TR[lang].q3[ans.q3 ?? 0],
+    phone: email || '-',
+    goal: primary.t,
+    problems: ans.q4.map(i=>TR[lang].q4[i]).join(', ') + ' | AI: ' + TR[lang].q5[ans.q5 ?? 0],
+    routine_total:'-', routine_ai:'-', routine_goal:'-',
+    tasks_html: '<b>' + primary.t + '</b><br>' + resultBodyHtml()
+  };
+  return emailjs.send(EJS_SERVICE, EJS_TEMPLATE_CHECK, checkParams, EJS_KEY)
+    .catch(() => emailjs.send(EJS_SERVICE, EJS_TEMPLATE_LEGACY, legacyParams, EJS_KEY));
+}
+
 function sendAnalytics(){
   if(analyticsSent || typeof emailjs === 'undefined') return;
   analyticsSent = true;
-  try{
-    emailjs.send('service_pfl7vyt','template_xo7wv5f',{
-      lang: lang,
-      name: 'AI Opportunity Check: completed (no email left yet)',
-      role: TR[lang].q1[ans.q1 ?? 5],
-      company: q2Label() + ' · ' + TR[lang].q3[ans.q3 ?? 0],
-      phone: '-',
-      goal: OPS[lang][ans.q4[0]].t,
-      problems: ans.q4.map(i=>TR[lang].q4[i]).join(', ') + ' | AI: ' + TR[lang].q5[ans.q5 ?? 0],
-      routine_total:'-', routine_ai:'-', routine_goal:'-',
-      tasks_html:'Result shown: ' + OPS[lang][ans.q4[0]].t
-    },'MqADpxGb2aRhHIjN2').catch(()=>{});
-  }catch(e){}
+  try{ sendToOlya('completed').catch(()=>{}); }catch(e){}
 }
 
 function restart(){
@@ -425,21 +456,8 @@ function sendResult(){
   };
   btn.disabled = true;
   btn.textContent = lang==='ru' ? 'Отправляю...' : 'Sending...';
-  const primary = OPS[lang][ans.q4[0]];
-  const params = {
-    lang: lang,
-    name: 'AI Opportunity Check lead: ' + email,
-    role: TR[lang].q1[ans.q1 ?? 5],
-    company: q2Label() + ' · ' + TR[lang].q3[ans.q3 ?? 0],
-    phone: email,
-    goal: primary.t,
-    problems: ans.q4.map(i=>TR[lang].q4[i]).join(', ') + ' | AI: ' + TR[lang].q5[ans.q5 ?? 0],
-    routine_total: '-', routine_ai: '-', routine_goal: '-',
-    tasks_html: '<b>' + primary.t + '</b><br>' + document.getElementById('r-why').textContent +
-      '<br><br><b>Effect:</b> ' + primary.eff + '<br><b>First check:</b> ' + primary.first
-  };
   try{
-    emailjs.send('service_pfl7vyt','template_xo7wv5f',params,'MqADpxGb2aRhHIjN2')
+    sendToOlya('lead', email)
       .then(()=>{ btn.textContent = t('r_email_btn'); document.getElementById('sent-ok').style.display='block'; })
       .catch(fail);
   }catch(e){ fail(); }
