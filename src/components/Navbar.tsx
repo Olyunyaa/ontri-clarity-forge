@@ -30,12 +30,6 @@ const Navbar = () => {
               {t(l.key)}
             </a>
           ))}
-          <a
-            href="/audit/"
-            className="border border-primary-foreground/40 rounded-md px-4 py-2 text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-          >
-            {t("nav.audit")}
-          </a>
           <LanguageSwitcher />
         </div>
 
@@ -66,13 +60,6 @@ const Navbar = () => {
                 {t(l.key)}
               </a>
             ))}
-            <a
-              href="/audit/"
-              onClick={() => setOpen(false)}
-              className="border border-primary-foreground/40 rounded-md px-4 py-2 text-center text-primary-foreground hover:bg-primary-foreground/10 transition-colors"
-            >
-              {t("nav.audit")}
-            </a>
           </div>
         </div>
       )}

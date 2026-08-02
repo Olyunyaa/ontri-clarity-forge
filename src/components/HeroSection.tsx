@@ -32,7 +32,7 @@ const HeroSection = () => {
               className="text-base px-8 py-6 bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
               asChild
             >
-              <a href="/audit/">{t("hero.ctaAudit")}</a>
+              <a href="#cases">{t("hero.ctaCases")}</a>
             </Button>
           </div>
         </div>

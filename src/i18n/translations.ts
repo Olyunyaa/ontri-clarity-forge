@@ -15,13 +15,12 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.whyUs": "Why Us",
     "nav.contact": "Contact",
     "nav.cases": "Cases",
-    "nav.audit": "Free AI Audit",
 
     // Hero
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
     "hero.subtitle": "For founders and business leaders who see AI potential but need someone to identify the right opportunity and turn it into a working system. We find where AI pays off in your business and stay until it works.",
     "hero.cta": "Schedule an Intro Meeting",
-    "hero.ctaAudit": "Take the Free AI Process Audit",
+    "hero.ctaCases": "See Selected Projects",
 
     // About
     "about.label": "About Us",
@@ -93,8 +92,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "contact.title": "Let's discuss how Ontrí Advisory can accelerate your intelligent transformation.",
     "contact.cta": "Schedule an Intro Meeting",
     "contact.email": "Prefer email?",
-    "contact.auditText": "Not ready for a call yet?",
-    "contact.auditLink": "Start with the free AI Process Audit",
+    "contact.casesText": "Want to see what we build first?",
+    "contact.casesLink": "See selected projects",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",
@@ -121,13 +120,12 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.whyUs": "Waarom wij",
     "nav.contact": "Contact",
     "nav.cases": "Cases",
-    "nav.audit": "Gratis AI-audit",
 
     // Hero
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
     "hero.subtitle": "Voor oprichters en bedrijfsleiders die de potentie van AI zien, maar iemand nodig hebben die de juiste kans identificeert en omzet in een werkend systeem. We vinden waar AI loont in uw bedrijf en blijven betrokken tot het werkt.",
     "hero.cta": "Plan een kennismaking",
-    "hero.ctaAudit": "Doe de gratis AI-procesaudit",
+    "hero.ctaCases": "Bekijk geselecteerde projecten",
 
     // About
     "about.label": "Over ons",
@@ -199,8 +197,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "contact.title": "Laten we samen bekijken hoe Ontrí Advisory uw organisatie kan helpen met AI.",
     "contact.cta": "Plan een kennismaking",
     "contact.email": "Liever mailen?",
-    "contact.auditText": "Nog niet klaar voor een gesprek?",
-    "contact.auditLink": "Begin met de gratis AI-procesaudit",
+    "contact.casesText": "Eerst zien wat we bouwen?",
+    "contact.casesLink": "Bekijk geselecteerde projecten",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",
@@ -227,13 +225,12 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.whyUs": "Почему мы",
     "nav.contact": "Контакты",
     "nav.cases": "Кейсы",
-    "nav.audit": "Бесплатный AI-аудит",
 
     // Hero
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
     "hero.subtitle": "Для фаундеров и руководителей бизнеса, которые видят потенциал AI, но им нужен тот, кто определит правильную возможность и превратит её в работающую систему. Мы находим, где AI окупится именно в вашем бизнесе, и остаёмся до результата.",
     "hero.cta": "Записаться на встречу",
-    "hero.ctaAudit": "Пройти бесплатный AI-аудит процессов",
+    "hero.ctaCases": "Посмотреть кейсы",
 
     // About
     "about.label": "О нас",
@@ -305,8 +302,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "contact.title": "Давайте обсудим, как Ontrí Advisory может помочь вашему бизнесу с AI.",
     "contact.cta": "Записаться на встречу",
     "contact.email": "Предпочитаете email?",
-    "contact.auditText": "Пока не готовы к созвону?",
-    "contact.auditLink": "Начните с бесплатного AI-аудита процессов",
+    "contact.casesText": "Хотите сначала посмотреть, что мы строим?",
+    "contact.casesLink": "Посмотреть кейсы",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",
