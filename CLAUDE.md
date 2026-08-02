@@ -113,7 +113,10 @@ cp ~/Desktop/Ontrí\ Advisory/Диагностическая\ карта/process
 git add public/audit/index.html && git commit -m "Update audit form" && git push
 ```
 
-## Текущий статус (обновлено 20.07.2026)
+## Текущий статус (обновлено 02.08.2026)
+
+- Обновления 21.07-02.08.2026: секция «Как мы работаем» переписана под разговорный процесс (без анкет); аудит-форма по умолчанию открывается на английском; в кейс 03 добавлены два скриншота 3D-карты (src/assets/case-map-*.jpg, брендинг клиента обрезан); услуги переписаны (Audit → Solution Design → Custom AI Systems → Implementation); заголовок кейсов «Selected problems we've turned into working systems»; hero-подзаголовок «For founders and business leaders who see AI potential...» (SMB-позиционирование осталось в title/meta/JSON-LD)
+
 
 - Сайт **работает** на https://ontri-advisory.com (GitHub Pages, HTTPS, SSL до 14.06.2026)
 - Из всех текстов (EN/NL/RU, легальные страницы, аудит-форма) удалены длинные тире (em dash) — фразы переписаны через запятые/двоеточия; задеплоено и проверено на проде 20.07.2026
