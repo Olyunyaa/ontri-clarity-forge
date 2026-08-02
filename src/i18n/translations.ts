@@ -19,7 +19,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
-    "hero.subtitle": "We help small and medium-sized companies at any stage hand routine work over to AI, so the business grows without growing the team. We find where AI pays off and stay until it works.",
+    "hero.subtitle": "For founders and business leaders who see AI potential but need someone to identify the right opportunity and turn it into a working system. We find where AI pays off in your business and stay until it works.",
     "hero.cta": "Schedule an Intro Meeting",
     "hero.ctaAudit": "Take the Free AI Process Audit",
 
@@ -125,7 +125,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
-    "hero.subtitle": "Wij helpen kleine en middelgrote bedrijven in elke fase routinewerk over te dragen aan AI, zodat het bedrijf groeit zonder het team uit te breiden. We vinden waar AI loont en blijven betrokken tot het werkt.",
+    "hero.subtitle": "Voor oprichters en bedrijfsleiders die de potentie van AI zien, maar iemand nodig hebben die de juiste kans identificeert en omzet in een werkend systeem. We vinden waar AI loont in uw bedrijf en blijven betrokken tot het werkt.",
     "hero.cta": "Plan een kennismaking",
     "hero.ctaAudit": "Doe de gratis AI-procesaudit",
 
@@ -231,7 +231,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
-    "hero.subtitle": "Помогаем малому и среднему бизнесу на любой стадии передать рутину AI, чтобы бизнес рос без расширения команды. Находим, где AI окупится, и остаёмся до работающего результата.",
+    "hero.subtitle": "Для фаундеров и руководителей бизнеса, которые видят потенциал AI, но им нужен тот, кто определит правильную возможность и превратит её в работающую систему. Мы находим, где AI окупится именно в вашем бизнесе, и остаёмся до результата.",
     "hero.cta": "Записаться на встречу",
     "hero.ctaAudit": "Пройти бесплатный AI-аудит процессов",
 
