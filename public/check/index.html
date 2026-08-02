@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Opportunity Check | Ontrí Advisory</title>
+<meta name="description" content="Five quick questions. See the most likely place AI pays off in your business, in under three minutes.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#111B32; --bg:#F6F4EE; --card:#FFFFFF; --beige:#E2C9A0; --gold:#B08A3E;
+  --muted:#5A5F6A; --line:rgba(17,27,50,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--navy);font-family:Inter,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:32px 20px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px}
+.brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:var(--navy);text-decoration:none}
+.lang button{background:none;border:none;font:inherit;font-size:13px;letter-spacing:.08em;color:var(--muted);cursor:pointer;padding:4px 6px}
+.lang button.active{color:var(--navy);font-weight:600}
+.progress{height:2px;background:var(--line);border-radius:2px;margin-bottom:36px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s ease}
+.screen{display:none;animation:fade .35s ease}
+.screen.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.badge{display:inline-block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,5vw,42px);line-height:1.15;margin-bottom:14px}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,4vw,30px);line-height:1.2;margin-bottom:8px}
+.sub{color:var(--muted);font-weight:300;font-size:16px;max-width:520px;margin-bottom:28px}
+.qnum{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.hint{font-size:13px;color:var(--muted);margin:2px 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:3px;padding:12px 18px;font:inherit;font-size:15px;cursor:pointer;transition:all .15s ease;color:var(--navy)}
+.chip:hover{border-color:var(--gold)}
+.chip.sel{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+.btn{display:inline-block;background:var(--navy);color:var(--bg);border:none;border-radius:3px;padding:14px 28px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:opacity .15s}
+.btn:hover{opacity:.9}
+.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--gold)}
+.btn[disabled]{opacity:.4;cursor:default}
+.back{background:none;border:none;font:inherit;font-size:13px;color:var(--muted);cursor:pointer;padding:0;margin-top:24px;display:inline-block}
+.back:hover{color:var(--navy)}
+.note{font-size:12px;color:var(--muted);margin-top:18px}
+.result-card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:28px;margin-bottom:16px}
+.result-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+.result-card p{color:var(--muted);font-size:15px}
+.result-card p strong{color:var(--navy);font-weight:600}
+.meta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+.meta{flex:1 1 200px;border-left:2px solid var(--beige);padding-left:12px}
+.meta .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.meta .v{font-size:14px;font-weight:500;color:var(--navy)}
+.case-card{background:var(--navy);color:var(--bg);border-radius:3px;padding:24px 28px;margin-bottom:16px}
+.case-card .result-label{color:var(--beige)}
+.case-card .role{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,244,238,.65);margin-bottom:6px}
+.case-card .line{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;line-height:1.3;margin-bottom:10px}
+.case-card a{color:var(--beige);font-size:14px;text-decoration:none}
+.case-card a:hover{text-decoration:underline}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 8px}
+.email-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.email-row input{flex:1 1 220px;border:1px solid var(--line);border-radius:3px;padding:12px 14px;font:inherit;font-size:14px;background:var(--card);color:var(--navy)}
+.email-row input:focus{outline:none;border-color:var(--gold)}
+.sent-ok{color:var(--gold);font-size:14px;margin-top:10px;display:none}
+@media (prefers-reduced-motion: reduce){.screen{animation:none}.progress i{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="brand" href="/">Ontrí Advisory</a>
+    <div class="lang">
+      <button id="lb-en" onclick="setLang('en')">EN</button><span style="color:var(--line)">/</span><button id="lb-ru" onclick="setLang('ru')">RU</button>
+    </div>
+  </div>
+  <div class="progress"><i id="bar"></i></div>
+
+  <div class="screen active" id="s-welcome">
+    <span class="badge" data-k="badge"></span>
+    <h1 data-k="w_title"></h1>
+    <p class="sub" data-k="w_sub"></p>
+    <button class="btn" onclick="go(1)" data-k="w_btn"></button>
+    <p class="note" data-k="w_note"></p>
+  </div>
+
+  <div class="screen" id="s-q1">
+    <p class="qnum" data-k="q_of" data-n="1"></p>
+    <h2 data-k="q1_t"></h2>
+    <div class="chips" id="c-q1"></div>
+    <button class="back" onclick="go(0)" data-k="back"></button>
+  </div>
+
+  <div class="screen" id="s-q2">
+    <p class="qnum" data-k="q_of" data-n="2"></p>
+    <h2 data-k="q2_t"></h2>
+    <div class="chips" id="c-q2"></div>
+    <button class="back" onclick="go(1)" data-k="back"></button>
+  </div>
+
+  <div class="screen" id="s-q3">
+    <p class="qnum" data-k="q_of" data-n="3"></p>
+    <h2 data-k="q3_t"></h2>
+    <div class="chips" id="c-q3"></div>
+    <button class="back" onclick="go(2)" data-k="back"></button>
+  </div>
+
+  <div class="screen" id="s-q4">
+    <p class="qnum" data-k="q_of" data-n="4"></p>
+    <h2 data-k="q4_t"></h2>
+    <p class="hint" data-k="q4_hint"></p>
+    <div class="chips" id="c-q4"></div>
+    <button class="btn" id="q4-next" disabled onclick="go(5)" data-k="next"></button>
+    <br><button class="back" onclick="go(3)" data-k="back"></button>
+  </div>
+
+  <div class="screen" id="s-q5">
+    <p class="qnum" data-k="q_of" data-n="5"></p>
+    <h2 data-k="q5_t"></h2>
+    <div class="chips" id="c-q5"></div>
+    <button class="back" onclick="go(4)" data-k="back"></button>
+  </div>
+
+  <div class="screen" id="s-result">
+    <span class="badge" data-k="r_badge"></span>
+    <h2 id="r-title" style="margin-bottom:20px"></h2>
+    <div class="result-card">
+      <div class="result-label" data-k="r_why"></div>
+      <p id="r-why"></p>
+      <div class="meta-row">
+        <div class="meta"><div class="k" data-k="r_effect"></div><div class="v" id="r-effect"></div></div>
+        <div class="meta"><div class="k" data-k="r_complexity"></div><div class="v" id="r-complexity"></div></div>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-label" data-k="r_first"></div>
+      <p id="r-first" style="color:var(--navy);font-weight:500"></p>
+      <p id="r-exp" style="margin-top:10px"></p>
+    </div>
+    <div class="result-card" id="r-second-card" style="display:none">
+      <div class="result-label" data-k="r_second"></div>
+      <p id="r-second" style="color:var(--navy);font-weight:500"></p>
+    </div>
+    <div class="case-card">
+      <div class="result-label" data-k="r_case"></div>
+      <div class="role" id="r-case-role"></div>
+      <div class="line" id="r-case-line"></div>
+      <a href="/#cases" data-k="r_case_link"></a>
+    </div>
+    <div class="cta-row">
+      <a class="btn" href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer" data-k="r_cta"></a>
+      <button class="btn ghost" onclick="restart()" data-k="r_again"></button>
+    </div>
+    <p class="sub" style="margin:22px 0 0;font-size:14px" data-k="r_email_intro"></p>
+    <div class="email-row">
+      <input id="lead-email" type="email" data-k-ph="r_email_ph">
+      <button class="btn ghost" id="send-btn" onclick="sendResult()" data-k="r_email_btn"></button>
+    </div>
+    <p class="sent-ok" id="sent-ok" data-k="r_email_ok"></p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+const TR = {
+en:{
+  badge:'AI Opportunity Check',
+  w_title:'Where would AI actually\npay off in your business?',
+  w_sub:'Five quick questions, under three minutes, no forms to fill. You get the most likely AI opportunity for your business, its expected effect, and the first thing to check.',
+  w_btn:'Start →', w_note:'No email required to see your result.',
+  q_of:'Question {n} of 5', back:'← Back', next:'Continue →',
+  q1_t:'Your role', q2_t:'Your type of business', q3_t:'Team size',
+  q4_t:'Where is the most manual work today?', q4_hint:'Pick up to two.',
+  q5_t:'What have you tried with AI so far?',
+  q1:['Founder / CEO','COO / Operations','Sales / Marketing','HR','Finance','Other'],
+  q2:['Services / agency','E-commerce / retail','SaaS / tech','Community / education','Finance','Manufacturing / engineering'],
+  q3:['Just me','2-10 people','11-50 people','50+ people'],
+  q4:['Client communication and sales','Reports and data','Onboarding and support','Documents and company knowledge','Planning and coordination','Content and marketing'],
+  q5:['Nothing yet','ChatGPT personally','Tried tools, they did not stick','Some things already work'],
+  r_badge:'Your result', r_why:'Why this fits your business', r_effect:'Potential effect', r_complexity:'Implementation complexity',
+  r_first:'The first thing to check', r_second:'Also worth exploring', r_case:'A related Ontrí case',
+  r_case_link:'See the case →', r_cta:'Discuss it on an intro call', r_again:'Start over',
+  r_email_intro:'Want this result in your inbox, with a short note on where to start? Leave your email and Olya will send it over personally.',
+  r_email_ph:'you@company.com', r_email_btn:'Send', r_email_ok:'Thank you! It will be in your inbox shortly.',
+  cx:{low:'Low',lowmed:'Low to medium',med:'Medium',medhigh:'Medium to high'},
+  exp:{
+    0:'Good news: starting from zero is often easier, there are no half-working setups to untangle.',
+    1:'You already use ChatGPT personally, so the jump to a systematic setup is smaller than it looks.',
+    2:'Tools that did not stick usually fail on adoption, not technology. That is exactly what implementation support fixes.',
+    3:'Something already works for you, so the next system can plug into existing habits.'
+  }
+},
+ru:{
+  badge:'AI Opportunity Check',
+  w_title:'Где AI реально окупится\nв вашем бизнесе?',
+  w_sub:'Пять быстрых вопросов, меньше трёх минут, никаких анкет. Вы получите наиболее вероятную AI-возможность для вашего бизнеса, её ожидаемый эффект и первый шаг для проверки.',
+  w_btn:'Начать →', w_note:'Результат виден сразу, email не нужен.',
+  q_of:'Вопрос {n} из 5', back:'← Назад', next:'Дальше →',
+  q1_t:'Ваша роль', q2_t:'Тип бизнеса', q3_t:'Размер команды',
+  q4_t:'Где сегодня больше всего ручной работы?', q4_hint:'Выберите не больше двух.',
+  q5_t:'Что вы уже пробовали с AI?',
+  q1:['Фаундер / CEO','COO / операции','Продажи / маркетинг','HR','Финансы','Другое'],
+  q2:['Услуги / агентство','E-commerce / retail','SaaS / tech','Сообщество / образование','Финансы','Производство / инжиниринг'],
+  q3:['Только я','2-10 человек','11-50 человек','50+ человек'],
+  q4:['Переписка с клиентами и продажи','Отчёты и данные','Онбординг и поддержка','Документы и знания компании','Планирование и координация','Контент и маркетинг'],
+  q5:['Пока ничего','ChatGPT лично','Пробовали инструменты, не прижилось','Кое-что уже работает'],
+  r_badge:'Ваш результат', r_why:'Почему это подходит вашему бизнесу', r_effect:'Потенциальный эффект', r_complexity:'Сложность внедрения',
+  r_first:'Первый шаг для проверки', r_second:'Тоже стоит изучить', r_case:'Похожий кейс Ontrí',
+  r_case_link:'Посмотреть кейс →', r_cta:'Обсудить на вводном созвоне', r_again:'Пройти заново',
+  r_email_intro:'Хотите получить этот результат на почту с короткой заметкой, с чего начать? Оставьте email, и Оля пришлёт его лично.',
+  r_email_ph:'you@company.com', r_email_btn:'Отправить', r_email_ok:'Спасибо! Письмо скоро будет у вас.',
+  cx:{low:'Низкая',lowmed:'Низкая или средняя',med:'Средняя',medhigh:'Средняя или высокая'},
+  exp:{
+    0:'Хорошая новость: начинать с нуля часто проще, нет полурабочих настроек, которые надо распутывать.',
+    1:'Вы уже пользуетесь ChatGPT лично, значит шаг до системного решения меньше, чем кажется.',
+    2:'Инструменты, которые не прижились, обычно ломаются на внедрении, а не на технологии. Именно это чинит сопровождение.',
+    3:'Что-то у вас уже работает, значит следующую систему можно встроить в существующие привычки.'
+  }
+}
+};
+
+const OPS = {
+en:[
+  {t:'An AI assistant for client communication and follow-ups',
+   why:'{role} in {ind} usually sees this directly: replies wait, follow-ups slip, proposals take days. An assistant that drafts replies in your tone, chases follow-ups on schedule, and assembles proposals from your templates removes the bottleneck without hiring.',
+   eff:'4-8 hours a week for whoever owns the pipeline', cx:'lowmed', cxNote:'depends on how standardized your proposals and pricing are',
+   first:'Do your best replies and proposals live somewhere reusable (docs, CRM, templates), or only in sent mail?', caseId:0},
+  {t:'Automated reporting and reconciliation across your data sources',
+   why:'You likely assemble the same numbers from several systems by hand every week or month. An AI agent can pull the data, match records across sources, flag discrepancies, and deliver one formatted report on schedule.',
+   eff:'At least one working day per month, often more', cx:'med', cxNote:'depends on export access to your systems',
+   first:'Can each data source export (CSV, API, spreadsheet), or is part of the picture only in someone\'s head?', caseId:1},
+  {t:'AI-assisted onboarding and first-line support',
+   why:'Most onboarding and support questions repeat. An assistant built on your materials answers instantly, personalizes first steps for every new client or member, and leaves only the exceptions to your team.',
+   eff:'A large share of routine inquiries handled without a human', cx:'med', cxNote:'depends on how complete your materials are',
+   first:'Are your onboarding steps and frequent answers written down anywhere, even messily?', caseId:1},
+  {t:'A RAG assistant on your internal documents',
+   why:'The knowledge exists but lives in PDFs, wikis, and heads, so people ask each other instead of finding answers. A RAG assistant answers instantly and cites the exact source document, and only non-standard questions reach a human.',
+   eff:'Up to 20% of the week for whoever answers repeat questions', cx:'lowmed', cxNote:'depends on document quality more than volume',
+   first:'If a new hire asks about a current policy, is there one place where the up-to-date answer lives?', caseId:2},
+  {t:'A personal AI assistant for tasks, calendar, and follow-ups',
+   why:'When planning and coordination run through one person, that person becomes the bottleneck. An assistant that tracks tasks and commitments, manages the calendar, and chases follow-ups returns focus time every single day.',
+   eff:'1-2 hours a day for the person who coordinates', cx:'medhigh', cxNote:'integrations with calendar and messengers define the scope',
+   first:'Where do commitments live today: a calendar, a tracker, or someone\'s memory?', caseId:0},
+  {t:'AI content workflows in your own voice',
+   why:'Generic AI text is easy to spot and slow to fix. A tuned workflow with your tone of voice, your best examples, and a review step produces drafts you actually publish, several times faster.',
+   eff:'2-4 hours saved per content piece', cx:'low', cxNote:'your published material is the training set, setup is quick',
+   first:'Do you have ten or more published pieces you consider truly your voice?', caseId:3}
+],
+ru:[
+  {t:'AI-ассистент для клиентской переписки и фоллоу-апов',
+   why:'{role} в сфере «{ind}» обычно видит это напрямую: ответы ждут, фоллоу-апы теряются, предложения готовятся днями. Ассистент, который пишет черновики в вашем тоне, напоминает о фоллоу-апах по расписанию и собирает предложения из ваших шаблонов, убирает это узкое место без найма.',
+   eff:'4-8 часов в неделю для того, кто ведёт продажи', cx:'lowmed', cxNote:'зависит от того, насколько стандартизированы ваши предложения и цены',
+   first:'Ваши лучшие ответы и предложения лежат в переиспользуемом виде (документы, CRM, шаблоны) или только в отправленных письмах?', caseId:0},
+  {t:'Автоматическая отчётность и сверка данных между системами',
+   why:'Скорее всего, одни и те же цифры вы собираете руками из нескольких систем каждую неделю или месяц. AI-агент может забирать данные, сопоставлять записи, подсвечивать расхождения и присылать один готовый отчёт по расписанию.',
+   eff:'Минимум один рабочий день в месяц, часто больше', cx:'med', cxNote:'зависит от доступа к выгрузкам из ваших систем',
+   first:'Каждый источник умеет отдавать данные (CSV, API, таблица) или часть картины существует только в чьей-то голове?', caseId:1},
+  {t:'AI-онбординг и первая линия поддержки',
+   why:'Большинство вопросов на онбординге и в поддержке повторяются. Ассистент на ваших материалах отвечает мгновенно, персонализирует первые шаги для каждого нового клиента или участника, а команде оставляет только исключения.',
+   eff:'Заметная доля типовых обращений закрывается без человека', cx:'med', cxNote:'зависит от полноты ваших материалов',
+   first:'Шаги онбординга и частые ответы где-то записаны, пусть даже неаккуратно?', caseId:1},
+  {t:'RAG-ассистент на внутренних документах',
+   why:'Знания есть, но живут в PDF, вики и головах, поэтому люди спрашивают друг друга вместо того, чтобы находить ответы. RAG-ассистент отвечает мгновенно со ссылкой на исходный документ, а до человека доходят только нестандартные вопросы.',
+   eff:'До 20% недели того, кто отвечает на повторяющиеся вопросы', cx:'lowmed', cxNote:'качество документов важнее их количества',
+   first:'Если новый сотрудник спросит про действующее правило, есть ли одно место с актуальным ответом?', caseId:2},
+  {t:'Личный AI-ассистент: задачи, календарь, фоллоу-апы',
+   why:'Когда планирование и координация замкнуты на одном человеке, он и становится узким местом. Ассистент, который ведёт задачи и договорённости, управляет календарём и напоминает о фоллоу-апах, возвращает время для важной работы каждый день.',
+   eff:'1-2 часа в день для того, кто координирует', cx:'medhigh', cxNote:'объём определяют интеграции с календарём и мессенджерами',
+   first:'Где сегодня живут договорённости: календарь, трекер или чья-то память?', caseId:0},
+  {t:'AI-процессы для контента в вашем голосе',
+   why:'Типовой AI-текст видно сразу, а править его долго. Настроенный процесс с вашим tone of voice, вашими лучшими примерами и шагом ревью выдаёт черновики, которые вы реально публикуете, в несколько раз быстрее.',
+   eff:'2-4 часа на единицу контента', cx:'low', cxNote:'ваши публикации и есть обучающий материал, настройка быстрая',
+   first:'Есть ли у вас десять и больше публикаций, которые вы считаете по-настоящему своим голосом?', caseId:3}
+],
+};
+
+const CASES = {
+en:[
+  {role:'CEO, international neobank', line:'A custom multi-agent AI assistant. ROI in 1 month.'},
+  {role:'Founder, paid community', line:'Onboarding and payment reconciliation on AI agents. 15+ hours a month freed.'},
+  {role:'HR Director, international company', line:'A RAG assistant on internal documentation. 20% of her week freed.'},
+  {role:'Product executive, industrial tech', line:'A personal AI news agent and tuned AI workflows.'}
+],
+ru:[
+  {role:'CEO международного необанка', line:'Кастомный мультиагентный AI-ассистент. ROI за 1 месяц.'},
+  {role:'Фаундер платного комьюнити', line:'Онбординг и сверка платежей на AI-агентах. Минимум 15 часов в месяц.'},
+  {role:'HR-директор международной компании', line:'RAG-ассистент на внутренней документации. 20% недели освобождено.'},
+  {role:'Топ-менеджер, промышленные технологии', line:'Личный AI-новостной агент и настроенные AI-процессы.'}
+]
+};
+
+const roleClause = {
+en:['A founder','Someone running operations','A sales or marketing lead','An HR lead','A finance lead','A business leader'],
+ru:['Фаундер','Операционный руководитель','Руководитель продаж или маркетинга','HR-руководитель','Финансовый руководитель','Руководитель']
+};
+
+let lang = localStorage.getItem('oc_lang') || 'en';
+let ans = {q1:null,q2:null,q3:null,q4:[],q5:null};
+const screens = ['s-welcome','s-q1','s-q2','s-q3','s-q4','s-q5','s-result'];
+
+function t(k){ return TR[lang][k]; }
+
+function setLang(l){
+  lang = l; localStorage.setItem('oc_lang', l);
+  document.documentElement.lang = l;
+  document.getElementById('lb-en').classList.toggle('active', l==='en');
+  document.getElementById('lb-ru').classList.toggle('active', l==='ru');
+  document.querySelectorAll('[data-k]').forEach(el=>{
+    let v = t(el.dataset.k);
+    if(el.dataset.n) v = v.replace('{n}', el.dataset.n);
+    if(el.dataset.k==='w_title'){ el.innerHTML=''; v.split('\n').forEach((line,i)=>{ if(i)el.appendChild(document.createElement('br')); el.appendChild(document.createTextNode(line)); }); }
+    else el.textContent = v;
+  });
+  document.querySelectorAll('[data-k-ph]').forEach(el=>{ el.placeholder = t(el.dataset.kPh); });
+  buildChips();
+  if(document.getElementById('s-result').classList.contains('active')) renderResult();
+}
+
+function buildChips(){
+  [['c-q1','q1',1],['c-q2','q2',1],['c-q3','q3',1],['c-q5','q5',1]].forEach(([cid,key])=>{
+    const c = document.getElementById(cid); c.innerHTML='';
+    TR[lang][key].forEach((label,i)=>{
+      const b = document.createElement('button');
+      b.className='chip'+(ans[key]===i?' sel':''); b.textContent=label;
+      b.onclick=()=>{ ans[key]=i; c.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
+        setTimeout(()=>{ const step = parseInt(key[1]); go(step===5?6:step+1); if(step===5) renderResult(); }, 220); };
+      c.appendChild(b);
+    });
+  });
+  const c4 = document.getElementById('c-q4'); c4.innerHTML='';
+  TR[lang].q4.forEach((label,i)=>{
+    const b = document.createElement('button');
+    b.className='chip'+(ans.q4.includes(i)?' sel':''); b.textContent=label;
+    b.onclick=()=>{
+      if(ans.q4.includes(i)) ans.q4 = ans.q4.filter(x=>x!==i);
+      else if(ans.q4.length<2) ans.q4.push(i);
+      b.classList.toggle('sel', ans.q4.includes(i));
+      document.getElementById('q4-next').disabled = ans.q4.length===0;
+    };
+    c4.appendChild(b);
+  });
+  document.getElementById('q4-next').disabled = ans.q4.length===0;
+}
+
+function go(n){
+  screens.forEach((id,i)=>document.getElementById(id).classList.toggle('active', i===n));
+  document.getElementById('bar').style.width = (n===0?0:n===6?100:(n/6*100))+'%';
+  window.scrollTo(0,0);
+}
+
+function renderResult(){
+  const primary = OPS[lang][ans.q4[0]];
+  const rc = roleClause[lang][ans.q1 ?? 5];
+  const ind = TR[lang].q2[ans.q2 ?? 0].toLowerCase();
+  document.getElementById('r-title').textContent = primary.t;
+  document.getElementById('r-why').textContent = primary.why.replace('{role}', rc).replace('{ind}', ind);
+  document.getElementById('r-effect').textContent = primary.eff;
+  document.getElementById('r-complexity').textContent = TR[lang].cx[primary.cx] + ' · ' + primary.cxNote;
+  document.getElementById('r-first').textContent = primary.first;
+  document.getElementById('r-exp').textContent = TR[lang].exp[ans.q5 ?? 0];
+  const second = ans.q4[1] !== undefined ? OPS[lang][ans.q4[1]] : null;
+  document.getElementById('r-second-card').style.display = second ? 'block' : 'none';
+  if(second) document.getElementById('r-second').textContent = second.t;
+  const cs = CASES[lang][primary.caseId];
+  document.getElementById('r-case-role').textContent = cs.role;
+  document.getElementById('r-case-line').textContent = cs.line;
+}
+
+function restart(){
+  ans = {q1:null,q2:null,q3:null,q4:[],q5:null};
+  buildChips(); go(0);
+  document.getElementById('sent-ok').style.display='none';
+  document.getElementById('lead-email').value='';
+}
+
+function sendResult(){
+  const email = document.getElementById('lead-email').value.trim();
+  if(!/^\S+@\S+\.\S+$/.test(email)) { document.getElementById('lead-email').focus(); return; }
+  const btn = document.getElementById('send-btn'); btn.disabled = true;
+  const primary = OPS[lang][ans.q4[0]];
+  const params = {
+    lang: lang,
+    name: 'AI Opportunity Check lead: ' + email,
+    role: TR[lang].q1[ans.q1 ?? 5],
+    company: TR[lang].q2[ans.q2 ?? 0] + ' · ' + TR[lang].q3[ans.q3 ?? 0],
+    phone: email,
+    goal: primary.t,
+    problems: ans.q4.map(i=>TR[lang].q4[i]).join(', ') + ' | AI: ' + TR[lang].q5[ans.q5 ?? 0],
+    routine_total: '-', routine_ai: '-', routine_goal: '-',
+    tasks_html: '<b>' + primary.t + '</b><br>' + document.getElementById('r-why').textContent +
+      '<br><br><b>Effect:</b> ' + primary.eff + '<br><b>First check:</b> ' + primary.first
+  };
+  emailjs.send('service_pfl7vyt','template_xo7wv5f',params,'MqADpxGb2aRhHIjN2')
+    .then(()=>{ document.getElementById('sent-ok').style.display='block'; })
+    .catch(()=>{ btn.disabled = false; alert(lang==='ru' ? 'Не получилось отправить. Попробуйте ещё раз.' : 'Could not send. Please try again.'); });
+}
+
+setLang(lang);
+go(0);
+</script>
+</body>
+</html>
