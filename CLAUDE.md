@@ -113,7 +113,12 @@ cp ~/Desktop/Ontrí\ Advisory/Диагностическая\ карта/process
 git add public/audit/index.html && git commit -m "Update audit form" && git push
 ```
 
-## Текущий статус (обновлено 02.08.2026)
+## Текущий статус (обновлено 02.08.2026, вечер)
+
+- **AI Opportunity Check** живёт на /check/ (public/check/index.html, standalone, EN/RU): 5 вопросов чипсами → мгновенный результат (библиотека возможностей по матрице роль×боль, кейс под боль, Calendly CTA, опциональный email). Письма идут через EmailJS шаблон **template_ilm44bu** (формат «AI Opportunity Check», result_body в тройных скобках), fallback на аудитный template_xo7wv5f. Тихая аналитика: письмо на каждое прохождение. Заявки приходят на **hello.ontri@gmail.com**. Лимит EmailJS: 200 писем/месяц.
+- **Воронка:** hero-кнопка «Check where AI pays off · 3 min» → /check/; мостик после кейсов и строка в контактах тоже ведут на чек; кейсы в навбаре. /audit/ переделан в post-booking preparation worksheet (по умолчанию EN), из sitemap удалён; /check/ в sitemap.
+- **Кейсы (финальная структура):** 4 featured-карточки 2×2 (CEO Executive Operations System, RAG Knowledge Product & Operations Automation с двумя фазами, AI Meeting-to-Action Workflow «Ontrí internal», Interactive Engineering Portfolio Map со скриншотами) + «What else we've built» (3 компактные карточки). Британский английский по всему EN-тексту.
+
 
 - Обновления 21.07-02.08.2026: секция «Как мы работаем» переписана под разговорный процесс (без анкет); аудит-форма по умолчанию открывается на английском; в кейс 03 добавлены два скриншота 3D-карты (src/assets/case-map-*.jpg, брендинг клиента обрезан); услуги переписаны (Audit → Solution Design → Custom AI Systems → Implementation); заголовок кейсов «Selected problems we've turned into working systems»; hero-подзаголовок «For founders and business leaders who see AI potential...» (SMB-позиционирование осталось в title/meta/JSON-LD)
 
