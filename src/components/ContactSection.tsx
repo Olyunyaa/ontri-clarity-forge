@@ -32,9 +32,9 @@ const ContactSection = () => {
               </a>
             </div>
             <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-primary-foreground/60 text-sm font-sans">
-              <span>{t("contact.casesText")}</span>
-              <a href="#cases" className="text-accent-dark hover:underline">
-                {t("contact.casesLink")}
+              <span>{t("contact.checkText")}</span>
+              <a href="/check/" className="text-accent-dark hover:underline">
+                {t("contact.checkLink")}
               </a>
             </div>
           </ScrollReveal>

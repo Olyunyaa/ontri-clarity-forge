@@ -20,7 +20,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
     "hero.subtitle": "For founders and business leaders who see AI potential but need someone to identify the right opportunity and turn it into a working system. We find where AI pays off in your business and stay until it works.",
     "hero.cta": "Schedule an Intro Meeting",
-    "hero.ctaCases": "See Selected Projects",
+    "hero.ctaCheck": "Check where AI pays off · 3 min",
 
     // About
     "about.label": "About Us",
@@ -79,7 +79,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "cases.2.p1": "We structured and categorised the content archive and built a RAG knowledge product that retrieves relevant source posts to generate personalised answers and participant roadmaps, delivered through a website and mini-app.",
     "cases.2.p2label": "Phase two · Operations automation",
     "cases.2.p2": "We then redesigned the operational layer around AI agents and automated systems: personalised onboarding, automatic payment reconciliation across multiple data sources, structured member records, and clearer visibility of retention.",
-    "cases.2.result": "The community gained both a usable knowledge product and more scalable operations. At least 15 hours a month freed up for sales and growth. Payback in under two months",
+    "cases.2.result": "The community gained both a usable knowledge product and more scalable operations. At least 15 hours a month freed up for sales and growth. ROI in under 2 months",
     "cases.3.name": "AI Meeting-to-Action Workflow",
     "cases.3.role": "Ontrí Advisory, internal workflow",
     "cases.3.pain": "From client conversation to next action",
@@ -97,14 +97,16 @@ export const translations: Record<Language, Record<string, string>> = {
     "more.2.desc": "Custom AI agents built around recurring business tasks, reducing manual monitoring, information processing and operational administration.",
     "more.3.title": "AI Research & Data Visualisation Workflows",
     "more.3.desc": "Workflows that turn scattered sources and raw data into structured research, visual analysis and decision-ready outputs.",
+    "cases.checkText": "Wondering what this could look like in your business?",
+    "cases.checkLink": "Take the 3-minute AI Opportunity Check",
 
     // Contact
     "contact.label": "Contact Us",
     "contact.title": "Let's discuss how Ontrí Advisory can accelerate your intelligent transformation.",
     "contact.cta": "Schedule an Intro Meeting",
     "contact.email": "Prefer email?",
-    "contact.casesText": "Want to see what we build first?",
-    "contact.casesLink": "See selected projects",
+    "contact.checkText": "Not ready for a call yet?",
+    "contact.checkLink": "Start with the 3-minute AI Opportunity Check",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",
@@ -136,7 +138,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
     "hero.subtitle": "Voor oprichters en bedrijfsleiders die de potentie van AI zien, maar iemand nodig hebben die de juiste kans identificeert en omzet in een werkend systeem. We vinden waar AI loont in uw bedrijf en blijven betrokken tot het werkt.",
     "hero.cta": "Plan een kennismaking",
-    "hero.ctaCases": "Bekijk geselecteerde projecten",
+    "hero.ctaCheck": "Check waar AI loont · 3 min",
 
     // About
     "about.label": "Over ons",
@@ -195,7 +197,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "cases.2.p1": "We structureerden en categoriseerden het contentarchief en bouwden een RAG-kennisproduct dat relevante bronposts ophaalt om persoonlijke antwoorden en deelnemersroadmaps te genereren, geleverd via een website en mini-app.",
     "cases.2.p2label": "Fase 2 · Operationele automatisering",
     "cases.2.p2": "Daarna herbouwden we de operationele laag op AI-agents en geautomatiseerde systemen: persoonlijke onboarding, automatische betalingsreconciliatie over meerdere databronnen, gestructureerde ledenadministratie en beter zicht op retentie.",
-    "cases.2.result": "De community kreeg een bruikbaar kennisproduct én een schaalbaardere operatie. Minstens 15 uur per maand vrijgemaakt voor sales en groei. Terugverdiend in minder dan twee maanden",
+    "cases.2.result": "De community kreeg een bruikbaar kennisproduct én een schaalbaardere operatie. Minstens 15 uur per maand vrijgemaakt voor sales en groei. ROI in minder dan 2 maanden",
     "cases.3.name": "AI Meeting-to-Action Workflow",
     "cases.3.role": "Ontrí Advisory, interne workflow",
     "cases.3.pain": "Van klantgesprek naar volgende actie",
@@ -213,14 +215,16 @@ export const translations: Record<Language, Record<string, string>> = {
     "more.2.desc": "Custom AI-agents rond terugkerende taken: minder handmatige monitoring, informatieverwerking en operationele administratie.",
     "more.3.title": "AI Research & Data Visualisation Workflows",
     "more.3.desc": "Workflows die verspreide bronnen en ruwe data omzetten in gestructureerde research, visuele analyse en beslisklare output.",
+    "cases.checkText": "Benieuwd hoe dit er bij u uit zou zien?",
+    "cases.checkLink": "Doe de AI Opportunity Check van 3 minuten",
 
     // Contact
     "contact.label": "Neem contact op",
     "contact.title": "Laten we samen bekijken hoe Ontrí Advisory uw organisatie kan helpen met AI.",
     "contact.cta": "Plan een kennismaking",
     "contact.email": "Liever mailen?",
-    "contact.casesText": "Eerst zien wat we bouwen?",
-    "contact.casesLink": "Bekijk geselecteerde projecten",
+    "contact.checkText": "Nog niet klaar voor een gesprek?",
+    "contact.checkLink": "Begin met de AI Opportunity Check van 3 minuten",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",
@@ -252,7 +256,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
     "hero.subtitle": "Для фаундеров и руководителей бизнеса, которые видят потенциал AI, но им нужен тот, кто определит правильную возможность и превратит её в работающую систему. Мы находим, где AI окупится именно в вашем бизнесе, и остаёмся до результата.",
     "hero.cta": "Записаться на встречу",
-    "hero.ctaCases": "Посмотреть кейсы",
+    "hero.ctaCheck": "Где AI окупится у вас · 3 минуты",
 
     // About
     "about.label": "О нас",
@@ -311,7 +315,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "cases.2.p1": "Мы структурировали и категоризировали архив контента и построили RAG-продукт знаний: он находит нужные исходные посты и генерирует персональные ответы и роадмапы участников. Работает как сайт и мини-приложение.",
     "cases.2.p2label": "Фаза 2 · Автоматизация операций",
     "cases.2.p2": "Затем мы перестроили операционный слой на AI-агентах и автоматизированных системах: персональный онбординг, автоматическая сверка платежей по нескольким источникам данных, структурированный учёт участников и понятная картина удержания.",
-    "cases.2.result": "Комьюнити получило и рабочий продукт знаний, и масштабируемую операционку. Минимум 15 часов в месяц освобождено для продаж и роста. Окупилось меньше чем за два месяца",
+    "cases.2.result": "Комьюнити получило и рабочий продукт знаний, и масштабируемую операционку. Минимум 15 часов в месяц освобождено для продаж и роста. ROI меньше чем за 2 месяца",
     "cases.3.name": "AI Meeting-to-Action Workflow",
     "cases.3.role": "Ontrí Advisory, внутренняя система",
     "cases.3.pain": "От разговора с клиентом к следующему действию",
@@ -329,14 +333,16 @@ export const translations: Record<Language, Record<string, string>> = {
     "more.2.desc": "Кастомные AI-агенты под повторяющиеся бизнес-задачи: меньше ручного мониторинга, обработки информации и операционного администрирования.",
     "more.3.title": "AI Research & Data Visualisation Workflows",
     "more.3.desc": "Процессы, которые превращают разрозненные источники и сырые данные в структурированный рисёрч, визуальный анализ и материалы для решений.",
+    "cases.checkText": "Хотите понять, как это выглядело бы у вас?",
+    "cases.checkLink": "Пройдите 3-минутный AI Opportunity Check",
 
     // Contact
     "contact.label": "Свяжитесь с нами",
     "contact.title": "Давайте обсудим, как Ontrí Advisory может помочь вашему бизнесу с AI.",
     "contact.cta": "Записаться на встречу",
     "contact.email": "Предпочитаете email?",
-    "contact.casesText": "Хотите сначала посмотреть, что мы строим?",
-    "contact.casesLink": "Посмотреть кейсы",
+    "contact.checkText": "Пока не готовы к созвону?",
+    "contact.checkLink": "Начните с 3-минутного AI Opportunity Check",
 
     // Footer
     "footer.copyright": "© 2026 Ontrí Advisory",

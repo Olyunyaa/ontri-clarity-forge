@@ -109,6 +109,15 @@ const CasesSection = () => {
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal>
+            <div className="mt-12 flex flex-wrap items-center gap-2 text-sm font-sans text-muted-foreground">
+              <span>{t("cases.checkText")}</span>
+              <a href="/check/" className="text-accent-dark font-medium hover:underline">
+                {t("cases.checkLink")}
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
