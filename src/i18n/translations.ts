@@ -66,7 +66,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Cases
     "cases.label": "Cases",
-    "cases.title": "What founders come to us with",
+    "cases.title": "Selected problems we've turned into working systems",
     "cases.1.role": "CEO, international neobank",
     "cases.1.pain": "Every new assistant took a year to learn how he works, and rarely stayed much longer.",
     "cases.1.desc": "We built him a custom multi-agent AI assistant, tailored to how he already communicates: texts and voice messages, in two languages. It runs his calendar, tracks his own and his team's tasks, sets reminders and follow-ups, turns screenshots into flights and restaurant bookings, and makes calls to book a table.",
@@ -172,7 +172,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Cases
     "cases.label": "Cases",
-    "cases.title": "Waar oprichters mee komen",
+    "cases.title": "Problemen die we hebben omgezet in werkende systemen",
     "cases.1.role": "CEO, internationale neobank",
     "cases.1.pain": "Elke nieuwe assistent had een jaar nodig om zijn manier van werken te leren, en bleef zelden veel langer.",
     "cases.1.desc": "We bouwden een custom multi-agent AI-assistent, afgestemd op hoe hij al communiceert: tekst- en spraakberichten, in twee talen. De assistent beheert zijn agenda, volgt zijn taken en die van zijn team, zet reminders en follow-ups, zet screenshots om in vluchten en restaurantreserveringen en belt zelf om een tafel te boeken.",
@@ -278,7 +278,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Cases
     "cases.label": "Кейсы",
-    "cases.title": "С чем к нам приходят",
+    "cases.title": "Задачи, которые мы превратили в работающие системы",
     "cases.1.role": "CEO международного необанка",
     "cases.1.pain": "Каждый новый ассистент год учился работать с ним, а потом уходил.",
     "cases.1.desc": "Мы собрали ему кастомного мультиагентного AI-ассистента, настроенного под то, как он привык общаться: тексты и голосовые, на двух языках. Ассистент ведёт календарь, отслеживает его задачи и задачи команды, ставит напоминания и фоллоу-апы, превращает скриншоты в перелёты и брони ресторанов и сам звонит, чтобы забронировать столик.",
