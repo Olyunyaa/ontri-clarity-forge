@@ -125,20 +125,50 @@ h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,4
     <button class="back" onclick="go(4)" data-k="back"></button>
   </div>
 
+  <div class="screen" id="s-a1">
+    <p class="qnum" data-k="q_of" data-n="6"></p>
+    <h2 id="a1-title"></h2>
+    <div class="chips" id="c-a1"></div>
+    <button class="back" onclick="go(5)" data-k="back"></button>
+  </div>
+
+  <div class="screen" id="s-a2">
+    <p class="qnum" data-k="q_of" data-n="7"></p>
+    <h2 id="a2-title"></h2>
+    <div class="chips" id="c-a2"></div>
+    <button class="back" onclick="go(6)" data-k="back"></button>
+  </div>
+
+  <div class="screen" id="s-a3">
+    <p class="qnum" data-k="q_of" data-n="8"></p>
+    <h2 id="a3-title"></h2>
+    <div class="chips" id="c-a3"></div>
+    <button class="back" onclick="go(7)" data-k="back"></button>
+  </div>
+
   <div class="screen" id="s-result">
     <span class="badge" data-k="r_badge"></span>
     <h2 id="r-title" style="margin-bottom:20px"></h2>
     <div class="result-card">
       <div class="result-label" data-k="r_why"></div>
       <p id="r-why"></p>
+    </div>
+    <div class="result-card">
+      <div class="result-label" data-k="r_pilot"></div>
+      <p id="r-pilot"></p>
       <div class="meta-row">
-        <div class="meta"><div class="k" data-k="r_effect"></div><div class="v" id="r-effect"></div></div>
-        <div class="meta"><div class="k" data-k="r_complexity"></div><div class="v" id="r-complexity"></div></div>
+        <div class="meta"><div class="k" data-k="r_value"></div><div class="v" id="r-value" style="font-weight:400"></div></div>
       </div>
     </div>
     <div class="result-card">
-      <div class="result-label" data-k="r_first"></div>
-      <p id="r-first" style="color:var(--navy);font-weight:500"></p>
+      <div class="result-label" data-k="r_needs"></div>
+      <p id="r-needs" style="margin-bottom:14px"></p>
+      <div class="result-label" data-k="r_notyet"></div>
+      <p id="r-notyet"></p>
+    </div>
+    <div class="result-card">
+      <div class="result-label" data-k="r_validate"></div>
+      <p id="r-validate" style="color:var(--navy);font-weight:500"></p>
       <p id="r-exp" style="margin-top:10px"></p>
     </div>
     <div class="result-card" id="r-second-card" style="display:none">
@@ -170,9 +200,9 @@ const TR = {
 en:{
   badge:'AI Opportunity Check',
   w_title:'Where would AI actually\npay off in your business?',
-  w_sub:'Five quick questions, under three minutes, no forms to fill. You get the most likely AI opportunity for your business, its expected effect, and the first thing to check.',
+  w_sub:'Eight quick questions, about four minutes, almost everything answered with a tap. You get a diagnosis of your likely bottleneck, the first AI pilot worth running, its indicative value on your own numbers, and what to check before investing anything.',
   w_btn:'Start →', w_note:'No email required to see your result.',
-  q_of:'Question {n} of 5', back:'← Back', next:'Continue →',
+  q_of:'Question {n} of 8', back:'← Back', next:'Continue →',
   q1_t:'Your role', q2_t:'Your type of business', q3_t:'Team size',
   q4_t:'Where is the most manual work today?', q4_hint:'Pick up to two.',
   q5_t:'What have you tried with AI so far?',
@@ -183,8 +213,9 @@ en:{
   q3:['Just me','2-10 people','11-50 people','50+ people'],
   q4:['Client communication and sales','Reports and data','Onboarding and support','Documents and company knowledge','Planning and coordination','Content and marketing'],
   q5:['Nothing yet','ChatGPT personally','Tried tools, they did not stick','Some things already work'],
-  r_badge:'Your result', r_why:'Why this fits your business', r_effect:'Potential effect', r_complexity:'Implementation complexity',
-  r_first:'The first thing to check', r_second:'Also worth exploring', r_case:'A related Ontrí case',
+  r_badge:'Your result', r_why:'Why we identified it', r_pilot:'The first AI intervention to pilot', r_value:'Indicative value, on your numbers',
+  r_needs:'What needs to be true for it to work', r_notyet:'What we would not automate yet',
+  r_validate:'Next validation step', r_second:'Also worth exploring', r_case:'A related Ontrí case',
   r_case_link:'See the case →', r_cta:'Discuss it on an intro call', r_again:'Start over',
   r_email_intro:'Want this result in your inbox, with a short note on where to start? Leave your email and Olya will send it over personally.',
   r_email_ph:'you@company.com', r_email_btn:'Send', r_email_ok:'Thank you! It will be in your inbox shortly.',
@@ -199,9 +230,9 @@ en:{
 ru:{
   badge:'AI Opportunity Check',
   w_title:'Где AI реально окупится\nв вашем бизнесе?',
-  w_sub:'Пять быстрых вопросов, меньше трёх минут, никаких анкет. Вы получите наиболее вероятную AI-возможность для вашего бизнеса, её ожидаемый эффект и первый шаг для проверки.',
+  w_sub:'Восемь быстрых вопросов, около четырёх минут, почти всё выбирается кнопками. Вы получите диагноз вероятного узкого места, первый AI-пилот, который стоит запустить, его ориентировочную ценность на ваших собственных цифрах и что проверить до любых вложений.',
   w_btn:'Начать →', w_note:'Результат виден сразу, email не нужен.',
-  q_of:'Вопрос {n} из 5', back:'← Назад', next:'Дальше →',
+  q_of:'Вопрос {n} из 8', back:'← Назад', next:'Дальше →',
   q1_t:'Ваша роль', q2_t:'Тип бизнеса', q3_t:'Размер команды',
   q4_t:'Где сегодня больше всего ручной работы?', q4_hint:'Выберите не больше двух.',
   q5_t:'Что вы уже пробовали с AI?',
@@ -212,8 +243,9 @@ ru:{
   q3:['Только я','2-10 человек','11-50 человек','50+ человек'],
   q4:['Переписка с клиентами и продажи','Отчёты и данные','Онбординг и поддержка','Документы и знания компании','Планирование и координация','Контент и маркетинг'],
   q5:['Пока ничего','ChatGPT лично','Пробовали инструменты, не прижилось','Кое-что уже работает'],
-  r_badge:'Ваш результат', r_why:'Почему это подходит вашему бизнесу', r_effect:'Потенциальный эффект', r_complexity:'Сложность внедрения',
-  r_first:'Первый шаг для проверки', r_second:'Тоже стоит изучить', r_case:'Похожий кейс Ontrí',
+  r_badge:'Ваш результат', r_why:'Почему мы так решили', r_pilot:'Первый AI-пилот', r_value:'Ориентировочная ценность на ваших цифрах',
+  r_needs:'Что должно быть правдой, чтобы это сработало', r_notyet:'Что мы пока не стали бы автоматизировать',
+  r_validate:'Следующий шаг проверки', r_second:'Тоже стоит изучить', r_case:'Похожий кейс Ontrí',
   r_case_link:'Посмотреть кейс →', r_cta:'Обсудить на вводном созвоне', r_again:'Пройти заново',
   r_email_intro:'Хотите получить этот результат на почту с короткой заметкой, с чего начать? Оставьте email, и Оля пришлёт его лично.',
   r_email_ph:'you@company.com', r_email_btn:'Отправить', r_email_ok:'Спасибо! Письмо скоро будет у вас.',
@@ -299,9 +331,205 @@ en:['A founder','Someone running operations','A sales or marketing lead','An HR 
 ru:['Фаундер','Операционный руководитель','Руководитель продаж или маркетинга','HR-руководитель','Финансовый руководитель','Руководитель']
 };
 
+const ADAPT = {
+en:[
+  {q:[
+    {t:'How many client or sales conversations does your team handle in a typical week?',o:['Under 10','10-30','30-100','100+']},
+    {t:'What still happens manually after a conversation?',o:['Notes and CRM updates','Follow-up emails','Proposals and quotes','Honestly, all of it']},
+    {t:'Where are commitments, follow-ups and client context recorded?',o:['In a CRM','In spreadsheets and docs','In mailboxes and chats','Mostly in people\'s heads']}
+  ]},
+  {q:[
+    {t:'How often is the report produced?',o:['Daily','Weekly','Monthly','Quarterly']},
+    {t:'How many systems or files feed into it?',o:['1-2','3-4','5 or more','Hard to say']},
+    {t:'Roughly how many hours go into collecting, checking and formatting it each time?',o:['Under 2','2-8','8-16','16+']}
+  ]},
+  {q:[
+    {t:'How many new clients or members arrive in a typical month?',o:['Under 10','10-50','50-200','200+']},
+    {t:'How much of onboarding is the same steps every time?',o:['Almost all of it','Most of it','About half','Only a small part']},
+    {t:'Where do the answers to frequent questions live?',o:['Written down and current','Written but outdated','Scattered across places','In people\'s heads']}
+  ]},
+  {q:[
+    {t:'Where does the relevant knowledge currently live?',o:['One organised place','Several systems','Docs, chats and email','Mostly in people\'s heads']},
+    {t:'How often do people ask questions that were already answered?',o:['Daily','Weekly','From time to time','Rarely']},
+    {t:'What happens when the right information cannot be found?',o:['Work stalls','People interrupt colleagues','Decisions are made without it','Work is redone from scratch']}
+  ]},
+  {q:[
+    {t:'How many meetings and commitments does a typical week hold?',o:['Under 10','10-25','25-50','50+']},
+    {t:'What slips most often?',o:['Follow-ups','Deadlines','Preparing for meetings','Nothing visible, but it costs evenings']},
+    {t:'Where do tasks and commitments live?',o:['One tracker','Several tools','Calendar and mailbox','Memory']}
+  ]},
+  {q:[
+    {t:'How much content ships in a typical month?',o:['1-4 pieces','5-15 pieces','15-50 pieces','50+ pieces']},
+    {t:'What takes the most time?',o:['Research before writing','The first draft','Editing to sound like you','Distribution and repurposing']},
+    {t:'Is there a defined tone of voice with examples to learn from?',o:['Yes, documented','Yes, in published work','Partly','Not yet']}
+  ]}
+],
+ru:[
+  {q:[
+    {t:'Сколько разговоров с клиентами и по продажам у команды в типичную неделю?',o:['До 10','10-30','30-100','100+']},
+    {t:'Что после разговора всё ещё делается вручную?',o:['Заметки и обновление CRM','Фоллоу-ап письма','Предложения и сметы','Честно говоря, всё']},
+    {t:'Где живут договорённости, фоллоу-апы и контекст клиента?',o:['В CRM','В таблицах и документах','В почте и чатах','В основном в головах']}
+  ]},
+  {q:[
+    {t:'Как часто готовится отчёт?',o:['Ежедневно','Еженедельно','Ежемесячно','Ежеквартально']},
+    {t:'Сколько систем или файлов его наполняют?',o:['1-2','3-4','5 и больше','Сложно сказать']},
+    {t:'Сколько примерно часов уходит на сбор, проверку и оформление за цикл?',o:['До 2','2-8','8-16','16+']}
+  ]},
+  {q:[
+    {t:'Сколько новых клиентов или участников приходит в типичный месяц?',o:['До 10','10-50','50-200','200+']},
+    {t:'Какая часть онбординга повторяется каждый раз?',o:['Почти весь','Большая часть','Около половины','Небольшая часть']},
+    {t:'Где живут ответы на частые вопросы?',o:['Записаны и актуальны','Записаны, но устарели','Разбросаны по местам','В головах']}
+  ]},
+  {q:[
+    {t:'Где сейчас живут нужные знания?',o:['В одном организованном месте','В нескольких системах','В документах, чатах и почте','В основном в головах']},
+    {t:'Как часто задают вопросы, на которые уже отвечали?',o:['Каждый день','Каждую неделю','Время от времени','Редко']},
+    {t:'Что происходит, когда нужную информацию не найти?',o:['Работа встаёт','Отвлекают коллег','Решают без неё','Делают заново']}
+  ]},
+  {q:[
+    {t:'Сколько встреч и договорённостей держит типичная неделя?',o:['До 10','10-25','25-50','50+']},
+    {t:'Что срывается чаще всего?',o:['Фоллоу-апы','Дедлайны','Подготовка к встречам','Ничего заметного, но ценой вечеров']},
+    {t:'Где живут задачи и договорённости?',o:['В одном трекере','В нескольких инструментах','В календаре и почте','В памяти']}
+  ]},
+  {q:[
+    {t:'Сколько контента выходит в типичный месяц?',o:['1-4 единицы','5-15 единиц','15-50 единиц','50+']},
+    {t:'Что съедает больше всего времени?',o:['Рисёрч перед написанием','Первый черновик','Редактура под свой голос','Дистрибуция и переупаковка']},
+    {t:'Есть ли зафиксированный tone of voice и примеры?',o:['Да, задокументирован','Да, в публикациях','Частично','Пока нет']}
+  ]}
+]
+};
+
+const RESGEN = {
+en:[
+  (a)=>{ const conv=[7,20,60,120][a[0]], after=['notes and CRM updates','follow-up emails','proposals and quotes','practically all follow-up work'][a[1]],
+    ctx=['Your CRM gives a pilot a solid foundation.','Spreadsheets and docs will do as a start, but they fragment client context.','With context living in mailboxes and chats, every handover loses information.','With context living in people\'s heads, every absence costs you client knowledge.'][a[2]];
+    return {
+    headline:'The bottleneck is the manual work after each conversation, not the conversations themselves',
+    why:`With around ${conv} client conversations in a typical week and ${after} still done by hand, the after-work grows with every new client while the day does not. ${ctx}`,
+    pilot:`A conversation-to-action pilot: call notes or transcripts go in, and drafted ${a[1]===3?'follow-ups, CRM updates and tracked commitments':after} come out for human review. Only that slice first, not the whole sales workflow.`,
+    value:`Even 15 minutes of after-work per conversation is about ${Math.max(2,Math.round(conv*0.25))} hours a week on your volume. A pilot typically takes over half of that within weeks.`,
+    needs:'Conversations need to be recorded or noted somewhere consistent, and your best replies and proposals need a few good examples to learn from.',
+    notYet:'We would not automate the actual sending of messages or any pricing decisions. Drafts stay drafts until a human approves them.',
+    validate:'Check what share of last week\'s conversations have their commitments written down anywhere at all. That gap is the pilot\'s exact scope.'};},
+  (a)=>{ const freq=['daily','weekly','monthly','quarterly'][a[0]], cyc=[220,52,12,4][a[0]], hrs=[1.5,5,12,20][a[2]],
+    sys=['1-2','3-4','5 or more','an unclear number of'][a[1]], annual=Math.round(cyc*hrs);
+    return {
+    headline:'The bottleneck is reconciliation between systems, not the report itself',
+    why:`A ${freq} report fed by ${sys} sources and taking ${ADAPT.en[1].q[2].o[a[2]].toLowerCase()} hours per cycle means the real work is collecting and cross-checking data, not drawing conclusions.${a[1]===3?' The fact that the number of sources is hard to name is itself part of the diagnosis.':''}`,
+    pilot:'A pilot that covers only data collection and discrepancy detection: sources are pulled automatically and mismatches are flagged for a human. Full report generation comes later, once the numbers earn trust.',
+    value:`On your numbers, roughly ${annual} hours a year go into producing this report. Automated collection and discrepancy detection typically return half to two thirds of that.`,
+    needs:'Each source needs a reliable export (CSV, API or a live sheet), and one named person who decides which source wins when numbers disagree.',
+    notYet:'We would not automate the conclusions or the judgement about what the numbers mean. That stays with you.',
+    validate:`Check whether all ${a[1]===3?'your':sys} sources can export consistently today. If one cannot, that is the first blocker to remove, before any AI.`};},
+  (a)=>{ const join=[5,30,125,300][a[0]], rep=['almost all','most','about half','only a small part'][a[1]],
+    ctx=['Your materials are written and current, which makes this a fast build.','Your materials exist but need a refresh, which the build will force anyway.','With answers scattered across places, the pilot starts by collecting them once.','With answers living in people\'s heads, the first step is writing them down once, and then they scale forever.'][a[2]];
+    return {
+    headline:'The bottleneck is repeating the same onboarding by hand for every new arrival',
+    why:`With around ${join} new arrivals a month and ${rep} of onboarding being the same steps each time, most of the effort is repetition rather than judgement. ${ctx}`,
+    pilot:'An onboarding assistant pilot: every new arrival gets a personalised path and instant answers built from your materials, and your team handles only the exceptions.',
+    value:`If each arrival takes even one hour of manual guidance, that is about ${join} hours a month that mostly repeat themselves.`,
+    needs:'The core steps and frequent answers need to exist in writing, even messily. Repetition is the raw material here.',
+    notYet:'We would not automate the personal welcome or judgement calls on exceptions. People join people, not bots.',
+    validate:'List the ten questions every new arrival asks. If written answers exist, the pilot is straightforward; if not, that list is where to start.'};},
+  (a)=>{ const lives=['in one organised place','across several systems','across docs, chats and email','mostly in people\'s heads'][a[0]],
+    often=['daily','weekly','from time to time','rarely'][a[1]],
+    cost=['work stalling','people interrupting colleagues','decisions being made without the information','work being redone from scratch'][a[2]];
+    return {
+    headline:'The bottleneck is retrieval: the knowledge exists, but finding it does not scale',
+    why:`Knowledge living ${lives}, already-answered questions coming back ${often}, and ${cost} when nothing is found: that is a retrieval problem, not a documentation problem.`,
+    pilot:'A RAG assistant pilot on one high-traffic slice of your documentation: it answers instantly, cites the source document, and passes non-standard questions to a human.',
+    value:`${a[1]===0?'Daily repeated questions across a team':a[1]===1?'Weekly repeated questions across a team':'Even occasional repeated questions'} usually add up to hours every week, plus the hidden cost of ${cost}.`,
+    needs:'Documents need to be readable and reasonably current. Quality matters more than volume: one good folder beats three outdated wikis.',
+    notYet:'We would not automate answers on sensitive or judgement-heavy topics. Those route to a human by design.',
+    validate:'Pick the five most re-asked questions and check whether a current written answer exists for each. That tells you whether the problem is retrieval or documentation.'};},
+  (a)=>{ const meet=[7,17,37,60][a[0]], slips=['follow-ups','deadlines','meeting preparation','nothing visible, at the cost of evenings'][a[1]],
+    lives=['in one tracker','across several tools','in the calendar and mailbox','in memory'][a[2]];
+    return {
+    headline:'The bottleneck is that coordination lives with one person instead of a system',
+    why:`A week holding around ${meet} meetings and commitments, with ${slips} slipping most often and everything tracked ${lives}, makes the coordinator the single point of failure.`,
+    pilot:'A personal operations assistant pilot: it tracks tasks and commitments, watches deadlines, drafts follow-ups and prepares briefs before meetings. One person first, the team later.',
+    value:`Even 10 minutes of admin around each of ${meet} weekly commitments is about ${Math.max(1,Math.round(meet*10/60))} hours a week of pure coordination.`,
+    needs:'Commitments need one place to land, and the assistant needs access to the calendar and task list. Habits matter more than tools here.',
+    notYet:'We would not automate prioritisation or saying no. The assistant surfaces, you decide.',
+    validate:'Count how many of this week\'s commitments exist only in someone\'s head or inbox. That number is the risk you are carrying.'};},
+  (a)=>{ const pieces=[2,10,30,60][a[0]], takes=['research before writing','the first draft','editing to sound like you','distribution and repurposing'][a[1]],
+    voice=['a documented tone of voice ready to teach from','your published work as the training material','a partly defined voice to formalise along the way','no defined voice yet, which the pilot will force into existence'][a[2]];
+    return {
+    headline:`The bottleneck is ${takes}, not writing in general`,
+    why:`Shipping around ${pieces} pieces a month with ${takes} eating most of the time, and ${voice}, the fix is a workflow tuned to your voice, not a generic writing tool.`,
+    pilot:`A content workflow pilot for the one format you ship most often, automating ${takes} first, with your voice learned from your best published pieces and a human review step built in.`,
+    value:`Saving even 2 hours per piece is about ${pieces*2} hours a month back on your volume.`,
+    needs:'A body of published work you consider your voice, and clarity on which single format hurts most.',
+    notYet:'We would not automate final editorial judgement or publishing. Nothing ships without your eyes.',
+    validate:'Take your last five pieces and note where the hours actually went. The biggest line item is the pilot\'s scope.'};}
+],
+ru:[
+  (a)=>{ const conv=[7,20,60,120][a[0]], after=['заметки и обновление CRM','фоллоу-ап письма','предложения и сметы','практически вся работа после разговора'][a[1]],
+    ctx=['Ваша CRM даёт пилоту крепкую основу.','Таблицы и документы годятся для старта, но дробят контекст клиента.','Когда контекст живёт в почте и чатах, каждая передача дел теряет информацию.','Когда контекст живёт в головах, любой отпуск или уход стоит вам знаний о клиентах.'][a[2]];
+    return {
+    headline:'Узкое место не сами разговоры, а ручная работа после каждого из них',
+    why:`При примерно ${conv} разговорах в неделю, где ${after} всё ещё делается вручную, объём послеразговорной работы растёт с каждым клиентом, а день не растягивается. ${ctx}`,
+    pilot:'Пилот «из разговора в действие»: на входе заметки или транскрипты, на выходе черновики фоллоу-апов, обновления CRM и зафиксированные договорённости на проверку человеку. Сначала только этот кусок, не весь процесс продаж.',
+    value:`Даже 15 минут послеразговорной работы на разговор это около ${Math.max(2,Math.round(conv*0.25))} часов в неделю на вашем объёме. Пилот обычно забирает больше половины за считанные недели.`,
+    needs:'Разговоры должны где-то фиксироваться, а у ваших лучших ответов и предложений должно быть несколько хороших примеров для обучения.',
+    notYet:'Мы не стали бы автоматизировать саму отправку сообщений и ценовые решения. Черновик остаётся черновиком, пока его не одобрил человек.',
+    validate:'Проверьте, у какой доли разговоров прошлой недели договорённости вообще где-то записаны. Этот разрыв и есть точный объём пилота.'};},
+  (a)=>{ const freq=['ежедневного','еженедельного','ежемесячного','ежеквартального'][a[0]], cyc=[220,52,12,4][a[0]], hrs=[1.5,5,12,20][a[2]],
+    sys=['1-2','3-4','5 и больше','неопределённого числа'][a[1]], annual=Math.round(cyc*hrs);
+    return {
+    headline:'Узкое место это сверка между системами, а не сам отчёт',
+    why:`Для ${freq} отчёта из ${sys} источников, съедающего ${ADAPT.ru[1].q[2].o[a[2]].toLowerCase()} часов за цикл, настоящая работа это сбор и перекрёстная проверка данных, а не выводы.${a[1]===3?' То, что число источников сложно назвать, само по себе часть диагноза.':''}`,
+    pilot:'Пилот только на сбор данных и поиск расхождений: источники подтягиваются автоматически, несовпадения подсвечиваются человеку. Полная генерация отчёта позже, когда цифры заслужат доверие.',
+    value:`На ваших цифрах на этот отчёт уходит примерно ${annual} часов в год. Автоматический сбор и поиск расхождений обычно возвращают от половины до двух третей.`,
+    needs:'У каждого источника должна быть надёжная выгрузка (CSV, API или живая таблица) и один человек, который решает, какой источник прав при расхождении.',
+    notYet:'Мы не стали бы автоматизировать выводы и суждения о том, что цифры значат. Это остаётся за вами.',
+    validate:`Проверьте, могут ли все ${a[1]===3?'ваши':sys} источника стабильно выгружать данные уже сегодня. Если один не может, это первый блокер, ещё до всякого AI.`};},
+  (a)=>{ const join=[5,30,125,300][a[0]], rep=['почти весь онбординг','большая часть онбординга','около половины онбординга','лишь небольшая часть'][a[1]],
+    ctx=['Материалы записаны и актуальны, значит сборка будет быстрой.','Материалы есть, но требуют обновления, и сборка это всё равно заставит сделать.','Ответы разбросаны по местам, поэтому пилот начнётся с того, чтобы один раз их собрать.','Ответы живут в головах, значит первый шаг записать их один раз, и дальше они масштабируются.'][a[2]];
+    return {
+    headline:'Узкое место это ручное повторение одного и того же онбординга для каждого нового',
+    why:`При примерно ${join} новых в месяц, когда ${rep} состоит из одних и тех же шагов, основное усилие уходит на повторение, а не на суждения. ${ctx}`,
+    pilot:'Пилот онбординг-ассистента: каждый новый получает персональный путь и мгновенные ответы на базе ваших материалов, а команда занимается только исключениями.',
+    value:`Если каждый новый занимает хотя бы час ручного сопровождения, это около ${join} часов в месяц, которые в основном повторяют сами себя.`,
+    needs:'Ключевые шаги и частые ответы должны существовать в письменном виде, пусть даже неаккуратно. Повторяемость здесь и есть сырьё.',
+    notYet:'Мы не стали бы автоматизировать личное приветствие и решения по исключениям. Люди приходят к людям, а не к ботам.',
+    validate:'Выпишите десять вопросов, которые задаёт каждый новый. Если письменные ответы есть, пилот прост; если нет, начинать нужно с этого списка.'};},
+  (a)=>{ const lives=['в одном организованном месте','в нескольких системах','в документах, чатах и почте','в основном в головах'][a[0]],
+    often=['каждый день','каждую неделю','время от времени','редко'][a[1]],
+    cost=['работа встаёт','отвлекают коллег','решения принимаются без информации','работу переделывают заново'][a[2]];
+    return {
+    headline:'Узкое место это поиск: знания существуют, но их нахождение не масштабируется',
+    why:`Знания живут ${lives}, уже отвеченные вопросы возвращаются ${often}, а когда ничего не находится, ${cost}. Это проблема поиска, а не документации.`,
+    pilot:'Пилот RAG-ассистента на одном самом нагруженном срезе документации: отвечает мгновенно, ссылается на исходный документ, нестандартное передаёт человеку.',
+    value:`${a[1]===0?'Ежедневные повторные вопросы в масштабе команды':a[1]===1?'Еженедельные повторные вопросы в масштабе команды':'Даже нечастые повторные вопросы'} обычно складываются в часы каждую неделю, плюс скрытая цена того, что ${cost}.`,
+    needs:'Документы должны быть читабельны и более-менее актуальны. Качество важнее объёма: одна хорошая папка лучше трёх устаревших вики.',
+    notYet:'Мы не стали бы автоматизировать ответы на чувствительные темы и вопросы, требующие суждения. Они по дизайну уходят человеку.',
+    validate:'Возьмите пять самых повторяющихся вопросов и проверьте, есть ли на каждый актуальный письменный ответ. Это покажет, в поиске проблема или в документации.'};},
+  (a)=>{ const meet=[7,17,37,60][a[0]], slips=['фоллоу-апы','дедлайны','подготовка к встречам','ничего заметного, но ценой вечеров'][a[1]],
+    lives=['в одном трекере','в нескольких инструментах','в календаре и почте','в памяти'][a[2]];
+    return {
+    headline:'Узкое место в том, что координация держится на одном человеке, а не на системе',
+    why:`Неделя из примерно ${meet} встреч и договорённостей, где чаще всего срываются ${slips}, а всё учитывается ${lives}, делает координатора единой точкой отказа.`,
+    pilot:'Пилот личного операционного ассистента: ведёт задачи и договорённости, следит за дедлайнами, готовит фоллоу-апы и брифы перед встречами. Сначала один человек, потом команда.',
+    value:`Даже 10 минут администрирования вокруг каждой из ${meet} недельных договорённостей это около ${Math.max(1,Math.round(meet*10/60))} часов чистой координации в неделю.`,
+    needs:'У договорённостей должно быть одно место посадки, а у ассистента доступ к календарю и списку задач. Привычки здесь важнее инструментов.',
+    notYet:'Мы не стали бы автоматизировать приоритизацию и умение говорить «нет». Ассистент подсвечивает, решаете вы.',
+    validate:'Посчитайте, сколько договорённостей этой недели существует только в чьей-то голове или почте. Это число и есть риск, который вы несёте.'};},
+  (a)=>{ const pieces=[2,10,30,60][a[0]], takes=['рисёрч перед написанием','первый черновик','редактура под свой голос','дистрибуция и переупаковка'][a[1]],
+    voice=['задокументированный tone of voice, на котором можно учить сразу','ваши публикации как обучающий материал','частично описанный голос, который пилот дооформит','голоса пока нет, и пилот заставит его появиться'][a[2]];
+    return {
+    headline:`Узкое место это ${takes}, а не написание вообще`,
+    why:`При примерно ${pieces} единицах контента в месяц, где больше всего времени съедает ${takes}, и учитывая, что есть ${voice}, решение это процесс под ваш голос, а не универсальный писательский инструмент.`,
+    pilot:`Пилот контент-процесса для одного самого частого формата: сначала автоматизируем ${takes}, голос учим на ваших лучших публикациях, шаг человеческой проверки встроен.`,
+    value:`Экономия даже 2 часов на единицу это около ${pieces*2} часов в месяц на вашем объёме.`,
+    needs:'Корпус публикаций, которые вы считаете своим голосом, и ясность, какой один формат болит сильнее всего.',
+    notYet:'Мы не стали бы автоматизировать финальное редакторское суждение и публикацию. Ничего не выходит без ваших глаз.',
+    validate:'Возьмите последние пять единиц контента и отметьте, куда реально ушли часы. Самая большая строка и есть объём пилота.'};}
+]
+};
+
 let lang = localStorage.getItem('oc_lang') || 'en';
-let ans = {q1:null,q2:null,q3:null,q4:[],q5:null};
-const screens = ['s-welcome','s-q1','s-q2','s-q3','s-q4','s-q5','s-result'];
+let ans = {q1:null,q2:null,q3:null,q4:[],q5:null,a:[null,null,null]};
+const screens = ['s-welcome','s-q1','s-q2','s-q3','s-q4','s-q5','s-a1','s-a2','s-a3','s-result'];
 
 function t(k){ return TR[lang][k]; }
 
@@ -333,12 +561,13 @@ function buildChips(){
           document.getElementById('q2-other').style.display = isOther ? 'block' : 'none';
           if(isOther){ document.getElementById('q2-other-input').focus(); return; }
         }
-        setTimeout(()=>{ const step = parseInt(key[1]); go(step===5?6:step+1); if(step===5) renderResult(); }, 220); };
+        setTimeout(()=>{ const step = parseInt(key[1]); if(step===5){ buildAdaptive(); go(6); } else { go(step+1); } }, 220); };
       c.appendChild(b);
     });
   });
   document.getElementById('q2-other').style.display =
     (ans.q2 === TR[lang].q2.length-1) ? 'block' : 'none';
+  if(ans.q4.length) buildAdaptive();
   const c4 = document.getElementById('c-q4'); c4.innerHTML='';
   TR[lang].q4.forEach((label,i)=>{
     const b = document.createElement('button');
@@ -356,23 +585,38 @@ function buildChips(){
 
 function go(n){
   screens.forEach((id,i)=>document.getElementById(id).classList.toggle('active', i===n));
-  document.getElementById('bar').style.width = (n===0?0:n===6?100:(n/6*100))+'%';
+  document.getElementById('bar').style.width = (n===0?0:n===9?100:(n/9*100))+'%';
   window.scrollTo(0,0);
 }
 
+function buildAdaptive(){
+  const pain = ans.q4[0];
+  if(pain === undefined) return;
+  [0,1,2].forEach(k=>{
+    document.getElementById('a'+(k+1)+'-title').textContent = ADAPT[lang][pain].q[k].t;
+    const c = document.getElementById('c-a'+(k+1)); c.innerHTML='';
+    ADAPT[lang][pain].q[k].o.forEach((label,i)=>{
+      const b = document.createElement('button');
+      b.className='chip'+(ans.a[k]===i?' sel':''); b.textContent=label;
+      b.onclick=()=>{ ans.a[k]=i; c.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
+        setTimeout(()=>{ if(k===2){ go(9); renderResult(); } else { go(7+k); } }, 220); };
+      c.appendChild(b);
+    });
+  });
+}
+
 function renderResult(){
-  const primary = OPS[lang][ans.q4[0]];
-  const rc = roleClause[lang][ans.q1 ?? 5];
-  const isOther = ans.q2 === TR[lang].q2.length-1;
-  const label = TR[lang].q2[ans.q2 ?? 0].toLowerCase();
-  const ind = lang === 'ru'
-    ? (isOther ? 'в вашей сфере' : 'в сфере «' + label + '»')
-    : (isOther ? TR[lang].q2_generic : label);
-  document.getElementById('r-title').textContent = primary.t;
-  document.getElementById('r-why').textContent = primary.why.replace('{role}', rc).replace('{ind}', ind);
-  document.getElementById('r-effect').textContent = primary.eff;
-  document.getElementById('r-complexity').textContent = TR[lang].cx[primary.cx] + ' · ' + primary.cxNote;
-  document.getElementById('r-first').textContent = primary.first;
+  const pain = ans.q4[0];
+  const primary = OPS[lang][pain];
+  const a = ans.a.map(x => x ?? 0);
+  const gen = RESGEN[lang][pain](a);
+  document.getElementById('r-title').textContent = gen.headline;
+  document.getElementById('r-why').textContent = gen.why;
+  document.getElementById('r-pilot').textContent = gen.pilot;
+  document.getElementById('r-value').textContent = gen.value;
+  document.getElementById('r-needs').textContent = gen.needs;
+  document.getElementById('r-notyet').textContent = gen.notYet;
+  document.getElementById('r-validate').textContent = gen.validate;
   document.getElementById('r-exp').textContent = TR[lang].exp[ans.q5 ?? 0];
   const second = ans.q4[1] !== undefined ? OPS[lang][ans.q4[1]] : null;
   document.getElementById('r-second-card').style.display = second ? 'block' : 'none';
@@ -392,12 +636,20 @@ function q2Label(){
   return TR[lang].q2[ans.q2 ?? 0] + (isOther && other ? ' (' + other + ')' : '');
 }
 
+function adaptiveSummary(){
+  const pain = ans.q4[0];
+  if(pain === undefined) return '';
+  return ADAPT[lang][pain].q.map((q,k)=> q.t + ' ' + (ans.a[k] !== null ? q.o[ans.a[k]] : '-')).join(' | ');
+}
+
 function resultBodyHtml(){
-  const primary = OPS[lang][ans.q4[0]];
-  return document.getElementById('r-why').textContent +
-    '<br><br><b>Effect:</b> ' + primary.eff +
-    '<br><b>Complexity:</b> ' + TR[lang].cx[primary.cx] + ', ' + primary.cxNote +
-    '<br><b>First check:</b> ' + primary.first;
+  const pain = ans.q4[0];
+  const gen = RESGEN[lang][pain](ans.a.map(x => x ?? 0));
+  return '<b>' + gen.headline + '</b><br><br>' + gen.why +
+    '<br><br><b>Pilot:</b> ' + gen.pilot +
+    '<br><b>Value:</b> ' + gen.value +
+    '<br><b>Validate:</b> ' + gen.validate +
+    '<br><br><b>Adaptive answers:</b> ' + adaptiveSummary();
 }
 
 function sendToOlya(kind, email){
@@ -412,7 +664,7 @@ function sendToOlya(kind, email){
     team: TR[lang].q3[ans.q3 ?? 0],
     pains: ans.q4.map(i=>TR[lang].q4[i]).join(', '),
     ai_exp: TR[lang].q5[ans.q5 ?? 0],
-    result_title: primary.t,
+    result_title: RESGEN[lang][ans.q4[0]](ans.a.map(x => x ?? 0)).headline,
     result_body: resultBodyHtml(),
     lang: lang
   };
@@ -425,7 +677,7 @@ function sendToOlya(kind, email){
     goal: primary.t,
     problems: ans.q4.map(i=>TR[lang].q4[i]).join(', ') + ' | AI: ' + TR[lang].q5[ans.q5 ?? 0],
     routine_total:'-', routine_ai:'-', routine_goal:'-',
-    tasks_html: '<b>' + primary.t + '</b><br>' + resultBodyHtml()
+    tasks_html: resultBodyHtml()
   };
   return emailjs.send(EJS_SERVICE, EJS_TEMPLATE_CHECK, checkParams, EJS_KEY)
     .catch(() => emailjs.send(EJS_SERVICE, EJS_TEMPLATE_LEGACY, legacyParams, EJS_KEY));
@@ -438,7 +690,7 @@ function sendAnalytics(){
 }
 
 function restart(){
-  ans = {q1:null,q2:null,q3:null,q4:[],q5:null};
+  ans = {q1:null,q2:null,q3:null,q4:[],q5:null,a:[null,null,null]};
   analyticsSent = false;
   document.getElementById('q2-other-input').value='';
   buildChips(); go(0);
