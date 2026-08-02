@@ -26,12 +26,12 @@ const AboutSection = () => {
                 <div className="overflow-hidden rounded-sm mb-5 w-[280px] h-[280px]">
                   <img
                     src={olgaPhoto}
-                    alt="Olga Perova, Founder, Ontrí Advisory"
+                    alt="Olya Groot, Founder, Ontrí Advisory"
                     className="w-full h-full object-cover object-[50%_25%]"
                     loading="lazy"
                   />
                 </div>
-                <p className="font-serif text-lg text-foreground font-medium">Olga Perova</p>
+                <p className="font-serif text-lg text-foreground font-medium">Olya Groot</p>
                 <p className="text-sm text-muted-foreground font-sans mb-6">Founder, Ontrí Advisory</p>
                 <blockquote className="border-l-4 border-accent-dark pl-5 py-3">
                   <p className="text-xl font-serif font-semibold text-foreground italic leading-snug">
