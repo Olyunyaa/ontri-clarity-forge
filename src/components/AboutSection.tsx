@@ -1,6 +1,6 @@
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/i18n/LanguageContext";
-import olgaPhoto from "@/assets/olga-perova.png";
+import olgaPhoto from "@/assets/olga-perova.jpg";
 import { Target, Users, Lightbulb, Sparkles } from "lucide-react";
 
 const AboutSection = () => {
