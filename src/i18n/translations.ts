@@ -125,6 +125,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "cookie.notice": "We use cookies for anonymous visit statistics (Google Analytics). You can accept or decline, the site works either way.",
     "cookie.accept": "Accept",
     "cookie.decline": "Decline",
+    "footer.cookieSettings": "Cookie Settings",
   },
 
   nl: {
@@ -245,6 +246,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "cookie.notice": "Wij gebruiken cookies voor anonieme bezoekersstatistieken (Google Analytics). U kunt accepteren of weigeren, de site werkt in beide gevallen.",
     "cookie.accept": "Accepteren",
     "cookie.decline": "Weigeren",
+    "footer.cookieSettings": "Cookie-instellingen",
   },
 
   ru: {
@@ -365,5 +367,6 @@ export const translations: Record<Language, Record<string, string>> = {
     "cookie.notice": "Мы используем cookie для анонимной статистики посещений (Google Analytics). Можно принять или отклонить, сайт работает в любом случае.",
     "cookie.accept": "Принять",
     "cookie.decline": "Отклонить",
+    "footer.cookieSettings": "Настройки cookie",
   },
 };

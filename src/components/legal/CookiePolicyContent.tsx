@@ -1,6 +1,6 @@
 const CookiePolicyContent = () => (
   <div className="space-y-6">
-    <p className="text-sm text-muted-foreground italic">Last updated: 9 March 2026</p>
+    <p className="text-sm text-muted-foreground italic">Last updated: 20 September 2026</p>
     <p><strong>Olga Perova</strong>, trading as Ontrí Advisory<br />KVK: <strong>97101907</strong> | hello@ontri-advisory.com</p>
 
     <h3 className="text-lg font-semibold">1. What Are Cookies</h3>
@@ -18,8 +18,6 @@ const CookiePolicyContent = () => (
         <tbody>
           <tr className="border-b"><td className="py-2 pr-4">_ga</td><td className="py-2 pr-4">Google Analytics</td><td className="py-2 pr-4">Distinguishes unique users</td><td className="py-2">2 years</td></tr>
           <tr className="border-b"><td className="py-2 pr-4">_ga_*</td><td className="py-2 pr-4">Google Analytics</td><td className="py-2 pr-4">Session state</td><td className="py-2">2 years</td></tr>
-          <tr className="border-b"><td className="py-2 pr-4">_gid</td><td className="py-2 pr-4">Google Analytics</td><td className="py-2 pr-4">Distinguishes users</td><td className="py-2">24 hours</td></tr>
-          <tr className="border-b"><td className="py-2 pr-4">_gat</td><td className="py-2 pr-4">Google Analytics</td><td className="py-2 pr-4">Throttles request rate</td><td className="py-2">1 minute</td></tr>
         </tbody>
       </table>
     </div>

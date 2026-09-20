@@ -13,11 +13,20 @@ const CookieNotice = () => {
     } else if (consent === null) {
       setVisible(true);
     }
+
+    const reopen = () => setVisible(true);
+    window.addEventListener("open-cookie-settings", reopen);
+    return () => window.removeEventListener("open-cookie-settings", reopen);
   }, []);
 
   const choose = (value: "granted" | "denied") => {
+    const wasGranted = getConsent() === "granted";
     setConsent(value);
     setVisible(false);
+    if (value === "denied" && wasGranted) {
+      // GA уже загружена на этой странице — перезагрузка останавливает сбор сразу
+      window.location.reload();
+    }
   };
 
   if (!visible) return null;

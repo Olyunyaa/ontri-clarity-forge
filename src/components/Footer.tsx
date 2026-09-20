@@ -58,6 +58,15 @@ const Footer = () => {
           >
             <DisclaimerContent />
           </LegalModal>
+
+          <span className="text-primary-foreground/20">|</span>
+
+          <button
+            onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}
+            className="text-primary-foreground/40 hover:text-primary-foreground/70 transition-colors"
+          >
+            {t("footer.cookieSettings")}
+          </button>
         </div>
 
         <p className="text-primary-foreground/40 text-xs font-sans text-center">
