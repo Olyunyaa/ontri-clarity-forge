@@ -122,7 +122,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "legal.disclaimer.placeholder": "Disclaimer content will be added soon.",
 
     // Cookie notice
-    "cookie.notice": "This website uses cookies to ensure the best experience. By continuing to use this site, you agree to our use of cookies.",
+    "cookie.notice": "We use cookies for anonymous visit statistics (Google Analytics). You can accept or decline, the site works either way.",
+    "cookie.accept": "Accept",
+    "cookie.decline": "Decline",
   },
 
   nl: {
@@ -240,7 +242,9 @@ export const translations: Record<Language, Record<string, string>> = {
     "legal.disclaimer.placeholder": "De Disclaimer wordt binnenkort toegevoegd.",
 
     // Cookie notice
-    "cookie.notice": "Deze website maakt gebruik van cookies voor de beste ervaring. Door deze site te blijven gebruiken, gaat u akkoord met ons cookiegebruik.",
+    "cookie.notice": "Wij gebruiken cookies voor anonieme bezoekersstatistieken (Google Analytics). U kunt accepteren of weigeren, de site werkt in beide gevallen.",
+    "cookie.accept": "Accepteren",
+    "cookie.decline": "Weigeren",
   },
 
   ru: {
@@ -358,6 +362,8 @@ export const translations: Record<Language, Record<string, string>> = {
     "legal.disclaimer.placeholder": "Отказ от ответственности будет добавлен в ближайшее время.",
 
     // Cookie notice
-    "cookie.notice": "Этот сайт использует файлы cookie для обеспечения наилучшего опыта. Продолжая использовать сайт, вы соглашаетесь с использованием cookie.",
+    "cookie.notice": "Мы используем cookie для анонимной статистики посещений (Google Analytics). Можно принять или отклонить, сайт работает в любом случае.",
+    "cookie.accept": "Принять",
+    "cookie.decline": "Отклонить",
   },
 };
