@@ -1,6 +1,6 @@
 // Google Analytics 4, загружается только после согласия пользователя (GDPR).
 // Тот же ключ localStorage читают standalone-страницы /check/ и /audit/.
-export const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+export const GA_MEASUREMENT_ID = "G-ZZSM623SC2";
 
 export const CONSENT_KEY = "analytics-consent";
 
@@ -27,7 +27,7 @@ export const setConsent = (value: ConsentValue) => {
 let loaded = false;
 
 export const loadAnalytics = () => {
-  if (loaded || !GA_MEASUREMENT_ID.startsWith("G-") || GA_MEASUREMENT_ID.includes("X")) return;
+  if (loaded || !GA_MEASUREMENT_ID.startsWith("G-") || GA_MEASUREMENT_ID.includes("XXXX")) return;
   loaded = true;
 
   const script = document.createElement("script");
