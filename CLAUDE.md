@@ -113,7 +113,9 @@ cp ~/Desktop/Ontrí\ Advisory/Диагностическая\ карта/process
 git add public/audit/index.html && git commit -m "Update audit form" && git push
 ```
 
-## Текущий статус (обновлено 29.08.2026)
+## Текущий статус (обновлено 16.10.2026)
+
+- **GA4 исправлена** (16.10.2026): на главной React-странице статистика не собиралась с момента подключения, потому что `gtag` в `src/lib/analytics.ts` пушил в dataLayer массив вместо объекта `arguments` (GA такие записи игнорирует). Исправлено (коммит b529f5a), на проде проверено: уходит `page_view` на G-ZZSM623SC2, в Realtime виден визит. Данных до 16.10.2026 нет и не будет. **GA-аккаунт «Ontrí Advisory», property «ontri-advisory.com»; владелец по словам Ольги ontri.backup@gmail.com** (из Chrome с расширением Claude он открывается напрямую). Realtime: `analytics.google.com/analytics/web/#/a408860929p555146662/realtime/overview`.
 
 - **Инцидент 29.08.2026, устранён:** сайт лежал с 404, потому что репозиторий перевели в private — GitHub на бесплатном тарифе автоматически отключает Pages для приватных репо. Решение (согласовано с Ольгой): репо снова сделан публичным, Pages пересоздан (build_type: workflow), кастомный домен ontri-advisory.com привязан заново, деплой перезапущен. Главная, /check/ и /audit/ отвечают 200, HTTPS enforced. **Важно: не переводить репо в private — сайт сразу упадёт** (либо сначала купить GitHub Pro).
 
