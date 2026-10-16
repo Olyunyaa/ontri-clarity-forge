@@ -36,8 +36,10 @@ export const loadAnalytics = () => {
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: unknown[]) {
-    window.dataLayer.push(args);
+  // gtag.js принимает только объект `arguments`, не массив — иначе события игнорируются
+  function gtag(..._args: unknown[]) {
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments);
   }
   gtag("js", new Date());
   gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
