@@ -1,7 +1,10 @@
+import { useEffect, useRef } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/i18n/LanguageContext";
 import caseMapOverview from "@/assets/case-map-overview.jpg";
 import caseMapCity from "@/assets/case-map-city.jpg";
+import cateringVideo from "@/assets/case-catering.mp4";
+import cateringPoster from "@/assets/case-catering-poster.png";
 
 const featured = [
   { n: "1", phases: false, images: false },
@@ -17,6 +20,22 @@ const mapImages = [
 
 const CasesSection = () => {
   const { t } = useLanguage();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Play the case video only while it is on screen, and never for prefers-reduced-motion
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      if (video) video.controls = true;
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => (entry.isIntersecting ? video.play().catch(() => {}) : video.pause()),
+      { threshold: 0.4 },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="cases" className="py-24 md:py-32 bg-background">
@@ -33,6 +52,38 @@ const CasesSection = () => {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <ScrollReveal className="md:col-span-2">
+              <div className="grid md:grid-cols-[2fr_3fr] gap-7 md:gap-10 border border-foreground/10 rounded-sm p-7 md:p-8 bg-card">
+                <video
+                  ref={videoRef}
+                  src={cateringVideo}
+                  poster={cateringPoster}
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label={t("cases.5.pain")}
+                  className="w-full max-w-sm mx-auto md:max-w-none rounded-sm border border-foreground/10"
+                />
+                <div className="flex flex-col">
+                  <p className="text-xs font-sans font-semibold tracking-[0.15em] uppercase text-accent-dark mb-2">
+                    {t("cases.5.name")}
+                  </p>
+                  <p className="text-xs font-sans tracking-[0.1em] uppercase text-muted-foreground mb-4">
+                    {t("cases.5.role")}
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-serif font-semibold text-foreground mb-3 leading-snug">
+                    {t("cases.5.pain")}
+                  </h3>
+                  <p className="text-muted-foreground font-sans leading-relaxed text-sm mb-5">
+                    {t("cases.5.desc")}
+                  </p>
+                  <p className="mt-auto border-l-2 border-accent-dark pl-3 text-sm font-sans font-medium text-foreground">
+                    {t("cases.5.result")}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
             {featured.map((c, i) => (
               <ScrollReveal key={c.n} delay={i * 100} className="h-full">
                 <div className="h-full flex flex-col border border-foreground/10 rounded-sm p-7 md:p-8 bg-card">
