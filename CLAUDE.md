@@ -37,6 +37,12 @@
 - **Офлайн-режим**: Service Worker + очередь в localStorage, отправка при восстановлении связи
 - Шаблон email: `~/Desktop/Ontrí Advisory/Диагностическая карта/emailjs-template.html` (table-based layout с `bgcolor`/`<font>` для совместимости с Gmail)
 
+### Страница продукта для кейтеринга (standalone)
+- **`public/catering/index.html`** — русскоязычный лендинг «Кейтеринг Система» для холодного аутрича (https://ontri-advisory.com/catering/): hero, демо-видео с кликабельными главами, цифры кейса, 6 возможностей, 4 скриншота с лайтбоксом, как внедряем, FAQ, блок основателя, CTA на Calendly + hello@ontri-advisory.com. Свой маленький баннер согласия на GA (тот же ключ `analytics-consent`), события `demo_play`, `demo_chapter`, `demo_complete`, `cta_click`.
+- Рядом ассеты: `demo.mp4` (ролик без звука, 68 с, H.264), `poster.jpg`, `shot-*.jpg`, `olya.jpg`, `og.jpg` (превью ссылки 1200×630). Исходник ролика и текст озвучки: `~/Desktop/Ontrí Advisory/Marketing/Кейтеринг демо-видео/`.
+- Блок основателя: «Оля Перова-Гроут», фаундер, иконка-ссылка на личный LinkedIn. Цена в FAQ: от 120 000 ₽, срок 2–4 недели.
+- Отзыв Авроры: закомментированный блок в HTML, ждёт текста.
+
 ### Стили и дизайн
 - **Tailwind CSS** + shadcn-ui (51 компонент в `src/components/ui/`)
 - **Шрифты**: Inter (body), Cormorant Garamond (заголовки)
@@ -85,6 +91,8 @@
 - **Аудит**: https://ontri-advisory.com/audit/
 - **DNS-провайдер**: strato.nl
 
+- **LinkedIn Ольги (личный)**: https://www.linkedin.com/in/olyagroot/ · **компании**: https://www.linkedin.com/company/ontri-advisory
+
 ## Env vars / ключи
 - EmailJS: service_pfl7vyt / template_xo7wv5f / MqADpxGb2aRhHIjN2 (публичные, в коде аудит-формы)
 
@@ -113,7 +121,9 @@ cp ~/Desktop/Ontrí\ Advisory/Диагностическая\ карта/process
 git add public/audit/index.html && git commit -m "Update audit form" && git push
 ```
 
-## Текущий статус (обновлено 02.11.2026)
+## Текущий статус (обновлено 03.11.2026)
+
+- **Страница /catering/ сделана** (03.11.2026, ещё не задеплоена): standalone HTML, как /check/ (React-роут на GitHub Pages отдавал бы 404 при прямом заходе). Добавлена в sitemap. Проверена на 1440 и 390 px, сборка и тесты зелёные. Чтобы заменить ролик на озвученный — положить новый mp4 с тем же именем `public/catering/demo.mp4` (таймкоды глав в HTML рассчитаны на текущий монтаж). В dev-сервере открывать `/catering/index.html` (Vite отдаёт SPA на `/catering/`), на проде работает `/catering/`.
 
 - **Кейс кейтеринга опубликован** (02.11.2026): пятая featured-карточка на всю ширину первой в секции кейсов, «Sales Quote & Proposal System» (кейтеринговая компания без имени, 100 → 15 часов в месяц на сметы), EN/NL/RU (ключи cases.5.*). Слева моушн-видео из LinkedIn-поста 11 (`src/assets/case-catering.mp4`, обложка `case-catering-poster.png`): без звука, по кругу, играет только когда карточка на экране; при prefers-reduced-motion не стартует, показывает контролы. Видео только на английском.
 

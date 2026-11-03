@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сметы и КП для кейтеринга за 10 минут | Ontrí Advisory</title>
+<meta name="description" content="Система для отдела продаж кейтеринга: заявка из мессенджера или почты, подбор меню под гостей и бюджет, три варианта и готовая КП-презентация за 8–15 минут вместо часа. Плюс списки сбора для склада.">
+<link rel="canonical" href="https://ontri-advisory.com/catering/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ontri-advisory.com/catering/">
+<meta property="og:title" content="КП для кейтеринга за 10 минут, а не за час">
+<meta property="og:description" content="Заявка клиента → три варианта меню в бюджете → готовая КП-презентация. Смотрите минутное демо.">
+<meta property="og:image" content="https://ontri-advisory.com/catering/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#111B32; --bg:#F6F4EE; --card:#FFFFFF; --cream:#F0EBE1; --beige:#E2C9A0; --gold:#B08A3E;
+  --muted:#5A5F6A; --line:rgba(17,27,50,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--navy);font-family:Inter,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.label{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.12}
+h1{font-size:clamp(38px,6vw,64px);margin-bottom:22px;max-width:820px}
+h2{font-size:clamp(30px,4.2vw,44px);margin-bottom:14px}
+h3{font-size:24px;margin-bottom:8px}
+.sub{color:var(--muted);font-weight:300;font-size:clamp(16px,2vw,19px);max-width:680px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--bg);border:1px solid var(--navy);border-radius:3px;padding:15px 26px;font:inherit;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none;transition:opacity .15s,border-color .15s}
+.btn:hover{opacity:.9}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--gold);opacity:1}
+.btn.light{background:var(--cream);color:var(--navy);border-color:var(--cream)}
+.btn.line-light{background:transparent;color:var(--cream);border-color:rgba(240,235,225,.35)}
+.btn.line-light:hover{border-color:var(--beige);opacity:1}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* шапка */
+.top{position:sticky;top:0;z-index:20;background:rgba(246,244,238,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:23px;text-decoration:none}
+.top .btn{padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero{padding:64px 0 40px}
+.hero .proof{margin-top:22px;font-size:14px;color:var(--muted)}
+.hero .proof b{color:var(--navy);font-weight:500}
+
+/* видео */
+.video-sec{padding-top:24px}
+.player{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:28px;align-items:start}
+.frame{background:var(--navy);border-radius:3px;overflow:hidden;box-shadow:0 24px 60px -28px rgba(17,27,50,.45)}
+.frame video{width:100%;aspect-ratio:16/9;background:var(--navy)}
+.vnote{font-size:13px;color:var(--muted);margin-top:12px}
+.chapters{list-style:none;border-top:1px solid var(--line)}
+.chapters li{border-bottom:1px solid var(--line)}
+.chapters button{display:flex;gap:14px;width:100%;text-align:left;background:none;border:none;font:inherit;color:var(--navy);padding:12px 4px;cursor:pointer;font-size:15px;line-height:1.4;transition:color .15s}
+.chapters button:hover{color:var(--gold)}
+.chapters .t{flex:0 0 38px;font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px;padding-top:2px}
+.chapters li.on button{color:var(--gold)}
+.chapters li.on .t{color:var(--gold)}
+
+/* цифры */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:28px 26px}
+.stat .n{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(40px,5vw,54px);line-height:1;margin-bottom:10px}
+.stat .n small{font-size:.5em;font-weight:500}
+.stat p{color:var(--muted);font-size:15px}
+
+/* возможности */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:26px 24px}
+.feat .num{font-size:12px;letter-spacing:.16em;color:var(--gold);font-weight:600;margin-bottom:14px}
+.feat p{color:var(--muted);font-size:15px}
+
+/* скриншоты */
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:36px}
+.shots figure{background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.shots img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;object-position:top left;cursor:zoom-in}
+.shots figcaption{padding:12px 16px;font-size:14px;color:var(--muted)}
+.lightbox{position:fixed;inset:0;background:rgba(17,27,50,.88);display:none;align-items:center;justify-content:center;padding:20px;z-index:50;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-height:92vh;border-radius:3px}
+
+/* отзыв */
+.quote{background:var(--navy);color:var(--cream);border-radius:3px;padding:40px}
+.quote blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,30px);line-height:1.35;font-weight:500}
+.quote .who{margin-top:18px;font-size:14px;color:var(--beige)}
+
+/* внедрение */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:36px}
+.step{border-top:2px solid var(--navy);padding-top:18px}
+.step .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+.step h3{font-size:22px}
+.step p{color:var(--muted);font-size:15px}
+
+/* FAQ */
+.faq{max-width:760px;margin-top:28px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 36px 20px 0;font-size:17px;font-weight:500;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:24px;font-weight:300;color:var(--gold);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);font-size:16px;padding:0 0 22px;max-width:680px}
+
+/* основатель */
+.founder{display:grid;grid-template-columns:180px minmax(0,1fr);gap:32px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:3px;padding:32px}
+.founder img{width:180px;height:180px;max-width:none;object-fit:cover;object-position:center 20%;border-radius:3px}
+.founder .name-row{display:flex;align-items:center;gap:10px}
+.founder .name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600}
+.founder .li{display:inline-flex;color:var(--muted);transition:color .15s}
+.founder .li:hover{color:#0A66C2}
+.founder .role{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
+.founder p{color:var(--muted);font-size:16px}
+
+/* финальный CTA */
+.final{background:var(--navy);color:var(--cream);text-align:left}
+.final h2{color:var(--cream)}
+.final .sub{color:rgba(240,235,225,.75)}
+.final .mail{margin-top:22px;font-size:15px;color:rgba(240,235,225,.75)}
+.final .mail a{color:var(--beige);text-decoration:none}
+.final .mail a:hover{text-decoration:underline}
+
+footer{background:var(--navy);color:rgba(240,235,225,.55);font-size:13px;border-top:1px solid rgba(226,201,160,.2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:22px;padding-bottom:22px}
+footer a{color:rgba(240,235,225,.75);text-decoration:none}
+footer a:hover{color:var(--beige)}
+
+/* согласие на аналитику */
+.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:40;max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:3px;box-shadow:0 12px 40px -16px rgba(17,27,50,.35);padding:16px 18px;display:none;gap:14px;align-items:center;font-size:14px;color:var(--muted)}
+.consent.show{display:flex}
+.consent p{flex:1}
+.consent button{font:inherit;font-size:14px;border-radius:3px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);background:none;color:var(--navy)}
+.consent button.yes{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+
+@media (max-width:900px){
+  .player{grid-template-columns:1fr}
+  .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  section{padding:56px 0}
+  .hero{padding:40px 0 28px}
+  .top .btn span{display:none}
+  .stats,.grid3,.shots,.steps{grid-template-columns:minmax(0,1fr)}
+  .founder{grid-template-columns:1fr;padding:24px}
+  .founder img{width:120px;height:120px}
+  .quote{padding:28px 24px}
+  .cta-row .btn{width:100%;justify-content:center}
+  .consent{flex-wrap:wrap}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script>
+/* GA4: только после согласия (тот же ключ, что на главной) */
+function loadGA(){try{var ID="G-ZZSM623SC2";if(window.__ga)return;window.__ga=1;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config",ID,{anonymize_ip:true});}catch(e){}}
+function consent(){try{return localStorage.getItem("analytics-consent")}catch(e){return null}}
+if(consent()==="granted")loadGA();
+function track(name,params){try{if(window.gtag)gtag("event",name,params||{})}catch(e){}}
+</script>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="/">Ontrí Advisory</a>
+    <a class="btn" href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer" data-cta="header">Записаться <span>на демо</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="label">Для кейтеринга</div>
+      <h1>КП для клиента за&nbsp;10&nbsp;минут, а&nbsp;не&nbsp;за&nbsp;час</h1>
+      <p class="sub">Менеджер вставляет заявку клиента из мессенджера или почты, система подбирает меню под формат, гостей и бюджет, собирает три варианта и выгружает готовую КП-презентацию. Склад получает список сбора из той же сметы.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer" data-cta="hero">Обсудить систему на онлайн-встрече</a>
+        <a class="btn ghost" href="#demo" data-cta="hero-video">Смотреть демо · 1 минута</a>
+      </div>
+      <p class="proof">С сентября 2026 года в ежедневной работе у кейтеринговой компании: <b>отдел продаж из 5 человек</b>.</p>
+    </div>
+  </section>
+
+  <section class="video-sec" id="demo">
+    <div class="wrap">
+      <div class="player">
+        <div>
+          <div class="frame">
+            <video id="vid" controls muted playsinline preload="metadata" poster="poster.jpg">
+              <source src="demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="vnote">Живая запись системы на демо-данных, ускорена. Нажмите на шаг, чтобы перейти к нему.</p>
+        </div>
+        <ol class="chapters" id="chapters">
+          <li data-t="2.6"><button type="button"><span class="t">0:03</span>Заявка клиента разбирается сама</button></li>
+          <li data-t="13.5"><button type="button"><span class="t">0:14</span>Три варианта меню в бюджете и граммовке</button></li>
+          <li data-t="21.3"><button type="button"><span class="t">0:21</span>Закрепили блюда, остальное пересобрано</button></li>
+          <li data-t="27.5"><button type="button"><span class="t">0:28</span>Три варианта в одной КП</button></li>
+          <li data-t="34.1"><button type="button"><span class="t">0:34</span>Готовая КП-презентация</button></li>
+          <li data-t="44.3"><button type="button"><span class="t">0:44</span>Склад: список сбора из сметы</button></li>
+          <li data-t="57.3"><button type="button"><span class="t">0:57</span>Все КП в одной базе</button></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="label">Результат у клиента</div>
+      <h2>Что изменилось в отделе продаж</h2>
+      <div class="stats" style="margin-top:32px">
+        <div class="stat"><div class="n">8–15 <small>мин</small></div><p>на одно КП вместо часа: подбор меню, расчёт и презентация</p></div>
+        <div class="stat"><div class="n">85 <small>часов</small></div><p>в месяц освободилось у команды: на сметы уходило 100 часов, теперь 15</p></div>
+        <div class="stat"><div class="n">3 <small>года</small></div><p>прошлых смет клиента легли в основу норм граммовки и шаблонов системы</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    ОТЗЫВ АВРОРЫ: вставить текст и подпись, затем раскомментировать блок.
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="quote">
+        <blockquote>«Текст отзыва»</blockquote>
+        <div class="who">Имя, должность, кейтеринговая компания</div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="label">Что умеет система</div>
+      <h2>Всё, что сейчас делается руками в Excel</h2>
+      <p class="sub">Под каждую компанию настраиваем свои нормы, форматы и фирменный стиль КП.</p>
+      <div class="grid3">
+        <div class="feat"><div class="num">01</div><h3>Заявка текстом</h3><p>Вставьте сообщение клиента: дата, гости, время, формат, бюджет и пожелания встанут в поля сами.</p></div>
+        <div class="feat"><div class="num">02</div><h3>Подбор по вашим нормам</h3><p>Граммовка и бюджет на гостя, баланс категорий под формат, «без свинины» и «больше рыбы». Суммы считает обычный код, поэтому они всегда сходятся.</p></div>
+        <div class="feat"><div class="num">03</div><h3>Три варианта и правки</h3><p>Эконом, сбалансированный и премиум. Закрепили нужные блюда, остальное система пересоберёт и пересчитает.</p></div>
+        <div class="feat"><div class="num">04</div><h3>КП в вашем стиле</h3><p>Презентация в PDF и PPTX с вашим логотипом, командой и расчётом по каждому варианту. Для себя есть Excel с формулами.</p></div>
+        <div class="feat"><div class="num">05</div><h3>База всех КП</h3><p>Прошлые сметы загружаются из ваших файлов. Любое КП находится по клиенту, поводу или блюду, новое можно собрать на его основе.</p></div>
+        <div class="feat"><div class="num">06</div><h3>Склад</h3><p>Из сметы получается список сбора: остатки на дату мероприятия видны сразу. Есть сметы аренды и печать для склада.</p></div>
+      </div>
+      <div class="shots">
+        <figure><img src="shot-request.jpg" alt="Заявка клиента разобрана по полям" loading="lazy" width="1200" height="675"><figcaption>Заявка клиента разобрана по полям</figcaption></figure>
+        <figure><img src="shot-variants.jpg" alt="Три варианта меню с ценой на гостя" loading="lazy" width="1200" height="675"><figcaption>Три варианта меню с ценой на гостя</figcaption></figure>
+        <figure><img src="shot-kp.jpg" alt="Слайд КП-презентации с расчётом по трём вариантам" loading="lazy" width="1200" height="675"><figcaption>Слайд КП-презентации: расчёт по трём вариантам</figcaption></figure>
+        <figure><img src="shot-sklad.jpg" alt="Список сбора для склада с остатками на дату" loading="lazy" width="1200" height="656"><figcaption>Список сбора для склада с остатками на дату</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="label">Как внедряем</div>
+      <h2>От первой встречи до запуска: 2–4 недели</h2>
+      <div class="steps">
+        <div class="step"><div class="k">Шаг 1</div><h3>Встреча</h3><p>Смотрим, как у вас сейчас собирается КП, и показываем систему вживую.</p></div>
+        <div class="step"><div class="k">Шаг 2</div><h3>Ваши данные</h3><p>Меню загружаем выгрузкой из R-Keeper в Excel, прошлые сметы из ваших файлов. Интеграция не нужна.</p></div>
+        <div class="step"><div class="k">Шаг 3</div><h3>Настройка</h3><p>Форматы, правила подбора, КП в вашем фирменном стиле и склад, если он нужен.</p></div>
+        <div class="step"><div class="k">Шаг 4</div><h3>Запуск</h3><p>Обучаем менеджеров и первые недели дорабатываем по их замечаниям.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="label">Вопросы</div>
+      <h2>Что обычно спрашивают</h2>
+      <div class="faq">
+        <details><summary>Мы привыкли работать по-своему. Систему можно адаптировать под нашу работу?</summary><p>Обязательно. Мы разбираем, как работает ваша команда и что вы хотите получить, и адаптируем систему так, чтобы ей было удобно пользоваться и она экономила команде время.</p></details>
+        <details><summary>Где хранятся наши данные?</summary><p>Система ставится на ваш сервер, у каждой компании своя установка. Меню, сметы и клиенты не смешиваются с чужими.</p></details>
+        <details><summary>Нужна интеграция с R-Keeper или 1С?</summary><p>Нет. Меню загружается выгрузкой из R-Keeper в Excel, складские остатки из ведомостей 1С. Цены обновляются загрузкой нового файла.</p></details>
+        <details><summary>У нас другая учётная система. Подойдёт?</summary><p>Скорее всего, да. Системе нужен список блюд с ценами и граммовкой, формат выгрузки обсудим на встрече.</p></details>
+        <details><summary>Зачем здесь ИИ и можно ли доверять цифрам?</summary><p>Цифры считает код: это надёжнее и дешевле. Суммы, граммовки и проверку бюджета ИИ не трогает. Для удобства ИИ можно добавить как опцию для разбора заявок: заявка, скопированная из переписки с клиентом, сама попадает в систему и превращается в черновик сметы.</p></details>
+        <details><summary>Сколько это стоит?</summary><p>От 120 000 ₽, итоговая сумма зависит от объёма доработок под вашу работу. Срок внедрения: 2–4 недели.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="founder">
+        <img src="olya.jpg" alt="Оля Перова-Гроут, фаундер Ontrí Advisory" loading="lazy" width="360" height="360">
+        <div>
+          <div class="name-row"><span class="name">Оля Перова-Гроут</span><a class="li" href="https://www.linkedin.com/in/olyagroot/" target="_blank" rel="noopener noreferrer" aria-label="Оля Перова-Гроут в LinkedIn" data-cta="linkedin"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></div>
+          <div class="role">Фаундер Ontrí Advisory</div>
+          <p>Раньше управляла активами на 2 млрд долларов в США и Великобритании и была операционным директором, поэтому смотрю на процессы глазами владельца бизнеса. Каждую систему делаю и запускаю сама: сначала разбираюсь, как работает ваша команда, и только потом думаю о технологиях.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Покажу систему за 20 минут</h2>
+      <p class="sub">Онлайн, в удобное вам время. Расскажете, как у вас собирается КП, и сразу увидите, что из этого система возьмёт на себя.</p>
+      <div class="cta-row">
+        <a class="btn light" href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer" data-cta="final">Выбрать время для встречи</a>
+        <a class="btn line-light" href="mailto:hello@ontri-advisory.com?subject=%D0%94%D0%B5%D0%BC%D0%BE%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D0%B5%D0%B9%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B3%D0%B0" data-cta="final-mail">Написать на почту</a>
+      </div>
+      <p class="mail">Или напрямую: <a href="mailto:hello@ontri-advisory.com">hello@ontri-advisory.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ontrí Advisory</span>
+    <a href="/">ontri-advisory.com</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Скриншот крупно"><img alt=""></div>
+
+<div class="consent" id="consent" role="region" aria-label="Согласие на аналитику">
+  <p>Можно учесть ваш визит в статистике? Только Google Analytics, без рекламы.</p>
+  <button type="button" data-v="denied">Нет</button>
+  <button type="button" class="yes" data-v="granted">Да</button>
+</div>
+
+<script>
+(function(){
+  var vid=document.getElementById("vid"), items=[].slice.call(document.querySelectorAll("#chapters li"));
+  items.forEach(function(li){
+    li.querySelector("button").addEventListener("click",function(){
+      vid.currentTime=parseFloat(li.dataset.t); vid.play().catch(function(){});
+      track("demo_chapter",{chapter:li.textContent.trim()});
+    });
+  });
+  vid.addEventListener("timeupdate",function(){
+    var t=vid.currentTime, cur=-1;
+    items.forEach(function(li,i){ if(t>=parseFloat(li.dataset.t)-0.05) cur=i; });
+    items.forEach(function(li,i){ li.classList.toggle("on",i===cur); });
+  });
+  var played=false;
+  vid.addEventListener("play",function(){ if(!played){played=true;track("demo_play");} });
+  vid.addEventListener("ended",function(){ track("demo_complete"); });
+
+  document.querySelectorAll("[data-cta]").forEach(function(a){
+    a.addEventListener("click",function(){ track("cta_click",{place:a.dataset.cta}); });
+  });
+
+  var lb=document.getElementById("lightbox");
+  document.querySelectorAll(".shots img").forEach(function(img){
+    img.addEventListener("click",function(){ lb.querySelector("img").src=img.src; lb.querySelector("img").alt=img.alt; lb.classList.add("open"); });
+  });
+  lb.addEventListener("click",function(){ lb.classList.remove("open"); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") lb.classList.remove("open"); });
+
+  var top=document.getElementById("top");
+  addEventListener("scroll",function(){ top.classList.toggle("scrolled",scrollY>8); },{passive:true});
+
+  var c=document.getElementById("consent");
+  if(!consent()) c.classList.add("show");
+  c.querySelectorAll("button").forEach(function(b){
+    b.addEventListener("click",function(){
+      try{localStorage.setItem("analytics-consent",b.dataset.v)}catch(e){}
+      c.classList.remove("show");
+      if(b.dataset.v==="granted") loadGA();
+    });
+  });
+})();
+</script>
+</body>
+</html>
