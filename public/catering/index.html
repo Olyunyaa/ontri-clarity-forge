@@ -166,7 +166,10 @@ footer a:hover{color:var(--beige)}
 </style>
 <script>
 /* GA4: только после согласия (тот же ключ, что на главной) */
-function loadGA(){try{var ID="G-ZZSM623SC2";if(window.__ga)return;window.__ga=1;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config",ID,{anonymize_ip:true});}catch(e){}}
+/* ?me=1 — не считать визиты этого браузера (ключ ga-ignore общий для всего сайта), ?me=0 — вернуть */
+(function(){try{var u=new URL(location.href),m=u.searchParams.get("me");if(m!=="1"&&m!=="0")return;if(m==="1")localStorage.setItem("ga-ignore","1");else localStorage.removeItem("ga-ignore");u.searchParams.delete("me");history.replaceState(null,"",u.pathname+u.search+u.hash);setTimeout(function(){alert(m==="1"?"Готово: визиты с этого браузера больше не попадают в статистику.":"Статистика для этого браузера снова включена.")},300);}catch(e){}})();
+function gaIgnored(){try{return localStorage.getItem("ga-ignore")==="1"}catch(e){return false}}
+function loadGA(){try{var ID="G-ZZSM623SC2";if(window.__ga||gaIgnored())return;window.__ga=1;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config",ID,{anonymize_ip:true});}catch(e){}}
 function consent(){try{return localStorage.getItem("analytics-consent")}catch(e){return null}}
 if(consent()==="granted")loadGA();
 function track(name,params){try{if(window.gtag)gtag("event",name,params||{})}catch(e){}}
