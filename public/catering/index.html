@@ -172,8 +172,10 @@ function gaIgnored(){try{return localStorage.getItem("ga-ignore")==="1"}catch(e)
 function loadGA(){try{var ID="G-ZZSM623SC2";if(window.__ga||gaIgnored())return;window.__ga=1;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments);};gtag("js",new Date());gtag("config",ID,{anonymize_ip:true});}catch(e){}}
 function consent(){try{return localStorage.getItem("analytics-consent")}catch(e){return null}}
 if(consent()==="granted")loadGA();
-function track(name,params){try{if(window.gtag)gtag("event",name,params||{})}catch(e){}}
+function track(name,params){try{if(window.gtag)gtag("event",name,params||{})}catch(e){}try{if(window.goatcounter&&goatcounter.count){var p=params||{},k=name+(p.place?"-"+p.place:"");goatcounter.count({path:"catering-"+k,title:k,event:true})}}catch(e){}}
 </script>
+<!-- GoatCounter: счётчик без cookie (согласие не нужно), считает всех; свои визиты (?me=1, ключ ga-ignore) не считаем -->
+<script>(function(){try{if(/[?&]me=1(&|$)/.test(location.search)||localStorage.getItem("ga-ignore")==="1")return}catch(e){}var s=document.createElement("script");s.async=true;s.src="https://gc.zgo.at/count.js";s.setAttribute("data-goatcounter","https://ontri-advisory.goatcounter.com/count");document.head.appendChild(s)})();</script>
 </head>
 <body>
 

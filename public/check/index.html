@@ -68,6 +68,8 @@ h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(24px,4
 /* GA4: грузится только если пользователь дал согласие на основном сайте */
 (function(){try{if(localStorage.getItem("analytics-consent")!=="granted"||localStorage.getItem("ga-ignore")==="1")return;var ID="G-ZZSM623SC2";if(ID.indexOf("XXXX")>-1)return;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function g(){dataLayer.push(arguments);}g("js",new Date());g("config",ID,{anonymize_ip:true});}catch(e){}})();
 </script>
+<!-- GoatCounter: счётчик без cookie (согласие не нужно), считает всех; свои визиты (?me=1, ключ ga-ignore) не считаем -->
+<script>(function(){try{if(/[?&]me=1(&|$)/.test(location.search)||localStorage.getItem("ga-ignore")==="1")return}catch(e){}var s=document.createElement("script");s.async=true;s.src="https://gc.zgo.at/count.js";s.setAttribute("data-goatcounter","https://ontri-advisory.goatcounter.com/count");document.head.appendChild(s)})();</script>
 </head>
 <body>
 <div class="wrap">

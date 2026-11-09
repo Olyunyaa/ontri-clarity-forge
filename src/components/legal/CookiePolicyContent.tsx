@@ -1,6 +1,6 @@
 const CookiePolicyContent = () => (
   <div className="space-y-6">
-    <p className="text-sm text-muted-foreground italic">Last updated: 20 September 2026</p>
+    <p className="text-sm text-muted-foreground italic">Last updated: 9 November 2026</p>
     <p><strong>Olga Perova</strong>, trading as Ontrí Advisory<br />KVK: <strong>97101907</strong> | hello@ontri-advisory.com</p>
 
     <h3 className="text-lg font-semibold">1. What Are Cookies</h3>
@@ -21,6 +21,9 @@ const CookiePolicyContent = () => (
         </tbody>
       </table>
     </div>
+
+    <h4 className="text-base font-semibold">Cookieless visit counts (no consent needed)</h4>
+    <p>We also use <strong>GoatCounter</strong> to count page visits. It does not place cookies or store anything on your device and does not store IP addresses, so it works without the cookie banner.</p>
 
     <p>See <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer" className="underline">Google's Cookie Policy</a> for further details.</p>
 

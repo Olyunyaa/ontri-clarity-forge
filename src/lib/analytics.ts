@@ -1,5 +1,7 @@
 // Google Analytics 4, загружается только после согласия пользователя (GDPR).
 // Тот же ключ localStorage читают standalone-страницы /check/ и /audit/.
+// Рядом в index.html (и в /catering/, /check/, /audit/) стоит GoatCounter: без cookie,
+// поэтому грузится без согласия и считает всех; свои визиты (ga-ignore) тоже пропускает.
 export const GA_MEASUREMENT_ID = "G-ZZSM623SC2";
 
 export const CONSENT_KEY = "analytics-consent";

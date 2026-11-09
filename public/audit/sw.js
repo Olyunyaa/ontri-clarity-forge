@@ -16,6 +16,7 @@ self.addEventListener('activate',e=>{
 });
 
 self.addEventListener('fetch',e=>{
+  if(/goatcounter\.com|gc\.zgo\.at/.test(e.request.url)) return; // счётчик идёт мимо кеша
   e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(resp=>{
     if(resp.ok&&e.request.method==='GET'){
       const cl=resp.clone();
