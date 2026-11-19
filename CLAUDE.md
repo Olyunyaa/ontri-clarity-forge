@@ -40,7 +40,7 @@
 ### Страница продукта для кейтеринга (standalone)
 - **`public/catering/index.html`** — русскоязычный лендинг «Кейтеринг Система» для холодного аутрича (https://ontri-advisory.com/catering/): hero, демо-видео с кликабельными главами, цифры кейса, 6 возможностей, 4 скриншота с лайтбоксом, как внедряем, FAQ, блок основателя, CTA на Calendly + hello@ontri-advisory.com. Свой маленький баннер согласия на GA (тот же ключ `analytics-consent`), события `demo_play`, `demo_chapter`, `demo_complete`, `cta_click`.
 - Рядом ассеты: `demo.mp4` (ролик без звука, 67 с, H.264), `poster.jpg`, `shot-*.jpg`, `olya.jpg`, `og.jpg` (превью ссылки 1200×630). Исходник ролика и текст озвучки: `~/Desktop/Ontrí Advisory/Marketing/Кейтеринг демо-видео/`.
-- Блок основателя: «Оля Перова-Гроут», фаундер, иконка-ссылка на личный LinkedIn. Цена в FAQ: от 120 000 ₽, срок 2–4 недели.
+- Блок основателя: «Оля Перова», фаундер, иконка-ссылка на личный LinkedIn. Цена в FAQ: от 120 000 ₽, срок 2–4 недели.
 - Отзыв Авроры: закомментированный блок в HTML, ждёт текста.
 
 ### Стили и дизайн
@@ -91,7 +91,7 @@
 - **Аудит**: https://ontri-advisory.com/audit/
 - **DNS-провайдер**: strato.nl
 
-- **LinkedIn Ольги (личный)**: https://www.linkedin.com/in/olyagroot/ · **компании**: https://www.linkedin.com/company/ontri-advisory
+- **LinkedIn Ольги (личный)**: https://www.linkedin.com/in/olyaperova/ · **компании**: https://www.linkedin.com/company/ontri-advisory
 
 ## Env vars / ключи
 - EmailJS: service_pfl7vyt / template_xo7wv5f / MqADpxGb2aRhHIjN2 (публичные, в коде аудит-формы)
