@@ -4,7 +4,7 @@ import olgaPhoto from "@/assets/olga-perova.jpg";
 import { Target, Users, Lightbulb, Sparkles, Linkedin } from "lucide-react";
 
 const AboutSection = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="about" className="py-24 md:py-32 bg-background">
@@ -32,7 +32,12 @@ const AboutSection = () => {
                   />
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <p className="font-serif text-lg text-foreground font-medium">Olya Perova</p>
+                  <a
+                    href={language === "ru" ? "/olya/ru/" : "/olya/"}
+                    className="font-serif text-lg text-foreground font-medium hover:text-accent-dark transition-colors"
+                  >
+                    Olya Perova
+                  </a>
                   <a
                     href="https://www.linkedin.com/in/olyaperova/"
                     target="_blank"

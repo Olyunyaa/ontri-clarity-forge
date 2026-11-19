@@ -43,6 +43,10 @@
 - Блок основателя: «Оля Перова», фаундер, иконка-ссылка на личный LinkedIn. Цена в FAQ: от 120 000 ₽, срок 2–4 недели.
 - Отзыв Авроры: закомментированный блок в HTML, ждёт текста.
 
+### Личная страница Оли (standalone)
+- **`public/olya/index.html`** (EN) и **`public/olya/ru/index.html`** (RU): https://ontri-advisory.com/olya/ и /olya/ru/. Нужны, чтобы по запросам «Оля Перова», «Olya Perova» поисковики находили страницу о ней. Hero с фото, био, «Как я работаю» (3 шага, формулировки из how.*), 4 кейса (тексты из cases.*), CTA на Calendly и LinkedIn. Разметка ProfilePage + Person (`@id` https://ontri-advisory.com/olya/#person, alternateName с «Olya Groot»), hreflang en/ru, GoatCounter без GA (баннер согласия не нужен). Фото `public/olya/olya.jpg` (720×900, из src/assets/olga-perova.jpg).
+- Ссылки на неё: имя в AboutSection (по языку /olya/ или /olya/ru/), имя в блоке основателя /catering/, founder в JSON-LD главной. Обе страницы в sitemap.
+
 ### Стили и дизайн
 - **Tailwind CSS** + shadcn-ui (51 компонент в `src/components/ui/`)
 - **Шрифты**: Inter (body), Cormorant Garamond (заголовки)
@@ -121,7 +125,9 @@ cp ~/Desktop/Ontrí\ Advisory/Диагностическая\ карта/process
 git add public/audit/index.html && git commit -m "Update audit form" && git push
 ```
 
-## Текущий статус (обновлено 09.11.2026)
+## Текущий статус (обновлено 19.11.2026)
+
+- **Единое имя Olya Perova / Оля Перова** (19.11.2026): Groot и «Перова-Гроут» убраны с сайта, личный LinkedIn теперь linkedin.com/in/olyaperova (коммит b3eab91). Сделана личная страница /olya/ и /olya/ru/ (см. «Ключевые файлы»). Следующий шаг: подключить сайт к Google Search Console и Яндекс.Вебмастеру (входит Оля сама) и отправить sitemap.
 
 - **/catering/ развёрнута на крупные кейтеринги** (09.11.2026): заголовок «Отдел продаж кейтеринга экономит 85 часов в месяц на сметах и КП», в подзаголовке – «суммы и граммовки считает код», первой цифрой идёт 85 часов; title, description, og:title и картинка превью `og.jpg` про 85 часов (на картинке кадр трёх вариантов на 1200 гостей). Ролик перезаписан на медицинскую конференцию на 1200 гостей (заставка и финал про 85 часов, 67,7 с), главы 0:04, 0:13, 0:20, 0:26, 0:34, 0:44, 0:57; заменены `poster.jpg` и все четыре `shot-*.jpg`. Причина: мелкие кейтеринги отвечают «нам не надо», аутрич идёт к крупным. Исходники и текст озвучки – `~/Desktop/Ontrí Advisory/Marketing/Кейтеринг демо-видео/`.
 
