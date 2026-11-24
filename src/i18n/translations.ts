@@ -19,7 +19,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
-    "hero.subtitle": "We look at how your team works, find what can be handed off to AI and implement it, so the business gets a measurable result.",
+    "hero.subtitle": "We go through your team's processes, find where AI will save time and money, then implement the best solution.",
     "hero.cta": "Schedule an Intro Meeting",
     "hero.ctaCheck": "Check where AI pays off · 3 min",
     "hero.audience": "For founders and leaders of small and medium-sized businesses.",
@@ -154,7 +154,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
-    "hero.subtitle": "We kijken hoe uw team werkt, bepalen wat u aan AI kunt overlaten en voeren het in, zodat uw bedrijf een meetbaar resultaat krijgt.",
+    "hero.subtitle": "We nemen de processen van uw team door, bepalen waar AI tijd en geld bespaart en voeren de beste oplossing in.",
     "hero.cta": "Plan een kennismaking",
     "hero.ctaCheck": "Check waar AI loont · 3 min",
     "hero.audience": "Voor oprichters en directeuren van mkb-bedrijven.",
@@ -289,7 +289,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
-    "hero.subtitle": "Смотрим, как работает ваша команда, находим, что можно отдать AI, и внедряем, чтобы у бизнеса был измеримый результат.",
+    "hero.subtitle": "Разбираем процессы вашей команды, находим, где AI сэкономит часы и деньги, и внедряем лучшее решение.",
     "hero.cta": "Записаться на встречу",
     "hero.ctaCheck": "Где AI окупится у вас · 3 минуты",
     "hero.audience": "Для основателей и руководителей малого и среднего бизнеса.",
