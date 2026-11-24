@@ -1,4 +1,6 @@
 import ScrollReveal from "@/components/ScrollReveal";
+import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/booking";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const stepKeys = [
@@ -40,6 +42,16 @@ const HowItWorksSection = () => {
               </ScrollReveal>
             ))}
           </div>
+
+          <ScrollReveal>
+            <div className="mt-14">
+              <Button size="lg" className="text-base px-8 py-6" asChild>
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" data-cta="how-it-works">
+                  {t("hero.cta")}
+                </a>
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

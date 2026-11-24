@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
+import { Button } from "@/components/ui/button";
+import { BOOKING_URL } from "@/lib/booking";
 import { useLanguage } from "@/i18n/LanguageContext";
 import caseMapOverview from "@/assets/case-map-overview.jpg";
 import caseMapCity from "@/assets/case-map-city.jpg";
@@ -162,11 +164,23 @@ const CasesSection = () => {
           </div>
 
           <ScrollReveal>
-            <div className="mt-12 flex flex-wrap items-center gap-2 text-sm font-sans text-muted-foreground">
-              <span>{t("cases.checkText")}</span>
-              <a href="/check/" className="text-accent-dark font-medium hover:underline">
-                {t("cases.checkLink")}
-              </a>
+            <div className="mt-16 rounded-sm bg-primary text-primary-foreground px-6 py-10 sm:px-10 sm:py-12">
+              <h3 className="font-serif text-2xl sm:text-3xl font-semibold leading-tight max-w-2xl">
+                {t("cases.bookTitle")}
+              </h3>
+              <div className="mt-8">
+                <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
+                  <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" data-cta="after-cases">
+                    {t("hero.cta")}
+                  </a>
+                </Button>
+              </div>
+              <p className="mt-8 text-sm font-sans text-primary-foreground/70">
+                {t("cases.checkText")}{" "}
+                <a href="/check/" className="text-primary-foreground underline underline-offset-4 decoration-primary-foreground/40 hover:decoration-primary-foreground">
+                  {t("cases.checkLink")}
+                </a>
+              </p>
             </div>
           </ScrollReveal>
         </div>

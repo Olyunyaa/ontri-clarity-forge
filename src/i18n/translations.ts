@@ -15,17 +15,25 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.whyUs": "Why Us",
     "nav.contact": "Contact",
     "nav.cases": "Cases",
+    "nav.book": "Book a call",
 
     // Hero
     "hero.title": "Scale Your Business\nWithout Scaling Your Team",
     "hero.subtitle": "We look at how your team works, find what can be handed off to AI and implement it, so the business gets a measurable result.",
     "hero.cta": "Schedule an Intro Meeting",
     "hero.ctaCheck": "Check where AI pays off · 3 min",
+    "hero.audience": "For founders and leaders of small and medium-sized businesses.",
+    "hero.proof.1.value": "100 → 15 h",
+    "hero.proof.1.label": "a month on client quotes, catering sales team",
+    "hero.proof.2.value": "1 month",
+    "hero.proof.2.label": "to ROI on a CEO's AI assistant",
+    "hero.proof.3.value": "15+ h",
+    "hero.proof.3.label": "a month freed for a founder's sales and growth",
 
     // About
     "about.label": "About Us",
     "about.title": "We bring clarity and see it through.",
-    "about.p1": "We've spent years building operations inside startups and scale-ups: not advising from the outside, but doing the actual work of making businesses run. We've also worked on the investor side of a $2B real estate portfolio in New York and the UK, so we understand what owners and shareholders expect. We know what it looks like when processes break, when teams are stretched thin, and when the answer isn't more people but strengthening what's already there.",
+    "about.p1": "I worked as COO on large projects, where among other things I built operational processes from scratch, reworked inefficient ones and was responsible for budgets of $2M and above. Before that I was on the investor side of a $2B real estate portfolio in New York and the UK, so I understand well what owners and shareholders look at.\n\nTeams tend to get used to working in a certain way, and with technology moving this fast they don't always manage to change how they work. We help businesses put technology to work so that they get the most out of it and save time and money.",
     "about.p2": "We speak the language of goals and numbers. That means we start with your objectives and constraints, then figure out where AI can make a measurable difference.",
     "about.p3": "Then we work with your team to make sure the changes actually stick.",
     "about.p4": "We also run Ontrí Advisory itself on AI, which means everything we recommend, we've tested ourselves.",
@@ -104,6 +112,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "more.3.desc": "Workflows that turn scattered sources and raw data into structured research, visual analysis and decision-ready outputs.",
     "cases.checkText": "Wondering what this could look like in your business?",
     "cases.checkLink": "Take the 3-minute AI Opportunity Check",
+    "cases.bookTitle": "Want to find out how AI could save you money or time? Book a free intro meeting!",
 
     // Contact
     "contact.label": "Contact Us",
@@ -141,17 +150,25 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.whyUs": "Waarom wij",
     "nav.contact": "Contact",
     "nav.cases": "Cases",
+    "nav.book": "Plan een gesprek",
 
     // Hero
     "hero.title": "Schaal Uw Bedrijf\nZonder Uw Team Uit Te Breiden",
     "hero.subtitle": "We kijken hoe uw team werkt, bepalen wat u aan AI kunt overlaten en voeren het in, zodat uw bedrijf een meetbaar resultaat krijgt.",
     "hero.cta": "Plan een kennismaking",
     "hero.ctaCheck": "Check waar AI loont · 3 min",
+    "hero.audience": "Voor oprichters en directeuren van mkb-bedrijven.",
+    "hero.proof.1.value": "100 → 15 uur",
+    "hero.proof.1.label": "per maand aan offertes, salesteam van een cateraar",
+    "hero.proof.2.value": "1 maand",
+    "hero.proof.2.label": "terugverdientijd van een AI-assistent voor een CEO",
+    "hero.proof.3.value": "15+ uur",
+    "hero.proof.3.label": "per maand vrij voor sales en groei van een oprichter",
 
     // About
     "about.label": "Over ons",
     "about.title": "Wij brengen helderheid en zorgen voor resultaat.",
-    "about.p1": "Wij hebben jarenlang operaties gebouwd binnen startups en scale-ups: niet als externe adviseurs, maar als mensen die het werk daadwerkelijk deden. Ook werkten wij aan de kant van de investeerder in een vastgoedportefeuille van $2 miljard in New York en het Verenigd Koninkrijk, dus wij kennen de verwachtingen van eigenaren en aandeelhouders. Wij weten hoe het voelt wanneer processen vastlopen, teams overbelast zijn, en het antwoord niet meer mensen zijn, maar het versterken van wat er al is.",
+    "about.p1": "Ik werkte als COO bij grote projecten, waar ik onder meer operationele processen vanaf nul opzette, inefficiënte werkwijzen herinrichtte en verantwoordelijk was voor budgetten vanaf $2 miljoen. Daarvoor werkte ik aan de kant van de investeerder in een vastgoedportefeuille van $2 miljard in New York en het Verenigd Koninkrijk, dus ik begrijp goed waar eigenaren en aandeelhouders naar kijken.\n\nMedewerkers raken meestal gewend aan een bepaalde manier van werken en hebben bij het huidige tempo van technologie niet altijd de tijd om die aan te passen. Wij helpen technologie zo in te zetten dat uw bedrijf er het maximale uit haalt en tijd en geld bespaart.",
     "about.p2": "Wij spreken de taal van doelen en cijfers. Dat betekent dat wij beginnen met uw doelstellingen en beperkingen, en uitzoeken waar AI een meetbaar verschil kan maken.",
     "about.p3": "Daarna werken wij samen met uw team om ervoor te zorgen dat de veranderingen ook echt werken.",
     "about.p4": "Ontrí Advisory zelf is volledig gebouwd met AI: alles wat wij onze klanten aanbevelen, testen wij eerst op onszelf.",
@@ -230,6 +247,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "more.3.desc": "Workflows die verspreide bronnen en ruwe data omzetten in gestructureerde research, visuele analyse en beslisklare output.",
     "cases.checkText": "Benieuwd hoe dit er bij u uit zou zien?",
     "cases.checkLink": "Doe de AI Opportunity Check van 3 minuten",
+    "cases.bookTitle": "Wilt u weten hoe AI u geld of tijd kan besparen? Plan een gratis kennismaking!",
 
     // Contact
     "contact.label": "Neem contact op",
@@ -267,17 +285,25 @@ export const translations: Record<Language, Record<string, string>> = {
     "nav.whyUs": "Почему мы",
     "nav.contact": "Контакты",
     "nav.cases": "Кейсы",
+    "nav.book": "Записаться",
 
     // Hero
     "hero.title": "Масштабируйте Бизнес\nБез Расширения Команды",
     "hero.subtitle": "Смотрим, как работает ваша команда, находим, что можно отдать AI, и внедряем, чтобы у бизнеса был измеримый результат.",
     "hero.cta": "Записаться на встречу",
     "hero.ctaCheck": "Где AI окупится у вас · 3 минуты",
+    "hero.audience": "Для основателей и руководителей малого и среднего бизнеса.",
+    "hero.proof.1.value": "100 → 15 ч",
+    "hero.proof.1.label": "в месяц на сметы, отдел продаж кейтеринга",
+    "hero.proof.2.value": "1 месяц",
+    "hero.proof.2.label": "окупаемость AI-ассистента для CEO",
+    "hero.proof.3.value": "15+ ч",
+    "hero.proof.3.label": "в месяц освобождено основателю на продажи и рост",
 
     // About
     "about.label": "О нас",
     "about.title": "Мы разбираемся в деталях и доводим до результата.",
-    "about.p1": "Мы много лет работали внутри бизнеса: выстраивали операционные процессы с нуля, оптимизировали существующие, управляли командами в стартапах и scale-ups в роли COO. А ещё работали на стороне инвестора в портфеле недвижимости на $2 млрд в Нью-Йорке и Великобритании, поэтому понимаем, чего ждут владельцы и акционеры. Мы хорошо знаем, как это бывает: процессы работают не идеально, но времени разобраться нет. Есть дорогостоящие решения, которые давно пора пересмотреть, но руки не доходят. Команда работает на пределе, а выручка не растёт. Часто ответ не в новых людях, а в автоматизации того, что съедает время, и высвобождении ресурса для задач, которые действительно двигают бизнес вперёд.",
+    "about.p1": "Я работала COO в крупных проектах, где среди прочего выстраивала операционные процессы с нуля, перестраивала неэффективные и отвечала за бюджеты от $2 млн. До этого была на стороне инвестора в портфеле недвижимости стоимостью $2 млрд в Нью-Йорке и Великобритании, поэтому хорошо понимаю, на что смотрят владельцы и акционеры.\n\nСотрудники, как правило, привыкают работать определённым образом и при нынешней скорости технологий не всегда успевают перестраиваться. Мы помогаем внедрить технологии так, чтобы бизнес получал от них максимум и экономил время и деньги.",
     "about.p2": "Мы работаем в логике результатов и цифр. Начинаем с ваших целей и ограничений, разбираемся в процессах и находим, где AI даст реальный эффект.",
     "about.p3": "Затем внедряем вместе с командой и доводим до работающего результата.",
     "about.p4": "Ontrí Advisory сам построен на AI. Всё, что рекомендуем клиентам, сначала проверяем на себе.",
@@ -309,7 +335,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "how.label": "Как мы работаем",
     "how.title": "Три шага до результата",
     "how.1.title": "Знакомство",
-    "how.1.desc": "Бесплатный созвон: ваши цели, процессы и где теряется время.",
+    "how.1.desc": "Бесплатный звонок: ваши цели, процессы и где теряется время.",
     "how.2.title": "Аудит процессов",
     "how.2.desc": "На рабочей сессии вместе разбираем ваши ключевые процессы, и мы анализируем, где AI даст измеримый эффект.",
     "how.3.title": "Дорожная карта и внедрение",
@@ -356,13 +382,14 @@ export const translations: Record<Language, Record<string, string>> = {
     "more.3.desc": "Процессы, которые превращают разрозненные источники и сырые данные в структурированный рисёрч, визуальный анализ и материалы для решений.",
     "cases.checkText": "Хотите понять, как это выглядело бы у вас?",
     "cases.checkLink": "Пройдите 3-минутный AI Opportunity Check",
+    "cases.bookTitle": "Хотите узнать, как AI может сэкономить вам деньги или время? Запишитесь на бесплатную вводную встречу!",
 
     // Contact
     "contact.label": "Свяжитесь с нами",
     "contact.title": "Давайте обсудим, как Ontrí Advisory может помочь вашему бизнесу с AI.",
     "contact.cta": "Записаться на встречу",
     "contact.email": "Предпочитаете email?",
-    "contact.checkText": "Пока не готовы к созвону?",
+    "contact.checkText": "Пока не готовы к звонку?",
     "contact.checkLink": "Начните с 3-минутного AI Opportunity Check",
 
     // Footer

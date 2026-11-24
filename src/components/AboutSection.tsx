@@ -65,9 +65,13 @@ const AboutSection = () => {
                 <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-accent flex items-center justify-center mt-1">
                   <Users className="w-5 h-5 text-accent-foreground" />
                 </div>
-                <p className="text-muted-foreground font-sans leading-relaxed">
-                  {t("about.p1")}
-                </p>
+                <div className="space-y-4">
+                  {t("about.p1").split("\n\n").map((para, i) => (
+                    <p key={i} className="text-muted-foreground font-sans leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                </div>
               </div>
             </ScrollReveal>
 

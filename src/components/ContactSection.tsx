@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { BOOKING_URL } from "@/lib/booking";
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -19,7 +20,7 @@ const ContactSection = () => {
           <ScrollReveal delay={200}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
               <Button variant="hero" size="lg" className="text-base px-8 py-6" asChild>
-                <a href="https://calendly.com/ontri-advisory/new-meeting" target="_blank" rel="noopener noreferrer">
+                <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" data-cta="contact">
                   {t("contact.cta")}
                 </a>
               </Button>

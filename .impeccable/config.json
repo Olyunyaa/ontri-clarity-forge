@@ -1,0 +1,32 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-24T15:46:29.846Z",
+        "reason": "Brand font documented in CLAUDE.md (Inter body, Cormorant headings); predates this session"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "public/check/index.html"
+        ],
+        "createdAt": "2026-11-24T15:46:29.855Z",
+        "reason": "Brand background #F6F4EE documented in CLAUDE.md; predates this session"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "public/audit/index.html"
+        ],
+        "createdAt": "2026-11-24T18:35:11.983Z",
+        "reason": "Brand background #F6F4EE documented in CLAUDE.md; predates this session"
+      }
+    ]
+  }
+}

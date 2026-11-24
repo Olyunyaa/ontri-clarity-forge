@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { BOOKING_URL } from "@/lib/booking";
 
 const navLinks = [
   { href: "#", key: "nav.home" },
@@ -24,22 +26,29 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8 text-sm text-primary-foreground/80 font-sans tracking-wide">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-8 text-sm text-primary-foreground/80 font-sans tracking-wide">
           {navLinks.map((l) => (
             <a key={l.href} href={l.href} className="hover:text-primary-foreground transition-colors">
               {t(l.key)}
             </a>
           ))}
           <LanguageSwitcher />
+          <Button variant="hero" size="sm" className="px-4" asChild>
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" data-cta="nav">
+              {t("nav.book")}
+            </a>
+          </Button>
         </div>
 
         {/* Mobile toggle */}
-        <div className="md:hidden flex items-center gap-4">
+        <div className="lg:hidden flex items-center gap-4">
           <LanguageSwitcher />
           <button
             onClick={() => setOpen(!open)}
             className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -48,7 +57,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-primary/98 border-t border-primary-foreground/10 animate-fade-in">
+        <div id="mobile-menu" className="lg:hidden bg-primary/98 border-t border-primary-foreground/10 animate-fade-in">
           <div className="container mx-auto px-6 py-6 flex flex-col gap-5 text-sm text-primary-foreground/80 font-sans tracking-wide">
             {navLinks.map((l) => (
               <a
@@ -60,6 +69,19 @@ const Navbar = () => {
                 {t(l.key)}
               </a>
             ))}
+            <div className="mt-2 pt-6 border-t border-primary-foreground/10">
+              <Button variant="hero" size="lg" className="text-base px-8 py-6 w-full sm:w-auto" asChild>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cta="mobile-menu"
+                  onClick={() => setOpen(false)}
+                >
+                  {t("hero.cta")}
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       )}
