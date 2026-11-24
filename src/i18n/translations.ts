@@ -37,7 +37,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "about.p2": "We speak the language of goals and numbers. That means we start with your objectives and constraints, then figure out where AI can make a measurable difference.",
     "about.p3": "Then we work with your team to make sure the changes actually stick.",
     "about.p4": "We also run Ontrí Advisory itself on AI, which means everything we recommend, we've tested ourselves.",
-    "about.quote": "AI is not our goal. Results are.",
+    "about.quote": "We don't bring in AI just because we can. We measure the effect on the business and, if there's a cheaper or more reliable solution, we'll suggest it.",
 
     // Services
     "services.label": "What We Do",
@@ -172,7 +172,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "about.p2": "Wij spreken de taal van doelen en cijfers. Dat betekent dat wij beginnen met uw doelstellingen en beperkingen, en uitzoeken waar AI een meetbaar verschil kan maken.",
     "about.p3": "Daarna werken wij samen met uw team om ervoor te zorgen dat de veranderingen ook echt werken.",
     "about.p4": "Ontrí Advisory zelf is volledig gebouwd met AI: alles wat wij onze klanten aanbevelen, testen wij eerst op onszelf.",
-    "about.quote": "AI is niet ons doel, resultaten wel.",
+    "about.quote": "Wij zetten AI niet in alleen omdat het kan. Wij meten het effect op het bedrijf en stellen een goedkopere of betrouwbaardere oplossing voor als die er is.",
 
     // Services
     "services.label": "Wat wij doen",
