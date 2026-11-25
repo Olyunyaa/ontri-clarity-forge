@@ -1,0 +1,36 @@
+# Ontrí Advisory
+
+> Ontrí Advisory is an AI consultancy for small and medium-sized businesses, founded by Olya Perova (Оля Перова) and based in Heiloo, the Netherlands. It goes through a team's processes, finds where AI will save time and money, and builds and implements the solution. Works in English and Russian, remotely, with clients in Europe and beyond.
+
+## Founder
+
+Olya Perova (Оля Перова, Olga Perova) is the founder of Ontrí Advisory and builds the systems herself.
+
+- Former COO in startups and scale-ups
+- Worked on the investor side of a $2B real estate portfolio in New York and the UK
+- Education: Master's in Financial Economics, Lomonosov Moscow State University; Economics, HSE University
+- Personal page (EN): https://ontri-advisory.com/olya/
+- Personal page (RU): https://ontri-advisory.com/olya/ru/
+- LinkedIn: https://www.linkedin.com/in/olyaperova/
+
+## Services
+
+- AI Opportunity & Workflow Audit: maps workflows and finds manual work, underused knowledge and data
+- Solution Design & Prioritisation: defines what is worth building and what is not
+- Custom AI Systems & Data Products: RAG, AI agents, internal assistants, personalisation, data visualisation, client-facing tools
+- Implementation, Handover & Optimisation: documentation, handover to the team, continuous improvement
+
+## Selected cases
+
+- AI executive assistant for a CEO: custom multi-agent assistant that handles text and voice messages in two languages, calendar, tasks, reminders, bookings and phone calls. ROI in 1 month against the cost of hiring an assistant.
+- Catering company, quotes and proposals: web system that proposes menu options within budget and portion norms and exports Excel and a branded presentation. Time on quotes cut from 100 to 15 hours a month. Details (RU): https://ontri-advisory.com/catering/
+- Online community: 800 Telegram posts turned into a usable knowledge product, member operations automated. At least 15 hours a month freed up, ROI in under 2 months.
+- Meeting-to-action workflow: transcribes and analyses client calls, researches the client, produces a meeting brief and books the next meeting.
+- Construction company website with an interactive 3D map of 200 projects across the Netherlands, built in under 20 hours.
+
+## Links
+
+- Website: https://ontri-advisory.com/
+- AI readiness check (3 min): https://ontri-advisory.com/check/
+- Company on LinkedIn: https://www.linkedin.com/company/ontri-advisory
+- Contact: hello@ontri-advisory.com
